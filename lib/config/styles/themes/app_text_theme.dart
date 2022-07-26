@@ -92,7 +92,7 @@ class AppTextTheme {
     fontWeight: _bold,
     fontSize: 14,
     height: 1,
-    color: AppColors.darkBlueColor,
+    color: AppColors.whiteColor,
     fontFamily: _fontFamily,
   );
 
