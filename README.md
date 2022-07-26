@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-# wassiet
-
-=======
-
 # wassiet
 
 A new Flutter project.
