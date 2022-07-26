@@ -21,12 +21,7 @@ class AppButtonTheme {
         const DecoratedBox(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.blueAccent,
-                Colors.redAccent,
-                Colors.purpleAccent
-                //add more colors
-              ],
+              colors: [Colors.blueAccent, Colors.redAccent, Colors.purpleAccent],
             ),
           ),
         );
@@ -34,12 +29,7 @@ class AppButtonTheme {
       const DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Colors.blueAccent,
-              Colors.redAccent,
-              Colors.purpleAccent
-              //add more colors
-            ],
+            colors: [Colors.blueAccent, Colors.redAccent, Colors.purpleAccent],
           ),
         ),
       );
@@ -62,5 +52,60 @@ class AppButtonTheme {
         borderRadius: AppConstants.smallBorderRadius,
       ),
     ),
+  );
+  /* OutlinedButton */
+  static final OutlinedButtonThemeData outlinedButtonThemeDataLight = OutlinedButtonThemeData(
+    style: _outlinedButtonStyle,
+  );
+
+  static final ButtonStyle _outlinedButtonStyle = ButtonStyle(
+    fixedSize: MaterialStateProperty.resolveWith<Size>(
+      (Set<MaterialState> states) => const Size(
+        double.maxFinite,
+        55,
+      ),
+    ),
+    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+      (states) => AppColors.whiteColor,
+    ),
+    elevation: MaterialStateProperty.resolveWith<double>(
+      (Set<MaterialState> states) => 0.0,
+    ),
+    shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
+      (states) => const RoundedRectangleBorder(
+        borderRadius: AppConstants.mediumBorderRadius,
+      ),
+    ),
+    side: MaterialStateProperty.resolveWith<BorderSide>(
+      (states) {
+        if (states.contains(MaterialState.disabled)) {
+          return const BorderSide(
+            width: 2,
+            color: AppColors.inactiveGreyColorLight,
+          );
+        } else {
+          return const BorderSide(
+            width: 2,
+            color: AppColors.darkBlueColor,
+          );
+        }
+      },
+    ),
+    textStyle: MaterialStateProperty.resolveWith<TextStyle>((states) {
+      if (states.contains(MaterialState.disabled)) {
+        return const TextStyle(
+          fontFamily: 'Poppins',
+          color: AppColors.inactiveGreyColorLight,
+          fontWeight: FontWeight.w500,
+          fontSize: 14,
+        );
+      }
+      return const TextStyle(
+        fontFamily: 'Poppins',
+        color: AppColors.darkBlueColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14,
+      );
+    }),
   );
 }
