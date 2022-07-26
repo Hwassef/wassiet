@@ -25,5 +25,7 @@ class AppImages {
   static const String timerIcon = '$iconsFolderPath/timer_icon.png';
   static const String unstraightStarIcon = '$iconsFolderPath/unstraight_star_icon.png';
   static const String userDefaultIcon = '$iconsFolderPath/user_default_icon.png';
+  static const String notificationsIcon = '$iconsFolderPath/notifications_icon.png';
+  static const String settingsIcon = '$iconsFolderPath/settings_icon.png';
   static const String blueLineImage = '$imagesFolderPath/blue_line_image.png';
 }
