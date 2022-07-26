@@ -44,7 +44,7 @@ class AppTextTheme {
     fontWeight: _semiBold,
     fontSize: 22,
     height: 1,
-    color: AppColors.primaryColorLight,
+    color: AppColors.darkCyanColor,
     fontFamily: _fontFamily,
   );
 
