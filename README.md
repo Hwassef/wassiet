@@ -12,4 +12,4 @@ A new Flutter project.
 
 # Versions
 
-This project was made with Flutter 3.0.5 and Drt 2.17.6
+This project was made with Flutter 3.0.5 and Dart 2.17.6
