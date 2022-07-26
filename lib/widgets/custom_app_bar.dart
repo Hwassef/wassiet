@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
-import 'package:wassiet/config/constants/app_paddings.dart';
-import 'package:wassiet/config/images/app_images.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
