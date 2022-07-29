@@ -27,5 +27,12 @@ class AppImages {
   static const String userDefaultIcon = '$iconsFolderPath/user_default_icon.png';
   static const String notificationsIcon = '$iconsFolderPath/notifications_icon.png';
   static const String settingsIcon = '$iconsFolderPath/settings_icon.png';
+  static const String arrowIcon = '$iconsFolderPath/arrow_icon.png';
+  static const String facebookIcon = '$iconsFolderPath/facebook_icon.png';
+  static const String twitterIcon = '$iconsFolderPath/twitter_icon.png';
+  static const String instagramIcon = '$iconsFolderPath/instagram_icon.png';
+  static const String whatsappIcon = '$iconsFolderPath/whatsapp_icon.png';
   static const String blueLineImage = '$imagesFolderPath/blue_line_image.png';
+  static const String greyShapeImage = '$imagesFolderPath/grey_shape.svg';
+  static const String appLogo = '$imagesFolderPath/app_logo.png';
 }

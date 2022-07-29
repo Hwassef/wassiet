@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wassiet/config/colors/app_colors.dart';
-import 'package:wassiet/config/constants/app_constants.dart';
+import 'package:wassiet/config/config.dart';
 
 /// This class allows for global overrides of material InputDecorationTheme
 class AppInputDecorationTheme {
@@ -8,7 +7,7 @@ class AppInputDecorationTheme {
   static InputDecorationTheme inputDecorationTheme = const InputDecorationTheme(
     floatingLabelBehavior: FloatingLabelBehavior.never,
     errorMaxLines: 3,
-    fillColor: Colors.white,
+    fillColor: AppColors.greyColor,
     filled: true,
     errorStyle: TextStyle(
       fontFamily: 'Poppins',
@@ -16,33 +15,33 @@ class AppInputDecorationTheme {
       color: AppColors.lightRedColor,
       fontSize: 12,
     ),
-    isDense: true,
-    disabledBorder: OutlineInputBorder(
-      borderRadius: AppConstants.largeBorderRadius,
+    hintStyle: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      height: 1,
+      color: AppColors.inputHintTextColor,
+      fontFamily: 'Cairo',
     ),
+    isDense: true,
     enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: AppColors.cyanColor,
-      ),
+      borderRadius: AppConstants.largeBorderRadius,
+      borderSide: BorderSide.none,
     ),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: AppColors.cyanColor,
-      ),
+      borderRadius: AppConstants.largeBorderRadius,
+      borderSide: BorderSide.none,
     ),
     errorBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: AppColors.lightRedColor,
-      ),
+      borderRadius: AppConstants.largeBorderRadius,
+      borderSide: BorderSide.none,
     ),
     focusedErrorBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: AppColors.lightRedColor,
-      ),
+      borderRadius: AppConstants.largeBorderRadius,
+      borderSide: BorderSide.none,
     ),
     contentPadding: EdgeInsets.symmetric(
-      vertical: 16,
-      horizontal: 17,
+      vertical: 22,
+      horizontal: 16,
     ),
   );
 }
