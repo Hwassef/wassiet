@@ -85,7 +85,7 @@ class ContactUsPage extends StatelessWidget {
               Form(
                 child: Column(
                   children: [
-                    InputFormField(
+                    InputTextField(
                       hintText: S.current.firstNameAndLastName,
                       controller: firstAndLastName,
                       label: S.current.firstNameAndLastName,
@@ -100,7 +100,7 @@ class ContactUsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    InputFormField(
+                    InputTextField(
                       hintText: S.current.emailAddress,
                       controller: firstAndLastName,
                       label: S.current.emailAddress,
@@ -115,7 +115,7 @@ class ContactUsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    InputFormField(
+                    InputTextField(
                       hintText: S.current.phoneNumber,
                       controller: firstAndLastName,
                       label: S.current.phoneNumber,
@@ -130,7 +130,7 @@ class ContactUsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    InputFormField(
+                    InputTextField(
                       hintText: S.current.subject,
                       controller: firstAndLastName,
                       label: S.current.subject,
@@ -145,7 +145,7 @@ class ContactUsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    InputFormField(
+                    InputTextField(
                       hintText: S.current.messageText,
                       controller: firstAndLastName,
                       label: S.current.message,

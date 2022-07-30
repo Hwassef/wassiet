@@ -38,7 +38,7 @@ class SettingsPage extends StatelessWidget {
                 runSpacing: 4,
                 children: [
                   CustomListTile(
-                    onTap: () => context.pushRoute(const ChangeAppLanguagePageRoute()),
+                    onTap: () => context.pushRoute(ProfilePageRoute(isLoggedIn: true)),
                     content: S.of(context).changeLanguage,
                   ),
                   CustomListTile(

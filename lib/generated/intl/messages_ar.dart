@@ -181,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rial": MessageLookupByLibrary.simpleMessage("ريال"),
         "roomsNumber": MessageLookupByLibrary.simpleMessage("عدد الغرف"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "saveData": MessageLookupByLibrary.simpleMessage("حفظ البيانات"),
         "searchForSomething":
             MessageLookupByLibrary.simpleMessage("ابحث عن شيء ما"),
         "searchInAnnouncements":

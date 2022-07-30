@@ -1,0 +1,10 @@
+export 'app_settings/about_app_page.dart';
+export 'app_settings/change_app_language_page.dart';
+export 'app_settings/contact_us_page.dart';
+export 'app_settings/settings_page.dart';
+export 'app_settings/using_terms_page.dart';
+export 'authentification/login_page.dart';
+export 'authentification/verification_code_page.dart';
+export 'profile/edit_informations_page.dart';
+export 'profile/profle_page.dart';
+export 'home_page.dart';

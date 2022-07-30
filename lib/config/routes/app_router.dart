@@ -1,11 +1,5 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:wassiet/app/presentation/app_settings/about_app_page.dart';
-import 'package:wassiet/app/presentation/app_settings/change_app_language_page.dart';
-import 'package:wassiet/app/presentation/app_settings/contact_us_page.dart';
-import 'package:wassiet/app/presentation/app_settings/settings_page.dart';
-import 'package:wassiet/app/presentation/app_settings/using_terms_page.dart';
-import 'package:wassiet/app/presentation/home_page.dart';
+import 'package:wassiet/app/presentation/pages.dart';
 
 @AdaptiveAutoRouter(
   routes: <AutoRoute>[
@@ -18,7 +12,6 @@ import 'package:wassiet/app/presentation/home_page.dart';
     CustomRoute(
       path: '/settingsPage',
       page: SettingsPage,
-      initial: true,
       transitionsBuilder: TransitionsBuilders.slideLeft,
       durationInMilliseconds: 400,
     ),
@@ -44,6 +37,25 @@ import 'package:wassiet/app/presentation/home_page.dart';
       path: '/aboutAppPage',
       page: AboutAppPage,
       transitionsBuilder: TransitionsBuilders.slideLeft,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/profilePage',
+      page: ProfilePage,
+      transitionsBuilder: TransitionsBuilders.slideLeft,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/loginPage',
+      page: LoginPage,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/verificationCidePage',
+      page: VerificationCodePage,
+      initial: true,
+      transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
   ],

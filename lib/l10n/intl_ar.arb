@@ -148,5 +148,6 @@
     "verificationCode": "رمز التحقق",
     "sendVerificationCodeIn": "أرسل الرمز مرة أخرى في حدود",
     "sendAgain": "أعد الإرسال",
-    "personalInformations": "معلومات شخصية"
+    "personalInformations": "معلومات شخصية",
+    "saveData": "حفظ البيانات"
 }

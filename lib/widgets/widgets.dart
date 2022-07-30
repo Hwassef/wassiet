@@ -3,5 +3,6 @@ export 'custom_list_tile.dart';
 export 'custom_back_button.dart';
 export 'circled_flag.dart';
 export 'custom_circle_avatar.dart';
-export 'input_form_field.dart';
+export 'input_text_field.dart';
 export 'underlined_text.dart';
+export 'required_field.dart';

@@ -31,6 +31,7 @@ class AppImages {
   static const String facebookIcon = '$iconsFolderPath/facebook_icon.png';
   static const String twitterIcon = '$iconsFolderPath/twitter_icon.png';
   static const String instagramIcon = '$iconsFolderPath/instagram_icon.png';
+  static const String mobileIcon = '$iconsFolderPath/mobile_icon.png';
   static const String whatsappIcon = '$iconsFolderPath/whatsapp_icon.png';
   static const String blueLineImage = '$imagesFolderPath/blue_line_image.png';
   static const String greyShapeImage = '$imagesFolderPath/grey_shape.svg';

@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 
-class InputFormField extends StatelessWidget {
-  const InputFormField({
+class InputTextField extends StatelessWidget {
+  const InputTextField({
     Key? key,
-    required this.hintText,
+    this.hintText,
     required this.controller,
     required this.keyboardType,
     // this.expands = false,
     this.maxLines = 1,
     this.minLines = 1,
     this.constraints,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.prefixIconConstraints,
     // required this.validator,
     // required this.onChanged,
     required this.label,
   }) : super(key: key);
-  final String hintText;
+  final String? hintText;
   final TextEditingController controller;
   final TextInputType keyboardType;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final BoxConstraints? prefixIconConstraints;
   // final bool expands;
   final int maxLines;
   final int minLines;
@@ -37,6 +43,12 @@ class InputFormField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             constraints: constraints,
+            suffixIcon: suffixIcon,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 21.0),
+              child: prefixIcon,
+            ),
+            prefixIconConstraints: prefixIconConstraints,
           ),
           controller: controller,
           // validator: validator,

@@ -193,6 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rial": MessageLookupByLibrary.simpleMessage("Rial"),
         "roomsNumber": MessageLookupByLibrary.simpleMessage("number of rooms"),
         "save": MessageLookupByLibrary.simpleMessage("save"),
+        "saveData": MessageLookupByLibrary.simpleMessage("save data"),
         "searchForSomething":
             MessageLookupByLibrary.simpleMessage("find something"),
         "searchInAnnouncements":
