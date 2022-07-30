@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:wassiet/app/presentation/custom_loader/custom_loader.dart';
 import 'package:wassiet/app/presentation/pages.dart';
 
 @AdaptiveAutoRouter(
@@ -54,6 +55,12 @@ import 'package:wassiet/app/presentation/pages.dart';
     CustomRoute(
       path: '/verificationCidePage',
       page: VerificationCodePage,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/customLoader',
+      page: CustomLoader,
       initial: true,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,

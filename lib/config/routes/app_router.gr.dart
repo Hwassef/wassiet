@@ -10,40 +10,41 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter/cupertino.dart' as _i4;
-import 'package:flutter/material.dart' as _i3;
+import 'package:auto_route/auto_route.dart' as _i3;
+import 'package:flutter/material.dart' as _i4;
+import 'package:wassiet/app/presentation/custom_loader/custom_loader.dart'
+    as _i2;
 import 'package:wassiet/app/presentation/pages.dart' as _i1;
 
-class AppRouter extends _i2.RootStackRouter {
-  AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
+class AppRouter extends _i3.RootStackRouter {
+  AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
+  final Map<String, _i3.PageFactory> pagesMap = {
     HomePageRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.HomePage(),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     SettingsPageRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.SettingsPage(),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     ChangeAppLanguagePageRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.ChangeAppLanguagePage(),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
@@ -51,38 +52,38 @@ class AppRouter extends _i2.RootStackRouter {
     ContactUsPageRoute.name: (routeData) {
       final args = routeData.argsAs<ContactUsPageRouteArgs>(
           orElse: () => const ContactUsPageRouteArgs());
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: _i1.ContactUsPage(key: args.key),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     UsingTermsPageRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.UsingTermsPage(),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     AboutAppPageRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.AboutAppPage(),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     ProfilePageRoute.name: (routeData) {
       final args = routeData.argsAs<ProfilePageRouteArgs>();
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: _i1.ProfilePage(key: args.key, isLoggedIn: args.isLoggedIn),
-          transitionsBuilder: _i2.TransitionsBuilders.slideLeft,
+          transitionsBuilder: _i3.TransitionsBuilders.slideLeft,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
@@ -90,10 +91,10 @@ class AppRouter extends _i2.RootStackRouter {
     LoginPageRoute.name: (routeData) {
       final args = routeData.argsAs<LoginPageRouteArgs>(
           orElse: () => const LoginPageRouteArgs());
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: _i1.LoginPage(key: args.key),
-          transitionsBuilder: _i2.TransitionsBuilders.slideTop,
+          transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
@@ -101,10 +102,19 @@ class AppRouter extends _i2.RootStackRouter {
     VerificationCodePageRoute.name: (routeData) {
       final args = routeData.argsAs<VerificationCodePageRouteArgs>(
           orElse: () => const VerificationCodePageRouteArgs());
-      return _i2.CustomPage<dynamic>(
+      return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: _i1.VerificationCodePage(key: args.key),
-          transitionsBuilder: _i2.TransitionsBuilders.slideTop,
+          transitionsBuilder: _i3.TransitionsBuilders.slideTop,
+          durationInMilliseconds: 400,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    CustomLoaderRoute.name: (routeData) {
+      return _i3.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i2.CustomLoader(),
+          transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
@@ -112,26 +122,27 @@ class AppRouter extends _i2.RootStackRouter {
   };
 
   @override
-  List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig('/#redirect',
-            path: '/', redirectTo: '/verificationCidePage', fullMatch: true),
-        _i2.RouteConfig(HomePageRoute.name, path: '/homePage'),
-        _i2.RouteConfig(SettingsPageRoute.name, path: '/settingsPage'),
-        _i2.RouteConfig(ChangeAppLanguagePageRoute.name,
+  List<_i3.RouteConfig> get routes => [
+        _i3.RouteConfig('/#redirect',
+            path: '/', redirectTo: '/customLoader', fullMatch: true),
+        _i3.RouteConfig(HomePageRoute.name, path: '/homePage'),
+        _i3.RouteConfig(SettingsPageRoute.name, path: '/settingsPage'),
+        _i3.RouteConfig(ChangeAppLanguagePageRoute.name,
             path: '/changeAppLanguagePage'),
-        _i2.RouteConfig(ContactUsPageRoute.name, path: '/contactUsPage'),
-        _i2.RouteConfig(UsingTermsPageRoute.name, path: '/usingTermsPage'),
-        _i2.RouteConfig(AboutAppPageRoute.name, path: '/aboutAppPage'),
-        _i2.RouteConfig(ProfilePageRoute.name, path: '/profilePage'),
-        _i2.RouteConfig(LoginPageRoute.name, path: '/loginPage'),
-        _i2.RouteConfig(VerificationCodePageRoute.name,
-            path: '/verificationCidePage')
+        _i3.RouteConfig(ContactUsPageRoute.name, path: '/contactUsPage'),
+        _i3.RouteConfig(UsingTermsPageRoute.name, path: '/usingTermsPage'),
+        _i3.RouteConfig(AboutAppPageRoute.name, path: '/aboutAppPage'),
+        _i3.RouteConfig(ProfilePageRoute.name, path: '/profilePage'),
+        _i3.RouteConfig(LoginPageRoute.name, path: '/loginPage'),
+        _i3.RouteConfig(VerificationCodePageRoute.name,
+            path: '/verificationCidePage'),
+        _i3.RouteConfig(CustomLoaderRoute.name, path: '/customLoader')
       ];
 }
 
 /// generated route for
 /// [_i1.HomePage]
-class HomePageRoute extends _i2.PageRouteInfo<void> {
+class HomePageRoute extends _i3.PageRouteInfo<void> {
   const HomePageRoute() : super(HomePageRoute.name, path: '/homePage');
 
   static const String name = 'HomePageRoute';
@@ -139,7 +150,7 @@ class HomePageRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.SettingsPage]
-class SettingsPageRoute extends _i2.PageRouteInfo<void> {
+class SettingsPageRoute extends _i3.PageRouteInfo<void> {
   const SettingsPageRoute()
       : super(SettingsPageRoute.name, path: '/settingsPage');
 
@@ -148,7 +159,7 @@ class SettingsPageRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.ChangeAppLanguagePage]
-class ChangeAppLanguagePageRoute extends _i2.PageRouteInfo<void> {
+class ChangeAppLanguagePageRoute extends _i3.PageRouteInfo<void> {
   const ChangeAppLanguagePageRoute()
       : super(ChangeAppLanguagePageRoute.name, path: '/changeAppLanguagePage');
 
@@ -157,7 +168,7 @@ class ChangeAppLanguagePageRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.ContactUsPage]
-class ContactUsPageRoute extends _i2.PageRouteInfo<ContactUsPageRouteArgs> {
+class ContactUsPageRoute extends _i3.PageRouteInfo<ContactUsPageRouteArgs> {
   ContactUsPageRoute({_i4.Key? key})
       : super(ContactUsPageRoute.name,
             path: '/contactUsPage', args: ContactUsPageRouteArgs(key: key));
@@ -178,7 +189,7 @@ class ContactUsPageRouteArgs {
 
 /// generated route for
 /// [_i1.UsingTermsPage]
-class UsingTermsPageRoute extends _i2.PageRouteInfo<void> {
+class UsingTermsPageRoute extends _i3.PageRouteInfo<void> {
   const UsingTermsPageRoute()
       : super(UsingTermsPageRoute.name, path: '/usingTermsPage');
 
@@ -187,7 +198,7 @@ class UsingTermsPageRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.AboutAppPage]
-class AboutAppPageRoute extends _i2.PageRouteInfo<void> {
+class AboutAppPageRoute extends _i3.PageRouteInfo<void> {
   const AboutAppPageRoute()
       : super(AboutAppPageRoute.name, path: '/aboutAppPage');
 
@@ -196,7 +207,7 @@ class AboutAppPageRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.ProfilePage]
-class ProfilePageRoute extends _i2.PageRouteInfo<ProfilePageRouteArgs> {
+class ProfilePageRoute extends _i3.PageRouteInfo<ProfilePageRouteArgs> {
   ProfilePageRoute({_i4.Key? key, required bool isLoggedIn})
       : super(ProfilePageRoute.name,
             path: '/profilePage',
@@ -220,7 +231,7 @@ class ProfilePageRouteArgs {
 
 /// generated route for
 /// [_i1.LoginPage]
-class LoginPageRoute extends _i2.PageRouteInfo<LoginPageRouteArgs> {
+class LoginPageRoute extends _i3.PageRouteInfo<LoginPageRouteArgs> {
   LoginPageRoute({_i4.Key? key})
       : super(LoginPageRoute.name,
             path: '/loginPage', args: LoginPageRouteArgs(key: key));
@@ -242,7 +253,7 @@ class LoginPageRouteArgs {
 /// generated route for
 /// [_i1.VerificationCodePage]
 class VerificationCodePageRoute
-    extends _i2.PageRouteInfo<VerificationCodePageRouteArgs> {
+    extends _i3.PageRouteInfo<VerificationCodePageRouteArgs> {
   VerificationCodePageRoute({_i4.Key? key})
       : super(VerificationCodePageRoute.name,
             path: '/verificationCidePage',
@@ -260,4 +271,13 @@ class VerificationCodePageRouteArgs {
   String toString() {
     return 'VerificationCodePageRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [_i2.CustomLoader]
+class CustomLoaderRoute extends _i3.PageRouteInfo<void> {
+  const CustomLoaderRoute()
+      : super(CustomLoaderRoute.name, path: '/customLoader');
+
+  static const String name = 'CustomLoaderRoute';
 }

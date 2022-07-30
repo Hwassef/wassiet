@@ -14,7 +14,7 @@ class VerificationCodePage extends StatefulWidget {
 
 class _VerificationCodePageState extends State<VerificationCodePage> {
   final TextEditingController testController = TextEditingController();
-
+  final FocusNode verificationCodeFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,18 +61,21 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         decoration: const BoxDecoration(
                           color: AppColors.greyColor,
                         ),
-                        child: VerificationCode(
-                          fillColor: AppColors.transparentColor,
-                          textStyle: TextStyle(fontSize: 20.0, color: Colors.red[900]),
-                          keyboardType: TextInputType.number,
-                          length: 4,
-                          cursorColor: Colors.blue,
-                          onCompleted: (String value) {
-                            setState(() {});
-                          },
-                          onEditing: (bool value) {
-                            setState(() {});
-                          },
+                        child: Focus(
+                          focusNode: verificationCodeFocusNode,
+                          child: VerificationCode(
+                            fillColor: AppColors.transparentColor,
+                            textStyle: TextStyle(fontSize: 20.0, color: Colors.red[900]),
+                            keyboardType: TextInputType.number,
+                            length: 4,
+                            cursorColor: Colors.blue,
+                            onCompleted: (String value) {
+                              setState(() {});
+                            },
+                            onEditing: (bool value) {
+                              setState(() {});
+                            },
+                          ),
                         ),
                       ),
                     ),
