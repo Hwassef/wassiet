@@ -89,22 +89,18 @@ class AppRouter extends _i3.RootStackRouter {
           barrierDismissible: false);
     },
     LoginPageRoute.name: (routeData) {
-      final args = routeData.argsAs<LoginPageRouteArgs>(
-          orElse: () => const LoginPageRouteArgs());
       return _i3.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i1.LoginPage(key: args.key),
+          child: const _i1.LoginPage(),
           transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
     },
     VerificationCodePageRoute.name: (routeData) {
-      final args = routeData.argsAs<VerificationCodePageRouteArgs>(
-          orElse: () => const VerificationCodePageRouteArgs());
       return _i3.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i1.VerificationCodePage(key: args.key),
+          child: const _i1.VerificationCodePage(),
           transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -124,7 +120,7 @@ class AppRouter extends _i3.RootStackRouter {
   @override
   List<_i3.RouteConfig> get routes => [
         _i3.RouteConfig('/#redirect',
-            path: '/', redirectTo: '/customLoader', fullMatch: true),
+            path: '/', redirectTo: '/loginPage', fullMatch: true),
         _i3.RouteConfig(HomePageRoute.name, path: '/homePage'),
         _i3.RouteConfig(SettingsPageRoute.name, path: '/settingsPage'),
         _i3.RouteConfig(ChangeAppLanguagePageRoute.name,
@@ -231,46 +227,19 @@ class ProfilePageRouteArgs {
 
 /// generated route for
 /// [_i1.LoginPage]
-class LoginPageRoute extends _i3.PageRouteInfo<LoginPageRouteArgs> {
-  LoginPageRoute({_i4.Key? key})
-      : super(LoginPageRoute.name,
-            path: '/loginPage', args: LoginPageRouteArgs(key: key));
+class LoginPageRoute extends _i3.PageRouteInfo<void> {
+  const LoginPageRoute() : super(LoginPageRoute.name, path: '/loginPage');
 
   static const String name = 'LoginPageRoute';
 }
 
-class LoginPageRouteArgs {
-  const LoginPageRouteArgs({this.key});
-
-  final _i4.Key? key;
-
-  @override
-  String toString() {
-    return 'LoginPageRouteArgs{key: $key}';
-  }
-}
-
 /// generated route for
 /// [_i1.VerificationCodePage]
-class VerificationCodePageRoute
-    extends _i3.PageRouteInfo<VerificationCodePageRouteArgs> {
-  VerificationCodePageRoute({_i4.Key? key})
-      : super(VerificationCodePageRoute.name,
-            path: '/verificationCidePage',
-            args: VerificationCodePageRouteArgs(key: key));
+class VerificationCodePageRoute extends _i3.PageRouteInfo<void> {
+  const VerificationCodePageRoute()
+      : super(VerificationCodePageRoute.name, path: '/verificationCidePage');
 
   static const String name = 'VerificationCodePageRoute';
-}
-
-class VerificationCodePageRouteArgs {
-  const VerificationCodePageRouteArgs({this.key});
-
-  final _i4.Key? key;
-
-  @override
-  String toString() {
-    return 'VerificationCodePageRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

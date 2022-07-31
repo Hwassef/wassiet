@@ -49,6 +49,7 @@ import 'package:wassiet/app/presentation/pages.dart';
     CustomRoute(
       path: '/loginPage',
       page: LoginPage,
+      initial: true,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
@@ -61,7 +62,6 @@ import 'package:wassiet/app/presentation/pages.dart';
     CustomRoute(
       path: '/customLoader',
       page: CustomLoader,
-      initial: true,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),

@@ -6,3 +6,4 @@ export 'custom_circle_avatar.dart';
 export 'input_text_field.dart';
 export 'underlined_text.dart';
 export 'required_field.dart';
+export 'gradient_elevated_button.dart';

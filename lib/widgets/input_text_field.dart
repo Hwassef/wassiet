@@ -13,8 +13,9 @@ class InputTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.prefixIconConstraints,
-    // required this.validator,
-    // required this.onChanged,
+    this.validator,
+    this.onChanged,
+    this.autoValidateMode,
     required this.label,
   }) : super(key: key);
   final String? hintText;
@@ -27,9 +28,10 @@ class InputTextField extends StatelessWidget {
   final int maxLines;
   final int minLines;
   final BoxConstraints? constraints;
-  // final String? Function(String?)? validator;
-  // final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
   final String label;
+  final AutovalidateMode? autoValidateMode;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,7 +39,10 @@ class InputTextField extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(label),
+          child: Text(
+            label,
+            style: Theme.of(context).textTheme.subtitle1,
+          ),
         ),
         TextFormField(
           decoration: InputDecoration(
@@ -51,9 +56,10 @@ class InputTextField extends StatelessWidget {
             prefixIconConstraints: prefixIconConstraints,
           ),
           controller: controller,
-          // validator: validator,
-          // onChanged: onChanged,
+          validator: validator,
+          onChanged: onChanged,
           keyboardType: keyboardType,
+          autovalidateMode: autoValidateMode,
           // expands: expands,
           maxLines: maxLines,
           minLines: minLines,

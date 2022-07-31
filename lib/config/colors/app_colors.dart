@@ -29,4 +29,14 @@ class AppColors {
     Color(0xFF00B4EF),
     Color(0xFFCEB8A0),
   ]);
+  static LinearGradient elevatedButtonGradientColor = LinearGradient(
+    colors: [
+      darkCyanColor,
+      darkCyanColor.withOpacity(0.4),
+    ],
+  );
+  static const LinearGradient disabledElevatedButtonGradientColor = LinearGradient(colors: [
+    Color(0xFF9E9E9E),
+    Color(0xFFD2D2D2),
+  ]);
 }
