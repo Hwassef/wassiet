@@ -15,7 +15,7 @@ class AppImages {
   static const String hammerIcon = '$iconsFolderPath/hammer_icon.png';
   static const String messageIcon = '$iconsFolderPath/message_icon.png';
   static const String moreIcon = '$iconsFolderPath/more_icon.png';
-  static const String outlinedHearhIcon = '$iconsFolderPath/outlined_heart_icon.png';
+  static const String outlinedHeartIcon = '$iconsFolderPath/outlined_heart_icon.png';
   static const String phoneIcon = '$iconsFolderPath/phone_icon.png';
   static const String pinIcon = '$iconsFolderPath/pin_icon.png';
   static const String removeIcon = '$iconsFolderPath/remove_icon.png';
