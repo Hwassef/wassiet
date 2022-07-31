@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/widgets/widgets.dart';
 
 class VerificationCodePage extends StatefulWidget {
-  VerificationCodePage({Key? key}) : super(key: key);
+  const VerificationCodePage({Key? key}) : super(key: key);
 
   @override
   State<VerificationCodePage> createState() => _VerificationCodePageState();
