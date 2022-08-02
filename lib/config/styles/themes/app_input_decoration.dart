@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
 
-/// This class allows for global overrides of material InputDecorationTheme
 class AppInputDecorationTheme {
   AppInputDecorationTheme._();
   static InputDecorationTheme inputDecorationTheme = const InputDecorationTheme(
@@ -27,9 +26,13 @@ class AppInputDecorationTheme {
       borderRadius: AppConstants.largeBorderRadius,
       borderSide: BorderSide.none,
     ),
+    focusColor: AppColors.whiteColor,
     focusedBorder: OutlineInputBorder(
       borderRadius: AppConstants.largeBorderRadius,
-      borderSide: BorderSide.none,
+      borderSide: BorderSide(
+        color: AppColors.cyanColor,
+        width: 2.0,
+      ),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: AppConstants.largeBorderRadius,
@@ -41,7 +44,7 @@ class AppInputDecorationTheme {
     ),
     contentPadding: EdgeInsets.symmetric(
       vertical: 22,
-      horizontal: 16,
+      horizontal: 0,
     ),
   );
 }

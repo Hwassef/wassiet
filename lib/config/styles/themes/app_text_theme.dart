@@ -74,7 +74,7 @@ class AppTextTheme {
 
   static const TextStyle _subTitle1Light = TextStyle(
     fontWeight: _semiBold,
-    fontSize: 12,
+    fontSize: 16,
     height: 1,
     color: AppColors.blackColor,
     fontFamily: _fontFamily,

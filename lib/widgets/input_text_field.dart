@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wassiet/config/config.dart';
 
 class InputTextField extends StatelessWidget {
   const InputTextField({
@@ -17,6 +18,7 @@ class InputTextField extends StatelessWidget {
     this.onChanged,
     this.autoValidateMode,
     required this.label,
+    required this.focusNode,
   }) : super(key: key);
   final String? hintText;
   final TextEditingController controller;
@@ -32,6 +34,7 @@ class InputTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final String label;
   final AutovalidateMode? autoValidateMode;
+  final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,12 +48,16 @@ class InputTextField extends StatelessWidget {
           ),
         ),
         TextFormField(
+          cursorHeight: 1.2,
+          cursorColor: AppColors.darkGreyColor,
           decoration: InputDecoration(
+            fillColor: focusNode.hasFocus ? AppColors.whiteColor : AppColors.greyColor,
+            filled: true,
             hintText: hintText,
             constraints: constraints,
             suffixIcon: suffixIcon,
             prefixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 21.0),
+              padding: EdgeInsets.symmetric(horizontal: prefixIcon != null ? 21.0 : 8.0),
               child: prefixIcon,
             ),
             prefixIconConstraints: prefixIconConstraints,
@@ -60,6 +67,7 @@ class InputTextField extends StatelessWidget {
           onChanged: onChanged,
           keyboardType: keyboardType,
           autovalidateMode: autoValidateMode,
+          focusNode: focusNode,
           // expands: expands,
           maxLines: maxLines,
           minLines: minLines,

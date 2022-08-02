@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "بالنقر على هذا الزر ، فإنك توافق على"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
         "chats": MessageLookupByLibrary.simpleMessage("محادثات"),
+        "chooseCountry": MessageLookupByLibrary.simpleMessage("Choose country"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
         "complaintDetails":
             MessageLookupByLibrary.simpleMessage("تفاصيل الشكوى"),
@@ -233,6 +234,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("عرض الشارع الغربي"),
         "writeYourMessage": MessageLookupByLibrary.simpleMessage("اكتب رسالتك"),
         "yes": MessageLookupByLibrary.simpleMessage("نعم"),
+        "youHaventRecieveVerificationCode":
+            MessageLookupByLibrary.simpleMessage("_"),
         "yourComment": MessageLookupByLibrary.simpleMessage("تعليقك"),
         "yourPhoneNumber":
             MessageLookupByLibrary.simpleMessage("رقم هاتفك الجوال"),

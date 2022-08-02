@@ -19,6 +19,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final Login _loginBase = Login();
   final TextEditingController phoneNumberTextEditingController = TextEditingController();
+  FocusNode phoneNumberFocusNode = FocusNode();
   final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
   @override
   Widget build(BuildContext context) {
@@ -72,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             onChanged: (phone) => _loginBase.phoneNumber = phone,
                             validator: (phone) => Validators.validatePhoneNumber(phoneNumber: phone),
+                            focusNode: phoneNumberFocusNode,
                           ),
                         ),
                       ),

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 import 'package:wassiet/config/routes/app_router.gr.dart';
-import 'package:wassiet/utils/validators.dart';
 part 'login.g.dart';
 
 class Login = LoginBase with _$Login;
@@ -16,7 +15,7 @@ abstract class LoginBase with Store {
   void handleLoginButtonOnclick({required BuildContext context}) {
     if (isPhoneNumberValid) {
       FocusScope.of(context).unfocus();
-      context.pushRoute(const VerificationCodePageRoute());
+      context.pushRoute(VerificationCodePageRoute(phoneNumber: phoneNumber ?? '_'));
     }
   }
 }

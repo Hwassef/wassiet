@@ -25,6 +25,9 @@ dependencies:
   flutter_mobx: ^2.0.6+1
   mobx_codegen: ^2.0.7
   mobx: ^2.0.7+5
+  pin_code_fields: ^7.4.0
+  permission_handler: ^10.0.0
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +40,7 @@ flutter:
     - assets/fonts/
     - assets/images/
     - assets/icons/
+    - assets/fake_data/
 
   fonts:
     - family: Cairo

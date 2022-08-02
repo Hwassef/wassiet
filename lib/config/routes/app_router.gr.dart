@@ -98,9 +98,11 @@ class AppRouter extends _i3.RootStackRouter {
           barrierDismissible: false);
     },
     VerificationCodePageRoute.name: (routeData) {
+      final args = routeData.argsAs<VerificationCodePageRouteArgs>();
       return _i3.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i1.VerificationCodePage(),
+          child: _i1.VerificationCodePage(
+              key: args.key, phoneNumber: args.phoneNumber),
           transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -110,6 +112,15 @@ class AppRouter extends _i3.RootStackRouter {
       return _i3.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i2.CustomLoader(),
+          transitionsBuilder: _i3.TransitionsBuilders.slideTop,
+          durationInMilliseconds: 400,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    EditInformationsPageRoute.name: (routeData) {
+      return _i3.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i1.EditInformationsPage(),
           transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -132,7 +143,9 @@ class AppRouter extends _i3.RootStackRouter {
         _i3.RouteConfig(LoginPageRoute.name, path: '/loginPage'),
         _i3.RouteConfig(VerificationCodePageRoute.name,
             path: '/verificationCidePage'),
-        _i3.RouteConfig(CustomLoaderRoute.name, path: '/customLoader')
+        _i3.RouteConfig(CustomLoaderRoute.name, path: '/customLoader'),
+        _i3.RouteConfig(EditInformationsPageRoute.name,
+            path: '/editInformation')
       ];
 }
 
@@ -235,11 +248,28 @@ class LoginPageRoute extends _i3.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.VerificationCodePage]
-class VerificationCodePageRoute extends _i3.PageRouteInfo<void> {
-  const VerificationCodePageRoute()
-      : super(VerificationCodePageRoute.name, path: '/verificationCidePage');
+class VerificationCodePageRoute
+    extends _i3.PageRouteInfo<VerificationCodePageRouteArgs> {
+  VerificationCodePageRoute({_i4.Key? key, required String phoneNumber})
+      : super(VerificationCodePageRoute.name,
+            path: '/verificationCidePage',
+            args: VerificationCodePageRouteArgs(
+                key: key, phoneNumber: phoneNumber));
 
   static const String name = 'VerificationCodePageRoute';
+}
+
+class VerificationCodePageRouteArgs {
+  const VerificationCodePageRouteArgs({this.key, required this.phoneNumber});
+
+  final _i4.Key? key;
+
+  final String phoneNumber;
+
+  @override
+  String toString() {
+    return 'VerificationCodePageRouteArgs{key: $key, phoneNumber: $phoneNumber}';
+  }
 }
 
 /// generated route for
@@ -249,4 +279,13 @@ class CustomLoaderRoute extends _i3.PageRouteInfo<void> {
       : super(CustomLoaderRoute.name, path: '/customLoader');
 
   static const String name = 'CustomLoaderRoute';
+}
+
+/// generated route for
+/// [_i1.EditInformationsPage]
+class EditInformationsPageRoute extends _i3.PageRouteInfo<void> {
+  const EditInformationsPageRoute()
+      : super(EditInformationsPageRoute.name, path: '/editInformation');
+
+  static const String name = 'EditInformationsPageRoute';
 }

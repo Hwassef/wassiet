@@ -23,22 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "UseTermsAndPrivacy":
-            MessageLookupByLibrary.simpleMessage("terms of use and privacy"),
-        "aboutApp": MessageLookupByLibrary.simpleMessage("about app"),
+            MessageLookupByLibrary.simpleMessage("Terms of use and privacy"),
+        "aboutApp": MessageLookupByLibrary.simpleMessage("About app"),
         "aboutOurServices":
-            MessageLookupByLibrary.simpleMessage("about our services"),
-        "addComment": MessageLookupByLibrary.simpleMessage("add comment"),
+            MessageLookupByLibrary.simpleMessage("About our services"),
+        "addComment": MessageLookupByLibrary.simpleMessage("Add comment"),
         "addNewAnouncement":
-            MessageLookupByLibrary.simpleMessage("add new announcement"),
+            MessageLookupByLibrary.simpleMessage("Add new announcement"),
         "addPropertyPictures":
-            MessageLookupByLibrary.simpleMessage("add pictures"),
+            MessageLookupByLibrary.simpleMessage("Add pictures"),
         "advertiserIdentity":
-            MessageLookupByLibrary.simpleMessage("advertiser identity"),
+            MessageLookupByLibrary.simpleMessage("Advertiser identity"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "announcementNumber":
-            MessageLookupByLibrary.simpleMessage("announcement number"),
+            MessageLookupByLibrary.simpleMessage("Announcement number"),
         "anouncementTitle":
-            MessageLookupByLibrary.simpleMessage("announcement title"),
+            MessageLookupByLibrary.simpleMessage("Announcement title"),
         "appNameInBothLanguages":
             MessageLookupByLibrary.simpleMessage("WASIET"),
         "areYouSureYouWantToCancelPostingNewAnnouncement":
@@ -46,210 +46,214 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Are you sure to cancel a new announcement? All data listed will be erased"),
         "auction": MessageLookupByLibrary.simpleMessage("Rent"),
         "auctionInformations":
-            MessageLookupByLibrary.simpleMessage("auction informations"),
+            MessageLookupByLibrary.simpleMessage("Auction informations"),
         "auctionIsOver":
-            MessageLookupByLibrary.simpleMessage("auction is over"),
+            MessageLookupByLibrary.simpleMessage("Auction is over"),
         "auctionStartingTime":
-            MessageLookupByLibrary.simpleMessage("auction starting time"),
-        "available": MessageLookupByLibrary.simpleMessage("available"),
+            MessageLookupByLibrary.simpleMessage("Auction starting time"),
+        "available": MessageLookupByLibrary.simpleMessage("Available"),
         "bathsNumber":
-            MessageLookupByLibrary.simpleMessage("number of bathrooms"),
-        "buildings": MessageLookupByLibrary.simpleMessage("buildings"),
+            MessageLookupByLibrary.simpleMessage("Number of bathrooms"),
+        "buildings": MessageLookupByLibrary.simpleMessage("Buildings"),
         "byClickingOnThisButtonYouAccept": MessageLookupByLibrary.simpleMessage(
-            "by clicking on this button you agree on"),
+            "By clicking on this button you agree on"),
         "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("change language"),
-        "chats": MessageLookupByLibrary.simpleMessage("messages"),
-        "city": MessageLookupByLibrary.simpleMessage("city"),
+            MessageLookupByLibrary.simpleMessage("Change language"),
+        "chats": MessageLookupByLibrary.simpleMessage("Messages"),
+        "chooseCountry": MessageLookupByLibrary.simpleMessage("Choose country"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
         "complaintDetails":
-            MessageLookupByLibrary.simpleMessage("complaint details"),
+            MessageLookupByLibrary.simpleMessage("Complaint details"),
         "complaintNumber":
-            MessageLookupByLibrary.simpleMessage("complaint number"),
+            MessageLookupByLibrary.simpleMessage("Complaint number"),
         "complaintState":
-            MessageLookupByLibrary.simpleMessage("complaint number"),
-        "complaints": MessageLookupByLibrary.simpleMessage("complaints"),
-        "confirm": MessageLookupByLibrary.simpleMessage("confirm"),
+            MessageLookupByLibrary.simpleMessage("Complaint number"),
+        "complaints": MessageLookupByLibrary.simpleMessage("Complaints"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmationCodeHasBeenSentToYourPhoneNumber":
             MessageLookupByLibrary.simpleMessage(
-                "confirmtion code has been sent to your phone number"),
-        "contactUs": MessageLookupByLibrary.simpleMessage("contact us"),
-        "continueText": MessageLookupByLibrary.simpleMessage("continue"),
-        "country": MessageLookupByLibrary.simpleMessage("country"),
-        "delete": MessageLookupByLibrary.simpleMessage("delete"),
+                "Confirmtion code has been sent to your phone number"),
+        "contactUs": MessageLookupByLibrary.simpleMessage("Contact us"),
+        "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
+        "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteAllNotifications":
-            MessageLookupByLibrary.simpleMessage("delete all notifications"),
+            MessageLookupByLibrary.simpleMessage("Delete all notifications"),
         "deleteAnnouncement":
-            MessageLookupByLibrary.simpleMessage("delete announcement"),
+            MessageLookupByLibrary.simpleMessage("Delete Announcement"),
         "deleteComplaint":
-            MessageLookupByLibrary.simpleMessage("delete complaint"),
-        "description": MessageLookupByLibrary.simpleMessage("description"),
-        "desiredPrice": MessageLookupByLibrary.simpleMessage("desired price"),
-        "details": MessageLookupByLibrary.simpleMessage("details"),
+            MessageLookupByLibrary.simpleMessage("Delete complaint"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "desiredPrice": MessageLookupByLibrary.simpleMessage("Desired price"),
+        "details": MessageLookupByLibrary.simpleMessage("Details"),
         "determinePropertyLocationIfExist":
             MessageLookupByLibrary.simpleMessage(
-                "determine property location if exist"),
+                "Determine property location if exist"),
         "directionsOfStreetsSurroundingYourProperty":
             MessageLookupByLibrary.simpleMessage(
                 "Put the width and direction of the street / streets surrounding your property according to the title deed. Streets that don\'t fit your property leave them empty"),
         "eastStreetView":
-            MessageLookupByLibrary.simpleMessage("east street view"),
-        "edit": MessageLookupByLibrary.simpleMessage("edit"),
+            MessageLookupByLibrary.simpleMessage("East street view"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "editAnnouncement":
-            MessageLookupByLibrary.simpleMessage("edit announcement"),
+            MessageLookupByLibrary.simpleMessage("Edit Announcement"),
         "editMyPersonnalInformations": MessageLookupByLibrary.simpleMessage(
-            "edit my personal informations"),
-        "editPost": MessageLookupByLibrary.simpleMessage("edit post"),
-        "email": MessageLookupByLibrary.simpleMessage("email"),
-        "emailAddress": MessageLookupByLibrary.simpleMessage("email address"),
-        "endAuction": MessageLookupByLibrary.simpleMessage("end auction"),
+            "Edit my personal informations"),
+        "editPost": MessageLookupByLibrary.simpleMessage("Edit Post"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
+        "endAuction": MessageLookupByLibrary.simpleMessage("End Auction"),
         "expiringDateAndTime":
-            MessageLookupByLibrary.simpleMessage("expiring date and time"),
-        "filter": MessageLookupByLibrary.simpleMessage("filter"),
-        "filterBy": MessageLookupByLibrary.simpleMessage("filter by"),
+            MessageLookupByLibrary.simpleMessage("Expiring date and time"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+        "filterBy": MessageLookupByLibrary.simpleMessage("Filter by"),
         "firstNameAndLastName":
-            MessageLookupByLibrary.simpleMessage("first and last name"),
+            MessageLookupByLibrary.simpleMessage("First and last name"),
         "followUpOnComplaints":
-            MessageLookupByLibrary.simpleMessage("follow up on complaints"),
-        "gallery": MessageLookupByLibrary.simpleMessage("gallery"),
-        "hallsNumber": MessageLookupByLibrary.simpleMessage("number of halls"),
-        "highestPrice": MessageLookupByLibrary.simpleMessage("highest price"),
-        "information": MessageLookupByLibrary.simpleMessage("information"),
+            MessageLookupByLibrary.simpleMessage("Follow up on complaints"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
+        "hallsNumber": MessageLookupByLibrary.simpleMessage("Number of halls"),
+        "highestPrice": MessageLookupByLibrary.simpleMessage("Highest price"),
+        "information": MessageLookupByLibrary.simpleMessage("Information"),
         "kissing": MessageLookupByLibrary.simpleMessage("Kissing"),
         "listOfAuctionParticipants": MessageLookupByLibrary.simpleMessage(
-            "list of auction participants"),
-        "locateNow": MessageLookupByLibrary.simpleMessage("locate now"),
-        "login": MessageLookupByLibrary.simpleMessage("login"),
-        "logout": MessageLookupByLibrary.simpleMessage("logout"),
-        "lowestPrice": MessageLookupByLibrary.simpleMessage("lowest price"),
+            "List of auction participants"),
+        "locateNow": MessageLookupByLibrary.simpleMessage("Locate now"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "lowestPrice": MessageLookupByLibrary.simpleMessage("Lowest price"),
         "managmentResponseToTheComplaint": MessageLookupByLibrary.simpleMessage(
-            "managment response to the complaint"),
-        "measruingUnit": MessageLookupByLibrary.simpleMessage("measruing unit"),
-        "message": MessageLookupByLibrary.simpleMessage("message"),
-        "messageText": MessageLookupByLibrary.simpleMessage("message text"),
+            "Managment response to the complaint"),
+        "measruingUnit": MessageLookupByLibrary.simpleMessage("Measruing unit"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "messageText": MessageLookupByLibrary.simpleMessage("Message text"),
         "moreDetailsAboutTheAnnouncement": MessageLookupByLibrary.simpleMessage(
-            "more details about the announcement"),
+            "Lore details about the announcement"),
         "myAnnouncements":
-            MessageLookupByLibrary.simpleMessage("my announcements"),
+            MessageLookupByLibrary.simpleMessage("My announcements"),
         "myAnouncements":
-            MessageLookupByLibrary.simpleMessage("my announcements"),
-        "myFavourites": MessageLookupByLibrary.simpleMessage("my favourites"),
+            MessageLookupByLibrary.simpleMessage("My announcements"),
+        "myFavourites": MessageLookupByLibrary.simpleMessage("My favourites"),
         "myParticipationInAuctions":
-            MessageLookupByLibrary.simpleMessage("my participants in auctions"),
-        "newest": MessageLookupByLibrary.simpleMessage("newest"),
-        "next": MessageLookupByLibrary.simpleMessage("next"),
-        "no": MessageLookupByLibrary.simpleMessage("no"),
+            MessageLookupByLibrary.simpleMessage("My participants in auctions"),
+        "newest": MessageLookupByLibrary.simpleMessage("Newest"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
         "northStreetView":
-            MessageLookupByLibrary.simpleMessage("north street view"),
-        "nothing": MessageLookupByLibrary.simpleMessage("nothing"),
-        "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
+            MessageLookupByLibrary.simpleMessage("North street view"),
+        "nothing": MessageLookupByLibrary.simpleMessage("Nothing"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "notificationsAlert":
-            MessageLookupByLibrary.simpleMessage("notifications alert"),
+            MessageLookupByLibrary.simpleMessage("Notifications alert"),
         "numberOfAppartments":
-            MessageLookupByLibrary.simpleMessage("number of appartments"),
+            MessageLookupByLibrary.simpleMessage("Number of appartments"),
         "numberOfElevators":
-            MessageLookupByLibrary.simpleMessage("number of elevators"),
+            MessageLookupByLibrary.simpleMessage("Number of elevators"),
         "numberOfFloors":
-            MessageLookupByLibrary.simpleMessage("number of floors"),
+            MessageLookupByLibrary.simpleMessage("Number of floors"),
         "numberOfShops":
-            MessageLookupByLibrary.simpleMessage("number of shops"),
-        "ok": MessageLookupByLibrary.simpleMessage("ok"),
-        "openningPrice": MessageLookupByLibrary.simpleMessage("openning price"),
-        "ourOwn": MessageLookupByLibrary.simpleMessage("our"),
+            MessageLookupByLibrary.simpleMessage("Number of shops"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "openningPrice": MessageLookupByLibrary.simpleMessage("Openning price"),
+        "ourOwn": MessageLookupByLibrary.simpleMessage("Our"),
         "particpateInAuction":
-            MessageLookupByLibrary.simpleMessage("particpate in auction"),
+            MessageLookupByLibrary.simpleMessage("Particpate in auction"),
         "persnalInformations":
-            MessageLookupByLibrary.simpleMessage("personal informations"),
-        "phone": MessageLookupByLibrary.simpleMessage("phone"),
-        "phoneCamera": MessageLookupByLibrary.simpleMessage("phone camera"),
-        "phoneNumber": MessageLookupByLibrary.simpleMessage("phone number"),
-        "pictures": MessageLookupByLibrary.simpleMessage("pictures"),
+            MessageLookupByLibrary.simpleMessage("Personal informations"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "phoneCamera": MessageLookupByLibrary.simpleMessage("Phone Camera"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "pictures": MessageLookupByLibrary.simpleMessage("Pictures"),
         "pleaseEnterSomeData":
-            MessageLookupByLibrary.simpleMessage("please enter some data"),
+            MessageLookupByLibrary.simpleMessage("Please enter some data"),
         "pleaseEnterYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
-            "please enter your phone number"),
-        "previous": MessageLookupByLibrary.simpleMessage("previous"),
+            "Please enter your phone number"),
+        "previous": MessageLookupByLibrary.simpleMessage("Previous"),
         "previousAnouncements":
-            MessageLookupByLibrary.simpleMessage("previous announcements"),
-        "price": MessageLookupByLibrary.simpleMessage("price"),
+            MessageLookupByLibrary.simpleMessage("Previous announcements"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceWillBeCaluclatedAutomaticaly": MessageLookupByLibrary.simpleMessage(
             "The price per square meter will be automatically calculated once the area and the total price are set"),
-        "propertyAge": MessageLookupByLibrary.simpleMessage("property age"),
-        "propertyType": MessageLookupByLibrary.simpleMessage("property type"),
+        "propertyAge": MessageLookupByLibrary.simpleMessage("Property age"),
+        "propertyType": MessageLookupByLibrary.simpleMessage("Property type"),
         "purposeOfAnouncement":
-            MessageLookupByLibrary.simpleMessage("purpose of announcements"),
+            MessageLookupByLibrary.simpleMessage("Purpose of announcements"),
         "ratingAndComments":
-            MessageLookupByLibrary.simpleMessage("rating and comments"),
-        "region": MessageLookupByLibrary.simpleMessage("region"),
-        "remainingTime": MessageLookupByLibrary.simpleMessage("remaining time"),
+            MessageLookupByLibrary.simpleMessage("Rating and comments"),
+        "region": MessageLookupByLibrary.simpleMessage("Region"),
+        "remainingTime": MessageLookupByLibrary.simpleMessage("Remaining time"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "reportAnouncement":
-            MessageLookupByLibrary.simpleMessage("report announcement"),
+            MessageLookupByLibrary.simpleMessage("Report announcement"),
         "reportThisPerson":
-            MessageLookupByLibrary.simpleMessage("report this person"),
+            MessageLookupByLibrary.simpleMessage("Report this person"),
         "requiredField":
-            MessageLookupByLibrary.simpleMessage("this field is requried"),
-        "reset": MessageLookupByLibrary.simpleMessage("reset"),
-        "result": MessageLookupByLibrary.simpleMessage("result"),
+            MessageLookupByLibrary.simpleMessage("This field is requried"),
+        "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "result": MessageLookupByLibrary.simpleMessage("Result"),
         "rial": MessageLookupByLibrary.simpleMessage("Rial"),
-        "roomsNumber": MessageLookupByLibrary.simpleMessage("number of rooms"),
-        "save": MessageLookupByLibrary.simpleMessage("save"),
-        "saveData": MessageLookupByLibrary.simpleMessage("save data"),
+        "roomsNumber": MessageLookupByLibrary.simpleMessage("Number of rooms"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "saveData": MessageLookupByLibrary.simpleMessage("Save data"),
         "searchForSomething":
-            MessageLookupByLibrary.simpleMessage("find something"),
+            MessageLookupByLibrary.simpleMessage("Find something"),
         "searchInAnnouncements":
-            MessageLookupByLibrary.simpleMessage("search in announcements"),
+            MessageLookupByLibrary.simpleMessage("Search in announcements"),
         "sell": MessageLookupByLibrary.simpleMessage("Sell"),
-        "send": MessageLookupByLibrary.simpleMessage("send"),
-        "sendAgain": MessageLookupByLibrary.simpleMessage("send again"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "sendAgain": MessageLookupByLibrary.simpleMessage("Send again"),
         "sendVerificationCodeIn": MessageLookupByLibrary.simpleMessage(
-            "send verification code again in"),
-        "settings": MessageLookupByLibrary.simpleMessage("settings"),
+            "Send verification code again in"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sevenImagesAllowedByMaximum": MessageLookupByLibrary.simpleMessage(
             "Note: The maximum number of uploads is 7 images. Allowed formats: jpg, jpeg, png, bmp, gif"),
         "smartPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("smart phone number"),
-        "sortBy": MessageLookupByLibrary.simpleMessage("sort by"),
+            MessageLookupByLibrary.simpleMessage("Smart phone number"),
+        "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),
         "southStreetView":
-            MessageLookupByLibrary.simpleMessage("south street view"),
-        "space": MessageLookupByLibrary.simpleMessage("space"),
+            MessageLookupByLibrary.simpleMessage("South street view"),
+        "space": MessageLookupByLibrary.simpleMessage("Space"),
         "spaceInSquareMeters":
-            MessageLookupByLibrary.simpleMessage("space in square meter"),
-        "spaceRange": MessageLookupByLibrary.simpleMessage("space range"),
+            MessageLookupByLibrary.simpleMessage("Space in square meter"),
+        "spaceRange": MessageLookupByLibrary.simpleMessage("Space range"),
         "squareMeterPrice":
-            MessageLookupByLibrary.simpleMessage("square meter price"),
+            MessageLookupByLibrary.simpleMessage("Square meter price"),
         "squareMeterPriceRange":
-            MessageLookupByLibrary.simpleMessage("square meter price range"),
+            MessageLookupByLibrary.simpleMessage("Square meter price range"),
         "startingDateAndTime":
-            MessageLookupByLibrary.simpleMessage("starting date and time"),
-        "streetAddress": MessageLookupByLibrary.simpleMessage("street address"),
-        "subject": MessageLookupByLibrary.simpleMessage("subject"),
+            MessageLookupByLibrary.simpleMessage("Starting date and time"),
+        "streetAddress": MessageLookupByLibrary.simpleMessage("Street address"),
+        "subject": MessageLookupByLibrary.simpleMessage("Subject"),
         "suggestedPrice": MessageLookupByLibrary.simpleMessage(
-            "suggested price (Saudi Rial)"),
-        "technicalCard": MessageLookupByLibrary.simpleMessage("technical card"),
+            "Suggested price (Saudi Rial)"),
+        "technicalCard": MessageLookupByLibrary.simpleMessage("Technical card"),
         "termsOfService":
-            MessageLookupByLibrary.simpleMessage("terms of service"),
+            MessageLookupByLibrary.simpleMessage("Terms of service"),
         "thereIsNothingAtTheMoment": MessageLookupByLibrary.simpleMessage(
-            "there is nothing at the moment"),
-        "totalPrice": MessageLookupByLibrary.simpleMessage("total price"),
+            "There is nothing at the moment"),
+        "totalPrice": MessageLookupByLibrary.simpleMessage("Total price"),
         "totalPriceRange":
-            MessageLookupByLibrary.simpleMessage("total price range"),
+            MessageLookupByLibrary.simpleMessage("Total price range"),
         "verificationCode":
-            MessageLookupByLibrary.simpleMessage("verification code"),
-        "viaEmail": MessageLookupByLibrary.simpleMessage("via email"),
+            MessageLookupByLibrary.simpleMessage("Verification code"),
+        "viaEmail": MessageLookupByLibrary.simpleMessage("Via email"),
         "viaSocialMedia":
-            MessageLookupByLibrary.simpleMessage("via social media"),
-        "watchMore": MessageLookupByLibrary.simpleMessage("watch more"),
+            MessageLookupByLibrary.simpleMessage("Via social media"),
+        "watchMore": MessageLookupByLibrary.simpleMessage("Watch more"),
         "weUseYourPhoneNumberOnlyToLocateYourIdentityItWillNotBeShared":
             MessageLookupByLibrary.simpleMessage(
                 "We only use your phone number to identify you, it will not be shared with anyone"),
         "westStreetView":
-            MessageLookupByLibrary.simpleMessage("west street view"),
+            MessageLookupByLibrary.simpleMessage("West street view"),
         "writeYourMessage":
-            MessageLookupByLibrary.simpleMessage("write your message"),
-        "yes": MessageLookupByLibrary.simpleMessage("yes"),
-        "yourComment": MessageLookupByLibrary.simpleMessage("your comment"),
+            MessageLookupByLibrary.simpleMessage("Write your message"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+        "youHaventRecieveVerificationCode":
+            MessageLookupByLibrary.simpleMessage(
+                "You haven\'t recieve verification code ?"),
+        "yourComment": MessageLookupByLibrary.simpleMessage("Your comment"),
         "yourPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("your phone number"),
-        "yourRate": MessageLookupByLibrary.simpleMessage("your rate")
+            MessageLookupByLibrary.simpleMessage("Your phone number"),
+        "yourRate": MessageLookupByLibrary.simpleMessage("Your rate")
       };
 }

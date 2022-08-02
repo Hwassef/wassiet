@@ -85,12 +85,12 @@ class ContactUsPage extends StatelessWidget {
               Form(
                 child: Column(
                   children: [
-                    InputTextField(
-                      hintText: S.current.firstNameAndLastName,
-                      controller: firstAndLastName,
-                      label: S.current.firstNameAndLastName,
-                      keyboardType: TextInputType.name,
-                    ),
+                    // InputTextField(
+                    //   hintText: S.current.firstNameAndLastName,
+                    //   controller: firstAndLastName,
+                    //   label: S.current.firstNameAndLastName,
+                    //   keyboardType: TextInputType.name,
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -100,59 +100,59 @@ class ContactUsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    InputTextField(
-                      hintText: S.current.emailAddress,
-                      controller: firstAndLastName,
-                      label: S.current.emailAddress,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Text(S.current.requiredField),
-                        ),
-                      ],
-                    ),
-                    InputTextField(
-                      hintText: S.current.phoneNumber,
-                      controller: firstAndLastName,
-                      label: S.current.phoneNumber,
-                      keyboardType: TextInputType.phone,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Text(S.current.requiredField),
-                        ),
-                      ],
-                    ),
-                    InputTextField(
-                      hintText: S.current.subject,
-                      controller: firstAndLastName,
-                      label: S.current.subject,
-                      keyboardType: TextInputType.text,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Text(S.current.requiredField),
-                        ),
-                      ],
-                    ),
-                    InputTextField(
-                      hintText: S.current.messageText,
-                      controller: firstAndLastName,
-                      label: S.current.message,
-                      keyboardType: TextInputType.text,
-                      maxLines: 7,
-                      minLines: 7,
-                    ),
+                    // InputTextField(
+                    //   hintText: S.current.emailAddress,
+                    //   controller: firstAndLastName,
+                    //   label: S.current.emailAddress,
+                    //   keyboardType: TextInputType.emailAddress,
+                    // ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   children: [
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(top: 8.0),
+                    //       child: Text(S.current.requiredField),
+                    //     ),
+                    //   ],
+                    // ),
+                    // InputTextField(
+                    //   hintText: S.current.phoneNumber,
+                    //   controller: firstAndLastName,
+                    //   label: S.current.phoneNumber,
+                    //   keyboardType: TextInputType.phone,
+                    // ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   children: [
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(top: 8.0),
+                    //       child: Text(S.current.requiredField),
+                    //     ),
+                    //   ],
+                    // ),
+                    // InputTextField(
+                    //   hintText: S.current.subject,
+                    //   controller: firstAndLastName,
+                    //   label: S.current.subject,
+                    //   keyboardType: TextInputType.text,
+                    // ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   children: [
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(top: 8.0),
+                    //       child: Text(S.current.requiredField),
+                    //     ),
+                    //   ],
+                    // ),
+                    // InputTextField(
+                    //   hintText: S.current.messageText,
+                    //   controller: firstAndLastName,
+                    //   label: S.current.message,
+                    //   keyboardType: TextInputType.text,
+                    //   maxLines: 7,
+                    //   minLines: 7,
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

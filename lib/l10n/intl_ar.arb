@@ -149,5 +149,7 @@
     "sendVerificationCodeIn": "أرسل الرمز مرة أخرى في حدود",
     "sendAgain": "أعد الإرسال",
     "personalInformations": "معلومات شخصية",
-    "saveData": "حفظ البيانات"
+    "saveData": "حفظ البيانات",
+    "youHaventRecieveVerificationCode": "_",
+    "chooseCountry": "Choose country"
 }
