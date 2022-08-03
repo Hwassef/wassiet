@@ -29,11 +29,11 @@ class _AddPictureState extends State<AddPicture> {
       if (statuses[Permission.camera] == PermissionStatus.granted &&
           statuses[Permission.photos] == PermissionStatus.granted) {
         try {
-          final _image = await ImagePicker().pickImage(source: imageSource);
-          if (_image == null) {
+          final image = await ImagePicker().pickImage(source: imageSource);
+          if (image == null) {
             return;
           }
-          final imageTemporary = File(_image.path);
+          final imageTemporary = File(image.path);
           widget.callBack(imageTemporary);
         } on PlatformException catch (e) {
           debugPrint('Failed to pick image: $e');
@@ -41,11 +41,11 @@ class _AddPictureState extends State<AddPicture> {
       }
     } else {
       try {
-        final _image = await ImagePicker().pickImage(source: imageSource);
-        if (_image == null) {
+        final image = await ImagePicker().pickImage(source: imageSource);
+        if (image == null) {
           return;
         }
-        final imageTemporary = File(_image.path);
+        final imageTemporary = File(image.path);
         widget.callBack(imageTemporary);
       } on PlatformException catch (e) {
         debugPrint('Failed to pick image: $e');

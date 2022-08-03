@@ -1,12 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wassiet/config/colors/app_colors.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/utils/enums.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 
 String getCountryFlag({required String countryCode}) => countryCode.toUpperCase().replaceAllMapped(
       RegExp(r'[A-Z]'),
@@ -46,7 +43,7 @@ showAlertDialog(BuildContext context) {
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Open app settings"),
+    title: const Text("Open app settings"),
     actions: [
       okButton,
       cancelButton,

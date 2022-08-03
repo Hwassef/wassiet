@@ -33,8 +33,6 @@ abstract class EditMyInformationsBase with Store {
   bool isEmailValid = false;
   @observable
   bool isPhoneNumberValid = false;
-  @observable
-  List<Country> countries = <Country>[];
   @action
   String? validateFullName(final String? fullName) {
     if (fullName == null || fullName.isEmpty) {
@@ -82,9 +80,10 @@ abstract class EditMyInformationsBase with Store {
   @action
   void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
   @action
-  Future<void> getAllCountries() async {
-    final String response = await rootBundle.loadString('assets/fake_data/countries.json');
-    var countriesList = jsonDecode(response);
-    return countriesList.map<Country>((object) => Country.fromJson(object)).toList();
+  Future<List<Country>> getAllCountries() async {
+    final response = await rootBundle.loadString('assets/fake_data/countries.json');
+    final json = jsonDecode(response) as List;
+    var mapped = json.map((object) => Country.fromJson(object)).toList();
+    return mapped;
   }
 }

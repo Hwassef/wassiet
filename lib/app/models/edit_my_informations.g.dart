@@ -129,27 +129,11 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
     });
   }
 
-  late final _$countriesAtom =
-      Atom(name: 'EditMyInformationsBase.countries', context: context);
-
-  @override
-  List<Country> get countries {
-    _$countriesAtom.reportRead();
-    return super.countries;
-  }
-
-  @override
-  set countries(List<Country> value) {
-    _$countriesAtom.reportWrite(value, super.countries, () {
-      super.countries = value;
-    });
-  }
-
   late final _$getAllCountriesAsyncAction =
       AsyncAction('EditMyInformationsBase.getAllCountries', context: context);
 
   @override
-  Future<void> getAllCountries() {
+  Future<List<Country>> getAllCountries() {
     return _$getAllCountriesAsyncAction.run(() => super.getAllCountries());
   }
 
@@ -221,7 +205,6 @@ phoneNumber: ${phoneNumber},
 isFullNameValid: ${isFullNameValid},
 isEmailValid: ${isEmailValid},
 isPhoneNumberValid: ${isPhoneNumberValid},
-countries: ${countries},
 isFormValid: ${isFormValid}
     ''';
   }

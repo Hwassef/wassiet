@@ -3,6 +3,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/models/edit_my_informations.dart';
+import 'package:wassiet/app/view_models/country.dart';
 
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
@@ -25,9 +26,10 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
   final EditMyInformations _editInformations = EditMyInformations();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  List<Country> countriesList = [];
   @override
   void initState() {
+    _editInformations.getAllCountries().then((value) => countriesList = value);
     super.initState();
   }
 
@@ -134,8 +136,19 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                 CustomDropDownButton(
                                   label: S.current.country,
                                   onTap: () {
-                                    _editInformations.getAllCountries();
-                                    countriesModealBottomSheet(context: context);
+                                    showModalBottomSheet(
+                                      enableDrag: true,
+                                      isScrollControlled: true,
+                                      backgroundColor: AppColors.whiteColor,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          top: AppConstants.extraLargeRadius,
+                                        ),
+                                      ),
+                                      isDismissible: true,
+                                      context: context,
+                                      builder: (_) => CountriesSheet(countries: countriesList),
+                                    );
                                   },
                                 ),
                                 12.h.verticalSpace,

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/utils/principal_functions.dart';
-import 'package:wassiet/widgets/custom_radio_button.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
 class ChangeAppLanguagePage extends StatefulWidget {
@@ -39,24 +37,24 @@ class _ChangeAppLanguagePageState extends State<ChangeAppLanguagePage> {
                     ],
                   ),
                   const UnderlinedText(),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Row(
-                    children: [
-                      const CustomRadioBtn(),
-                      CircledFlag(flag: getCountryFlag(countryCode: 'SA'), radius: 15.0),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    children: [
-                      const CustomRadioBtn(),
-                      CircledFlag(flag: getCountryFlag(countryCode: 'TN'), radius: 15.0),
-                    ],
-                  ),
+                  // const SizedBox(
+                  //   height: 32,
+                  // ),
+                  // Row(
+                  //   children: [
+                  //     const CustomRadioBtn(),
+                  //     CircledFlag(flag: getCountryFlag(countryCode: 'SA'), radius: 15.0),
+                  //   ],
+                  // ),
+                  // const SizedBox(
+                  //   height: 16,
+                  // ),
+                  // Row(
+                  //   children: [
+                  //     const CustomRadioBtn(),
+                  //     CircledFlag(flag: getCountryFlag(countryCode: 'TN'), radius: 15.0),
+                  //   ],
+                  // ),
                 ],
               ),
             ),

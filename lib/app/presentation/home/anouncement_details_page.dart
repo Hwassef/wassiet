@@ -54,6 +54,10 @@ class AnnouncementDetailsPage extends StatelessWidget {
                   ),
                   Tab(
                     child: Container(
+                      decoration: const BoxDecoration(
+                        color: AppColors.whiteColor,
+                        borderRadius: AppConstants.largeBorderRadius,
+                      ),
                       child: Text(S.current.ratingAndComments),
                     ),
                   ),
