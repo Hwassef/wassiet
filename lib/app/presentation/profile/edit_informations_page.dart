@@ -3,7 +3,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/models/edit_my_informations.dart';
-import 'package:wassiet/app/view_models/country.dart';
+import 'package:wassiet/app/models/radio_button.dart';
 
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
@@ -26,10 +26,10 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
   final EditMyInformations _editInformations = EditMyInformations();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  List<Country> countriesList = [];
+  final RadioButton radioButton = RadioButton();
   @override
   void initState() {
-    _editInformations.getAllCountries().then((value) => countriesList = value);
+    _editInformations.getAllCountries();
     super.initState();
   }
 
@@ -38,7 +38,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
     return KeyboardDismissOnTap(
       child: SafeArea(
         child: Scaffold(
-          resizeToAvoidBottomInset: false, // this is new
+          resizeToAvoidBottomInset: false,
           body: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 24.0,
@@ -133,26 +133,27 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                   ),
                                 ),
                                 12.h.verticalSpace,
-                                CustomDropDownButton(
-                                  label: S.current.country,
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                      enableDrag: true,
-                                      isScrollControlled: true,
-                                      backgroundColor: AppColors.whiteColor,
-                                      shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                          top: AppConstants.extraLargeRadius,
+                                Observer(
+                                  builder: (_) => CustomDropDownButton(
+                                    onTap: () {
+                                      showModalBottomSheet(
+                                        enableDrag: true,
+                                        isScrollControlled: true,
+                                        backgroundColor: AppColors.whiteColor,
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                            top: AppConstants.extraLargeRadius,
+                                          ),
                                         ),
-                                      ),
-                                      isDismissible: true,
-                                      context: context,
-                                      builder: (_) => CountriesSheet(countries: countriesList),
-                                    );
-                                  },
+                                        isDismissible: true,
+                                        context: context,
+                                        builder: (_) => const CountriesSheet(),
+                                      );
+                                    },
+                                  ),
                                 ),
                                 12.h.verticalSpace,
-                                CustomDropDownButton(label: S.current.region),
+                                CustomDropDownButton(),
                               ],
                             ),
                           ),

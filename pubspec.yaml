@@ -28,6 +28,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   permission_handler: ^10.0.0
   image_picker: ^0.8.5+3
+  im_stepper: ^1.0.1+1
 
 dev_dependencies:
   flutter_test:

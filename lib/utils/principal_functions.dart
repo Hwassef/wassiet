@@ -1,9 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_fith_step.dart';
+import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_fourth_step.dart';
+import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_second_step.dart';
 import 'package:wassiet/config/colors/app_colors.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/utils/enums.dart';
+
+import '../app/presentation/annoucements/create_announcement/create_announcement_first_step.dart';
+import '../app/presentation/annoucements/create_announcement/create_announcement_third_step.dart';
 
 String getCountryFlag({required String countryCode}) => countryCode.toUpperCase().replaceAllMapped(
       RegExp(r'[A-Z]'),
@@ -57,4 +63,23 @@ showAlertDialog(BuildContext context) {
       return alert;
     },
   );
+}
+
+enum CurrentStep { first, second, third, fourth, fith }
+
+Widget currentFormForCurrentIndex({required CurrentStep currentStep}) {
+  switch (currentStep) {
+    case CurrentStep.first:
+      return CreateAnnouncementFirstStep();
+    case CurrentStep.second:
+      return CreateAnnouncementSecondStep();
+    case CurrentStep.third:
+      return CreateAnnouncementThirdStep();
+    case CurrentStep.fourth:
+      return CreateAnnouncementFourthStep();
+    case CurrentStep.fith:
+      return const CreateAnnouncementFithStep();
+    default:
+      return const SizedBox.shrink();
+  }
 }

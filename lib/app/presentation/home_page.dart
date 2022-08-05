@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wassiet/config/config.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -6,8 +7,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [],
+      body: Image.asset(
+        AppImages.backgroundImage,
       ),
     );
   }

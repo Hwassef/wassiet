@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
+import 'package:wassiet/widgets/required_field.dart';
 
 class InputTextField extends StatelessWidget {
-  const InputTextField({
+  InputTextField({
     Key? key,
     this.hintText,
     required this.controller,
@@ -17,6 +18,7 @@ class InputTextField extends StatelessWidget {
     this.validator,
     this.onChanged,
     this.autoValidateMode,
+    this.isRequired = true,
     required this.label,
     required this.focusNode,
   }) : super(key: key);
@@ -35,6 +37,7 @@ class InputTextField extends StatelessWidget {
   final String label;
   final AutovalidateMode? autoValidateMode;
   final FocusNode focusNode;
+  bool isRequired;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,12 +46,11 @@ class InputTextField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Text(
-            label,
+            isRequired ? '* $label' : label,
             style: Theme.of(context).textTheme.subtitle1,
           ),
         ),
         TextFormField(
-          cursorHeight: 1.2,
           cursorColor: AppColors.darkGreyColor,
           decoration: InputDecoration(
             fillColor: focusNode.hasFocus ? AppColors.whiteColor : AppColors.greyColor,
@@ -72,6 +74,7 @@ class InputTextField extends StatelessWidget {
           maxLines: maxLines,
           minLines: minLines,
         ),
+        isRequired ? const RequriedField() : const SizedBox.shrink(),
       ],
     );
   }

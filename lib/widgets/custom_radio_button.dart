@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/config/config.dart';
 
 class CustomRadioBtn extends StatefulWidget {
   const CustomRadioBtn({
@@ -20,23 +19,26 @@ class _CustomRadioBtnState extends State<CustomRadioBtn> {
   @override
   Widget build(BuildContext context) {
     return Observer(
-      builder: (_) => Container(
-        width: 32.0,
-        height: 32.0,
-        padding: EdgeInsets.all(radioButtonBase.value == widget.selectedIndex ? 8.5 : 4.5),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: radioButtonBase.value == widget.selectedIndex
-              ? AppColors.darkCyanColor
-              : AppColors.inactiveGreyColorLight,
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+      builder: (_) => GestureDetector(
+          // onTap: () => radioButtonBase.changeCurrentSelectedItem(selectedItem: widget.selectedIndex),
+          // child: Container(
+          //   width: 32.0,
+          //   height: 32.0,
+          //   padding: EdgeInsets.all(radioButtonBase.value == widget.selectedIndex ? 8.5 : 4.5),
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.circle,
+          //     color: radioButtonBase.value == widget.selectedIndex
+          //         ? AppColors.darkCyanColor
+          //         : AppColors.inactiveGreyColorLight,
+          //   ),
+          //   child: Container(
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(10.0),
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
           ),
-        ),
-      ),
     );
   }
 }

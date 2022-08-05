@@ -16,6 +16,20 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
       (_$isFormValidComputed ??= Computed<bool>(() => super.isFormValid,
               name: 'EditMyInformationsBase.isFormValid'))
           .value;
+  Computed<bool>? _$isCountryListEmptyComputed;
+
+  @override
+  bool get isCountryListEmpty => (_$isCountryListEmptyComputed ??=
+          Computed<bool>(() => super.isCountryListEmpty,
+              name: 'EditMyInformationsBase.isCountryListEmpty'))
+      .value;
+  Computed<bool>? _$isSearchWordNullOrEmptyComputed;
+
+  @override
+  bool get isSearchWordNullOrEmpty => (_$isSearchWordNullOrEmptyComputed ??=
+          Computed<bool>(() => super.isSearchWordNullOrEmpty,
+              name: 'EditMyInformationsBase.isSearchWordNullOrEmpty'))
+      .value;
 
   late final _$imageFileAtom =
       Atom(name: 'EditMyInformationsBase.imageFile', context: context);
@@ -129,12 +143,52 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
     });
   }
 
+  late final _$countriesAtom =
+      Atom(name: 'EditMyInformationsBase.countries', context: context);
+
+  @override
+  List<Country> get countries {
+    _$countriesAtom.reportRead();
+    return super.countries;
+  }
+
+  @override
+  set countries(List<Country> value) {
+    _$countriesAtom.reportWrite(value, super.countries, () {
+      super.countries = value;
+    });
+  }
+
+  late final _$searchWordAtom =
+      Atom(name: 'EditMyInformationsBase.searchWord', context: context);
+
+  @override
+  String? get searchWord {
+    _$searchWordAtom.reportRead();
+    return super.searchWord;
+  }
+
+  @override
+  set searchWord(String? value) {
+    _$searchWordAtom.reportWrite(value, super.searchWord, () {
+      super.searchWord = value;
+    });
+  }
+
   late final _$getAllCountriesAsyncAction =
       AsyncAction('EditMyInformationsBase.getAllCountries', context: context);
 
   @override
-  Future<List<Country>> getAllCountries() {
+  Future<void> getAllCountries() {
     return _$getAllCountriesAsyncAction.run(() => super.getAllCountries());
+  }
+
+  late final _$searchForCountryAsyncAction =
+      AsyncAction('EditMyInformationsBase.searchForCountry', context: context);
+
+  @override
+  Future<void> searchForCountry() {
+    return _$searchForCountryAsyncAction.run(() => super.searchForCountry());
   }
 
   late final _$EditMyInformationsBaseActionController =
@@ -205,7 +259,11 @@ phoneNumber: ${phoneNumber},
 isFullNameValid: ${isFullNameValid},
 isEmailValid: ${isEmailValid},
 isPhoneNumberValid: ${isPhoneNumberValid},
-isFormValid: ${isFormValid}
+countries: ${countries},
+searchWord: ${searchWord},
+isFormValid: ${isFormValid},
+isCountryListEmpty: ${isCountryListEmpty},
+isSearchWordNullOrEmpty: ${isSearchWordNullOrEmpty}
     ''';
   }
 }

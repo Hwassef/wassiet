@@ -9,19 +9,19 @@ part of 'radio_button.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$RadioButton on RadioButtonBase, Store {
-  late final _$valueAtom =
-      Atom(name: 'RadioButtonBase.value', context: context);
+  late final _$selectedItemNameAtom =
+      Atom(name: 'RadioButtonBase.selectedItemName', context: context);
 
   @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
+  String get selectedItemName {
+    _$selectedItemNameAtom.reportRead();
+    return super.selectedItemName;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
+  set selectedItemName(String value) {
+    _$selectedItemNameAtom.reportWrite(value, super.selectedItemName, () {
+      super.selectedItemName = value;
     });
   }
 
@@ -29,11 +29,11 @@ mixin _$RadioButton on RadioButtonBase, Store {
       ActionController(name: 'RadioButtonBase', context: context);
 
   @override
-  void changeCurrentSelectedItem({required int selectedItem}) {
+  void changeCurrentSelectedItem({required String name}) {
     final _$actionInfo = _$RadioButtonBaseActionController.startAction(
         name: 'RadioButtonBase.changeCurrentSelectedItem');
     try {
-      return super.changeCurrentSelectedItem(selectedItem: selectedItem);
+      return super.changeCurrentSelectedItem(name: name);
     } finally {
       _$RadioButtonBaseActionController.endAction(_$actionInfo);
     }
@@ -42,7 +42,7 @@ mixin _$RadioButton on RadioButtonBase, Store {
   @override
   String toString() {
     return '''
-value: ${value}
+selectedItemName: ${selectedItemName}
     ''';
   }
 }

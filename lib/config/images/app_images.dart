@@ -37,4 +37,5 @@ class AppImages {
   static const String blueLineImage = '$imagesFolderPath/blue_line_image.png';
   static const String greyShapeImage = '$imagesFolderPath/grey_shape.svg';
   static const String appLogo = '$imagesFolderPath/app_logo.png';
+  static const String backgroundImage = '$imagesFolderPath/background_image.png';
 }

@@ -33,6 +33,10 @@ abstract class EditMyInformationsBase with Store {
   bool isEmailValid = false;
   @observable
   bool isPhoneNumberValid = false;
+  @observable
+  List<Country> countries = <Country>[];
+  @observable
+  String? searchWord;
   @action
   String? validateFullName(final String? fullName) {
     if (fullName == null || fullName.isEmpty) {
@@ -80,10 +84,26 @@ abstract class EditMyInformationsBase with Store {
   @action
   void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
   @action
-  Future<List<Country>> getAllCountries() async {
+  Future<void> getAllCountries() async {
     final response = await rootBundle.loadString('assets/fake_data/countries.json');
     final json = jsonDecode(response) as List;
-    var mapped = json.map((object) => Country.fromJson(object)).toList();
-    return mapped;
+    countries = json.map((object) => Country.fromJson(object)).toList();
+  }
+
+  @computed
+  bool get isCountryListEmpty => countries.isEmpty;
+  @computed
+  bool get isSearchWordNullOrEmpty => (searchWord != null || (searchWord?.isNotEmpty ?? false));
+
+  @action
+  Future<void> searchForCountry() async {
+    List<Country> searchResult = <Country>[];
+    if (searchWord != null && (searchWord?.isNotEmpty ?? false)) {
+      await getAllCountries();
+      searchResult = countries.where((country) => country.name.toLowerCase().contains(searchWord!)).toList();
+      countries = searchResult;
+    } else {
+      getAllCountries();
+    }
   }
 }

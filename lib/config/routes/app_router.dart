@@ -51,7 +51,6 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: LoginPage,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
-      initial: true,
     ),
     CustomRoute(
       path: '/verificationCidePage',
@@ -68,6 +67,43 @@ import 'package:wassiet/app/presentation/pages.dart';
     CustomRoute(
       path: '/editInformation',
       page: EditInformationsPage,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/createAnnouncement',
+      page: CreateAnnouncementPage,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+      initial: true,
+    ),
+    CustomRoute(
+      path: '/createAnnouncementFirstStep',
+      page: CreateAnnouncementFirstStep,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/createAnnouncementSecondStep',
+      page: CreateAnnouncementSecondStep,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/createAnnouncementThirdStep',
+      page: CreateAnnouncementThirdStep,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/createAnnouncementFourthStep',
+      page: CreateAnnouncementFourthStep,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/createAnnouncementFithStep',
+      page: CreateAnnouncementFithStep,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
