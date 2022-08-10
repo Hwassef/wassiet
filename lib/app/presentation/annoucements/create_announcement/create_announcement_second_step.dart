@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
@@ -6,7 +7,6 @@ import 'package:wassiet/widgets/widgets.dart';
 class CreateAnnouncementSecondStep extends StatelessWidget {
   CreateAnnouncementSecondStep({Key? key}) : super(key: key);
 
-  @override
   final TextEditingController announcementAddressTextEditingController = TextEditingController();
   final FocusNode announcementAddressFocusNode = FocusNode();
   final TextEditingController streetAddressTextEditingController = TextEditingController();
@@ -39,21 +39,29 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
   final FocusNode elevatorsNumberFocusNode = FocusNode();
   final TextEditingController ageOfAppartmentTextEditingController = TextEditingController();
   final FocusNode ageOfAppartmentFocusNode = FocusNode();
-
+  @override
   Widget build(BuildContext context) {
     return Form(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           /// This one is used to show the purpose of annoucenemt
-          CustomDropDownButton(),
+          CustomDropDownButton(
+            label: S.current.purposeOfAnouncement,
+          ),
           const RequriedField(),
 
           /// This one is used to show the type of announcement
-          CustomDropDownButton(),
+          CustomDropDownButton(
+            label: S.current.propertyType,
+          ),
           const RequriedField(),
 
           /// This one is used to show the unity of measuring
-          CustomDropDownButton(),
+          CustomDropDownButton(
+            label: S.current.measruingUnit,
+          ),
           const RequriedField(),
 
           InputTextField(
@@ -62,7 +70,6 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
             label: S.current.spaceInSquareMeters,
             focusNode: spaceInMeterSquareMeter,
           ),
-          const RequriedField(),
 
           InputTextField(
             controller: priceSquareMeterTextEditingController,
@@ -70,28 +77,45 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
             label: S.current.squareMeterPrice,
             focusNode: priceSquareMeterFocusNode,
           ),
-          const RequriedField(),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InputTextField(
-                controller: totalPriceTextEditingController,
-                keyboardType: TextInputType.number,
-                label: S.current.totalPrice,
-                focusNode: totalPriceFocusNode,
+              Expanded(
+                child: InputTextField(
+                  controller: totalPriceTextEditingController,
+                  keyboardType: TextInputType.number,
+                  label: S.current.totalPrice,
+                  focusNode: totalPriceFocusNode,
+                  isRequired: false,
+                ),
               ),
-              CustomDropDownButton(),
+              8.w.horizontalSpace,
+              Expanded(
+                child: CustomDropDownButton(
+                  label: S.current.price,
+                ),
+              ),
             ],
           ),
-          const RequriedField(),
+          8.h.verticalSpace,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(S.current.requiredField),
+            ],
+          ),
+          8.h.verticalSpace,
           Row(
             children: [
-              Text(
-                S.current.priceWillBeCaluclatedAutomaticaly,
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                      color: AppColors.cyanColor,
-                    ),
+              Expanded(
+                child: Text(
+                  S.current.priceWillBeCaluclatedAutomaticaly,
+                  style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                        color: AppColors.cyanColor,
+                      ),
+                ),
               ),
             ],
           ),

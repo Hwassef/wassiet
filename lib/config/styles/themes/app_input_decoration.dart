@@ -44,7 +44,7 @@ class AppInputDecorationTheme {
     ),
     contentPadding: EdgeInsets.symmetric(
       vertical: 22,
-      horizontal: 0,
+      horizontal: 16.0,
     ),
   );
 }

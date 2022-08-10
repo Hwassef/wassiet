@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:im_stepper/stepper.dart';
-import 'package:wassiet/app/presentation/pages.dart';
+import 'package:wassiet/config/config.dart';
+import 'package:wassiet/generated/l10n.dart';
+import 'package:wassiet/utils/principal_functions.dart';
 
 class CustomStepper extends StatefulWidget {
   CustomStepper({
@@ -51,37 +53,82 @@ class _CustomStepperState extends State<CustomStepper> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        DotStepper(
-          shape: Shape.pipe,
-          dotCount: 5,
-          dotRadius: 6,
-          spacing: 26,
-          activeStep: widget.activeStep,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    S.current.addNewAnouncement,
+                    style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 18),
+                  ),
+                  const Icon(
+                    Icons.close,
+                    color: AppColors.darkCyanColor,
+                  ),
+                ],
+              ),
+              24.h.verticalSpace,
+              DotStepper(
+                shape: Shape.pipe,
+                spacing: 26,
+                dotRadius: 12,
+                dotCount: widget.dotCount,
+                indicatorDecoration: const IndicatorDecoration(
+                  color: AppColors.cyanColor,
+                ),
+                activeStep: widget.activeStep,
+                indicator: Indicator.slide,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: currentFormForCurrentIndex(currentStep: widget.activeStep),
+                ),
+              ),
+            ],
+          ),
         ),
-
-        /// Jump buttons.
-        const Padding(
-          padding: EdgeInsets.all(18.0),
-        ),
-
-        const CreateAnnouncementPage(),
-      ],
+      ),
+      bottomNavigationBar: buildStepperButton(context),
     );
   }
 
-  Widget buildStepperButton(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: nextButton(),
+  Widget buildStepperButton(BuildContext context) => Container(
+        height: 103,
+        decoration: BoxDecoration(
+          color: AppColors.whiteColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: nextButton(),
+              ),
+              12.w.horizontalSpace,
+              widget.activeStep > 0
+                  ? Expanded(
+                      child: previousButton(),
+                    )
+                  : const Expanded(child: SizedBox()),
+            ],
           ),
-          12.w.horizontalSpace,
-          Expanded(
-            child: previousButton(),
-          ),
-        ],
+        ),
       );
 
   /// Returns the next button widget.

@@ -19,7 +19,7 @@ class InputTextField extends StatelessWidget {
     this.onChanged,
     this.autoValidateMode,
     this.isRequired = true,
-    required this.label,
+    this.label,
     required this.focusNode,
   }) : super(key: key);
   final String? hintText;
@@ -34,7 +34,7 @@ class InputTextField extends StatelessWidget {
   final BoxConstraints? constraints;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
-  final String label;
+  final String? label;
   final AutovalidateMode? autoValidateMode;
   final FocusNode focusNode;
   bool isRequired;
@@ -43,25 +43,29 @@ class InputTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(
-            isRequired ? '* $label' : label,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-        ),
+        label != null
+            ? Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  isRequired ? '*${label!}' : label!,
+                  style: Theme.of(context).textTheme.subtitle1,
+                ),
+              )
+            : const SizedBox.shrink(),
         TextFormField(
           cursorColor: AppColors.darkGreyColor,
           decoration: InputDecoration(
             fillColor: focusNode.hasFocus ? AppColors.whiteColor : AppColors.greyColor,
             filled: true,
             hintText: hintText,
-            constraints: constraints,
-            suffixIcon: suffixIcon,
-            prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(horizontal: prefixIcon != null ? 21.0 : 8.0),
-              child: prefixIcon,
-            ),
+            // constraints: constraints,
+            // suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon != null
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                    child: prefixIcon,
+                  )
+                : null,
             prefixIconConstraints: prefixIconConstraints,
           ),
           controller: controller,

@@ -4,7 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/models/edit_my_informations.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/app/view_models/country.dart';
+import 'package:wassiet/app/domain/entities/country.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/utils/principal_functions.dart';

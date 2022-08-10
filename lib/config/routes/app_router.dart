@@ -9,6 +9,7 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: HomePage,
       transitionsBuilder: TransitionsBuilders.slideLeft,
       durationInMilliseconds: 400,
+      initial: true,
     ),
     CustomRoute(
       path: '/settingsPage',
@@ -70,13 +71,12 @@ import 'package:wassiet/app/presentation/pages.dart';
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
-    CustomRoute(
-      path: '/createAnnouncement',
-      page: CreateAnnouncementPage,
-      transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: 400,
-      initial: true,
-    ),
+    // CustomRoute(
+    //   path: '/createAnnouncement',
+    //   page: CreateAnnouncementPage,
+    //   transitionsBuilder: TransitionsBuilders.slideTop,
+    //   durationInMilliseconds: 400,
+    // ),
     CustomRoute(
       path: '/createAnnouncementFirstStep',
       page: CreateAnnouncementFirstStep,
@@ -104,6 +104,12 @@ import 'package:wassiet/app/presentation/pages.dart';
     CustomRoute(
       path: '/createAnnouncementFithStep',
       page: CreateAnnouncementFithStep,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
+    CustomRoute(
+      path: '/filterPage',
+      page: FilterPage,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),

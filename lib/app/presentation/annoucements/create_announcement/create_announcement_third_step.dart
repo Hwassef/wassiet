@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
@@ -44,58 +45,110 @@ class CreateAnnouncementThirdStep extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(S.current.directionsOfStreetsSurroundingYourProperty),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: InputTextField(
+                    controller: northStreetWidthTextEditingController,
+                    keyboardType: TextInputType.number,
+                    isRequired: false,
+                    focusNode: northStreetFocusNode,
+                  ),
+                ),
+                16.w.horizontalSpace,
+                Expanded(
+                  child: InputTextField(
+                    controller: northStreetWidthTextEditingController,
+                    keyboardType: TextInputType.number,
+                    isRequired: false,
+                    focusNode: northStreetFocusNode,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InputTextField(
-                controller: northStreetWidthTextEditingController,
-                keyboardType: TextInputType.number,
-                label: '',
-                focusNode: northStreetFocusNode,
-              ),
-              InputTextField(
-                controller: northStreetWidthTextEditingController,
-                keyboardType: TextInputType.number,
-                label: '',
-                focusNode: northStreetFocusNode,
-              ),
-              InputTextField(
-                controller: westStreetTextEditingController,
-                keyboardType: TextInputType.number,
-                label: '',
-                focusNode: westStreetFocusNode,
-              ),
-              InputTextField(
-                controller: eastStreetTextEditingController,
-                keyboardType: TextInputType.number,
-                label: '',
-                focusNode: eastStreetFocusNode,
-              ),
-              12.h.verticalSpace,
-              Container(
-                child: TextButton(
-                  child: Text(S.current.locateNow),
-                  onPressed: () {},
+              Expanded(
+                child: InputTextField(
+                  controller: westStreetTextEditingController,
+                  keyboardType: TextInputType.number,
+                  isRequired: false,
+                  focusNode: westStreetFocusNode,
                 ),
               ),
-              16.h.verticalSpace,
-              InputTextField(
-                controller: moreDetailsAboutAnnouncement,
-                keyboardType: TextInputType.text,
-                label: S.current.moreDetailsAboutTheAnnouncement,
-                focusNode: moreDetailsFocusNode,
+              16.w.horizontalSpace,
+              Expanded(
+                child: InputTextField(
+                  controller: eastStreetTextEditingController,
+                  keyboardType: TextInputType.number,
+                  isRequired: false,
+                  focusNode: eastStreetFocusNode,
+                ),
               ),
-              16.h.verticalSpace,
-              InputTextField(
-                controller: emailAddressTextEditingController,
-                keyboardType: TextInputType.emailAddress,
-                label: S.current.emailAddress,
-                focusNode: emailAddressFocusNode,
-              ),
-
-              /// Postor Personnality
-              CustomDropDownButton(),
             ],
+          ),
+          12.h.verticalSpace,
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: 366,
+                height: 174,
+                child: ClipRRect(
+                  borderRadius: AppConstants.largeBorderRadius,
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      AppColors.inactiveGreyColorLight.withOpacity(0.2), // 0 = Colored, 1 = Black & White
+                      BlendMode.saturation,
+                    ),
+                    child: Image.asset(
+                      AppImages.mapPlaceHolderImage,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 175,
+                height: 55,
+                decoration: const BoxDecoration(
+                  borderRadius: AppConstants.mediumBorderRadius,
+                  color: AppColors.whiteColor,
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    S.current.locateNow,
+                    style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 13),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          16.h.verticalSpace,
+          InputTextField(
+            controller: moreDetailsAboutAnnouncement,
+            keyboardType: TextInputType.text,
+            label: S.current.moreDetailsAboutTheAnnouncement,
+            focusNode: moreDetailsFocusNode,
+            maxLines: 8,
+            minLines: 6,
+          ),
+          16.h.verticalSpace,
+          InputTextField(
+            controller: emailAddressTextEditingController,
+            keyboardType: TextInputType.emailAddress,
+            label: S.current.emailAddress,
+            focusNode: emailAddressFocusNode,
+          ),
+
+          /// Postor Personnality
+          CustomDropDownButton(
+            label: 'Owner',
           ),
         ],
       ),

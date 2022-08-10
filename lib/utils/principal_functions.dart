@@ -67,17 +67,17 @@ showAlertDialog(BuildContext context) {
 
 enum CurrentStep { first, second, third, fourth, fith }
 
-Widget currentFormForCurrentIndex({required CurrentStep currentStep}) {
+Widget currentFormForCurrentIndex({required int currentStep}) {
   switch (currentStep) {
-    case CurrentStep.first:
+    case 0:
       return CreateAnnouncementFirstStep();
-    case CurrentStep.second:
+    case 1:
       return CreateAnnouncementSecondStep();
-    case CurrentStep.third:
+    case 2:
       return CreateAnnouncementThirdStep();
-    case CurrentStep.fourth:
+    case 3:
       return CreateAnnouncementFourthStep();
-    case CurrentStep.fith:
+    case 4:
       return const CreateAnnouncementFithStep();
     default:
       return const SizedBox.shrink();

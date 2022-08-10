@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
+// import 'package:wassiet/config/routes/app_router.gr.dart';
 
 part 'verification_code.g.dart';
 
@@ -32,7 +32,7 @@ abstract class VerificationCodeBase with Store {
   void handleVerificationCodeButtonOnclick({required BuildContext context}) {
     if (isButtonEnabled) {
       FocusScope.of(context).unfocus();
-      context.pushRoute(EditInformationsPageRoute());
+      // context.pushRoute(EditInformationsPageRoute());
     }
   }
 

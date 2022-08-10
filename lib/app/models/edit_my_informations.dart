@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
-import 'package:wassiet/app/view_models/country.dart';
+import 'package:wassiet/app/domain/entities/country.dart';
 import 'package:wassiet/config/routes/app_router.gr.dart';
 part 'edit_my_informations.g.dart';
 
@@ -82,7 +82,7 @@ abstract class EditMyInformationsBase with Store {
   @computed
   bool get isFormValid => isFullNameValid && isPhoneNumberValid && isEmailValid;
   @action
-  void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
+  void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(HomePageRoute());
   @action
   Future<void> getAllCountries() async {
     final response = await rootBundle.loadString('assets/fake_data/countries.json');

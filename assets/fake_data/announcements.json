@@ -1,0 +1,62 @@
+[
+    {
+        "announcement_image": "https://images.prismic.io/villaplus/b94890cc-53d4-4003-880b-e511a1bcacb7_tiareII-1121_5143_villa1_3600.jpg",
+        "announcement_name": "فيلا 5 طوابق ",
+        "announcement_type": "إيجار",
+        "announcement_posted_at": "2021-07-20",
+        "announcement_description": "محافظة البكيرية-محافظة البكيرية",
+        "announcement_price": 1550.000,
+        "announcement_price_unit":  " ريال",
+        "announcement_rate": 4.8,
+        "announcement_number_of_rates": 900,
+        "anouncement_posted_by_user_image": "https://www.journaldugeek.com/content/uploads/2022/06/sans-titre19.jpg"
+    },
+    {
+        "announcement_image": "https://villa-felostal.com/wp-content/uploads/VILLA-FELOSTAL-1.jpg",
+        "announcement_name": "فيلا 5 طوابق ",
+        "announcement_type": "إيجار",
+        "announcement_posted_at": "2021-07-20",
+        "announcement_description": "محافظة البكيرية-محافظة البكيرية",
+        "announcement_price": 999.999,
+        "announcement_price_unit":  " ريال",
+        "announcement_rate": 4.1,
+        "announcement_number_of_rates": 3600,
+        "anouncement_posted_by_user_image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+    },
+    {
+        "announcement_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSac-COcuO1MQM8M2LO6pn1pFcEDqcrBbQ6Bw&usqp=CAU",
+        "announcement_name": "فيلا 5 طوابق ",
+        "announcement_type": "إيجار",
+        "announcement_posted_at": "2021-07-20",
+        "announcement_description": "محافظة البكيرية-محافظة البكيرية",
+        "announcement_price": 150.000,
+        "announcement_price_unit":  " ريال",
+        "announcement_rate": 4.5,
+        "announcement_number_of_rates": 12,
+        "anouncement_posted_by_user_image": "https://images.bfmtv.com/Gu2qrv-LRcjY8eKjoCU5QKGsC6Y=/0x40:768x472/768x0/images/Pierre-Person-en-2017-a-Paris-399285.jpg"
+    },
+    {
+        "announcement_image": "https://atlasinternational.com/media/images/properties/thumbnails/29308_xl.jpg",
+        "announcement_name": "فيلا 5 طوابق ",
+        "announcement_type": "إيجار",
+        "announcement_posted_at": "2021-07-20",
+        "announcement_description": "محافظة البكيرية-محافظة البكيرية",
+        "announcement_price": 50.000,
+        "announcement_price_unit":  " ريال",
+        "announcement_rate": 3.9,
+        "announcement_number_of_rates": 120,
+        "anouncement_posted_by_user_image": "https://www.indiewire.com/wp-content/uploads/2022/01/AP21190389554952-e1643225561835.jpg?w=780"
+    },
+    {
+        "announcement_image": "https://photos.tf1.fr/1200/720/vignette_maison_de_reve_1_em4-e0d2b3-c81cb3-0@1x.jpg",
+        "announcement_name": "فيلا 5 طوابق ",
+        "announcement_type": "إيجار",
+        "announcement_posted_at": "2021-07-20",
+        "announcement_description": "محافظة البكيرية-محافظة البكيرية",
+        "announcement_price": 1550.000,
+        "announcement_price_unit":  " ريال",
+        "announcement_rate": 5.0,
+        "announcement_number_of_rates": 2,
+        "anouncement_posted_by_user_image": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_624206636_200013332000928034_376810.jpg"
+    }
+]

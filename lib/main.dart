@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:wassiet/config/routes/app_router.gr.dart';
 import 'package:wassiet/config/styles/themes/app_themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'config/routes/app_router.gr.dart';
+import 'package:wassiet/widgets/custom_stepper.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: false,
-      builder: (BuildContext context, Widget? child) => MaterialApp.router(
+      builder: (BuildContext context, Widget? child) => MaterialApp(
         theme: AppThemes.defaultAppTheme,
         darkTheme: AppThemes.defaultAppTheme,
         debugShowCheckedModeBanner: false,
@@ -31,8 +32,9 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        home: CustomStepper(),
+        // routerDelegate: _appRouter.delegate(),
+        // routeInformationParser: _appRouter.defaultRouteParser(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 
@@ -7,37 +8,48 @@ class CreateAnnouncementFithStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Wrap(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              S.current.addPropertyPictures,
+            Expanded(
+              child: Text(
+                S.current.addPropertyPictures,
+                style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 14),
+              ),
             ),
           ],
         ),
+        16.h.verticalSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              S.current.sevenImagesAllowedByMaximum,
+            Expanded(
+              child: Text(
+                S.current.sevenImagesAllowedByMaximum,
+              ),
             ),
           ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8),
-          child: Row(
+          child: Stack(
+            alignment: Alignment.center,
             children: [
               Container(
                 height: 144,
                 width: 175,
-                decoration: const BoxDecoration(
-                  color: AppColors.cyanColor,
+                decoration: BoxDecoration(
+                  color: AppColors.cyanColor.withOpacity(0.9),
                   borderRadius: AppConstants.largeBorderRadius,
                 ),
-                child: Image.asset(AppImages.addIcon),
-              )
+              ),
+              Image.asset(
+                AppImages.addIcon,
+                width: 30,
+                height: 30,
+              ),
             ],
           ),
         ),

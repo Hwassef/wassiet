@@ -10,3 +10,4 @@ export 'gradient_elevated_button.dart';
 export 'change_picture_modal_bottom_sheet.dart';
 export 'drop_down_button.dart';
 export 'countries_modal_bottom_sheet.dart';
+export 'custom_bottom_navigation_bar.dart';

@@ -7,6 +7,8 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: AppColors.transparentColor,
+      elevation: 0.0,
       leading: Padding(
         padding: AppPaddings.leftLargePadding,
         child: Image.asset(

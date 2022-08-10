@@ -1,0 +1,22 @@
+[
+    {
+        "filter_by_name": "All",
+        "is_selected": false
+    },
+    {
+        "filter_by_name": "Sell",
+        "is_selected": false
+    },
+    {
+        "filter_by_name": "Rent",
+        "is_selected": false
+    },
+    {
+        "filter_by_name": "Bid",
+        "is_selected": false
+    },
+    {
+        "filter_by_name": "Exchange",
+        "is_selected": false
+    }
+]

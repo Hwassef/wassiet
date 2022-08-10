@@ -135,6 +135,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                 12.h.verticalSpace,
                                 Observer(
                                   builder: (_) => CustomDropDownButton(
+                                    label: S.current.country,
                                     onTap: () {
                                       showModalBottomSheet(
                                         enableDrag: true,
@@ -153,7 +154,9 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                   ),
                                 ),
                                 12.h.verticalSpace,
-                                CustomDropDownButton(),
+                                CustomDropDownButton(
+                                  label: S.current.region,
+                                ),
                               ],
                             ),
                           ),
@@ -165,7 +168,8 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                 Observer(
                   builder: (_) => GradientElevatedButton(
                     onPressed: () => _editInformations.isEmailValid
-                        ? _editInformations.handleEditPersonnalInformationOnClick(context)
+                        ? null
+                        // _editInformations.handleEditPersonnalInformationOnClick(context)
                         : null,
                     isButtonEnabled: _editInformations.isFormValid,
                     child: Text(S.current.saveData),

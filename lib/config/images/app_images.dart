@@ -34,8 +34,13 @@ class AppImages {
   static const String mobileIcon = '$iconsFolderPath/mobile_icon.png';
   static const String whatsappIcon = '$iconsFolderPath/whatsapp_icon.png';
   static const String galleryIcon = '$iconsFolderPath/gallery_icon.png';
+  static const String plusIcon = '$iconsFolderPath/plus_icon.png';
+  static const String homeIcon = '$iconsFolderPath/home_icon.png';
+  static const String messagesIcon = '$iconsFolderPath/messages_icon.png';
+  static const String myAdsIcon = '$iconsFolderPath/my_ads_icon.png';
   static const String blueLineImage = '$imagesFolderPath/blue_line_image.png';
   static const String greyShapeImage = '$imagesFolderPath/grey_shape.svg';
   static const String appLogo = '$imagesFolderPath/app_logo.png';
   static const String backgroundImage = '$imagesFolderPath/background_image.png';
+  static const String mapPlaceHolderImage = '$imagesFolderPath/map_placeholder.png';
 }
