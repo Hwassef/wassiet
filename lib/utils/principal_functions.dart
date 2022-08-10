@@ -78,7 +78,7 @@ Widget currentFormForCurrentIndex({required int currentStep}) {
     case 3:
       return CreateAnnouncementFourthStep();
     case 4:
-      return const CreateAnnouncementFithStep();
+      return CreateAnnouncementFithStep();
     default:
       return const SizedBox.shrink();
   }

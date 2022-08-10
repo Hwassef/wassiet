@@ -1,11 +1,17 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wassiet/app/models/create_announcement_fith_step_vm.dart';
 import 'package:wassiet/config/config.dart';
+
 import 'package:wassiet/generated/l10n.dart';
+import 'package:wassiet/widgets/add_announcement_picture.dart';
 
 class CreateAnnouncementFithStep extends StatelessWidget {
-  const CreateAnnouncementFithStep({Key? key}) : super(key: key);
-
+  CreateAnnouncementFithStep({Key? key}) : super(key: key);
+  final CreateAnnouncementFithStepVM createAnnouncementFirstStepVM = CreateAnnouncementFithStepVM();
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -34,24 +40,21 @@ class CreateAnnouncementFithStep extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                height: 144,
-                width: 175,
-                decoration: BoxDecoration(
-                  color: AppColors.cyanColor.withOpacity(0.9),
-                  borderRadius: AppConstants.largeBorderRadius,
-                ),
-              ),
-              Image.asset(
-                AppImages.addIcon,
-                width: 30,
-                height: 30,
-              ),
-            ],
+          child: AddAnnouncementPicture(
+            callBack: createAnnouncementFirstStepVM.addPicture,
           ),
+        ),
+        Observer(
+          builder: (_) => ListView.builder(
+              shrinkWrap: true,
+              itemCount: createAnnouncementFirstStepVM.images.length,
+              itemBuilder: (context, index) {
+                File currentImage = createAnnouncementFirstStepVM.images[index];
+                return ClipRRect(
+                  borderRadius: AppConstants.largeBorderRadius,
+                  child: Image.file(currentImage),
+                );
+              }),
         ),
       ],
     );

@@ -171,9 +171,11 @@ class AppRouter extends _i3.RootStackRouter {
           barrierDismissible: false);
     },
     CreateAnnouncementFithStepRoute.name: (routeData) {
+      final args = routeData.argsAs<CreateAnnouncementFithStepRouteArgs>(
+          orElse: () => const CreateAnnouncementFithStepRouteArgs());
       return _i3.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i1.CreateAnnouncementFithStep(),
+          child: _i1.CreateAnnouncementFithStep(key: args.key),
           transitionsBuilder: _i3.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -459,12 +461,25 @@ class CreateAnnouncementFourthStepRouteArgs {
 
 /// generated route for
 /// [_i1.CreateAnnouncementFithStep]
-class CreateAnnouncementFithStepRoute extends _i3.PageRouteInfo<void> {
-  const CreateAnnouncementFithStepRoute()
+class CreateAnnouncementFithStepRoute
+    extends _i3.PageRouteInfo<CreateAnnouncementFithStepRouteArgs> {
+  CreateAnnouncementFithStepRoute({_i4.Key? key})
       : super(CreateAnnouncementFithStepRoute.name,
-            path: '/createAnnouncementFithStep');
+            path: '/createAnnouncementFithStep',
+            args: CreateAnnouncementFithStepRouteArgs(key: key));
 
   static const String name = 'CreateAnnouncementFithStepRoute';
+}
+
+class CreateAnnouncementFithStepRouteArgs {
+  const CreateAnnouncementFithStepRouteArgs({this.key});
+
+  final _i4.Key? key;
+
+  @override
+  String toString() {
+    return 'CreateAnnouncementFithStepRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
