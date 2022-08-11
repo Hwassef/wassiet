@@ -197,7 +197,7 @@ class AppRouter extends _i3.RootStackRouter {
   @override
   List<_i3.RouteConfig> get routes => [
         _i3.RouteConfig('/#redirect',
-            path: '/', redirectTo: '/homePage', fullMatch: true),
+            path: '/', redirectTo: '/loginPage', fullMatch: true),
         _i3.RouteConfig(HomePageRoute.name, path: '/homePage'),
         _i3.RouteConfig(SettingsPageRoute.name, path: '/settingsPage'),
         _i3.RouteConfig(ChangeAppLanguagePageRoute.name,

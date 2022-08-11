@@ -9,7 +9,6 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: HomePage,
       transitionsBuilder: TransitionsBuilders.slideLeft,
       durationInMilliseconds: 400,
-      initial: true,
     ),
     CustomRoute(
       path: '/settingsPage',
@@ -52,6 +51,7 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: LoginPage,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
+      initial: true,
     ),
     CustomRoute(
       path: '/verificationCidePage',

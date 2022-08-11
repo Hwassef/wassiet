@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "250887281692",
+    "project_id": "wassiet",
+    "storage_bucket": "wassiet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250887281692:android:0954653d7a4dfae85093d9",
+        "android_client_info": {
+          "package_name": "com.example.wassiet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250887281692-bbrvsgg6mjcbnacuc61jm7onm05h6c8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCauR8SBe1uWEJRwcvQNZl-n11xZ02EhvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250887281692-bbrvsgg6mjcbnacuc61jm7onm05h6c8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

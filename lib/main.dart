@@ -1,12 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:wassiet/config/routes/app_router.gr.dart';
 import 'package:wassiet/config/styles/themes/app_themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/widgets/custom_stepper.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: false,
-      builder: (BuildContext context, Widget? child) => MaterialApp(
+      builder: (BuildContext context, Widget? child) => MaterialApp.router(
         theme: AppThemes.defaultAppTheme,
         darkTheme: AppThemes.defaultAppTheme,
         debugShowCheckedModeBanner: false,
@@ -32,9 +34,8 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        home: CustomStepper(),
-        // routerDelegate: _appRouter.delegate(),
-        // routeInformationParser: _appRouter.defaultRouteParser(),
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
     );
   }
