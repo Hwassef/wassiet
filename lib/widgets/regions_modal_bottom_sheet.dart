@@ -2,41 +2,40 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/models/edit_my_informations.dart';
+import 'package:wassiet/app/domain/entities/region.dart';
+import 'package:wassiet/app/models/create_announcement_first_step_vm.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/app/domain/entities/country.dart';
-import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_first_step.dart';
+import 'package:wassiet/app/presentation/pages.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/utils/principal_functions.dart';
-import 'package:wassiet/widgets/circled_flag.dart';
-import 'package:wassiet/widgets/gradient_elevated_button.dart';
-import 'package:wassiet/widgets/input_text_field.dart';
+import 'package:wassiet/widgets/widgets.dart';
 
-class CountriesSheet extends StatefulWidget {
-  const CountriesSheet({
+class RegionsModalBottomSheet extends StatefulWidget {
+  const RegionsModalBottomSheet({
     Key? key,
     required this.callBack,
   }) : super(key: key);
   final Function callBack;
+
   @override
-  State<CountriesSheet> createState() => _CountriesSheetState();
+  State<RegionsModalBottomSheet> createState() => _RegionsModalBottomSheetState();
 }
 
-class _CountriesSheetState extends State<CountriesSheet> {
-  final TextEditingController searchCountryTextEditingController = TextEditingController();
-  final FocusNode searchCountry = FocusNode();
-
+class _RegionsModalBottomSheetState extends State<RegionsModalBottomSheet> {
+  final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
+  final TextEditingController searchRegionTextEditingController = TextEditingController();
+  final FocusNode searchRegionFocusNode = FocusNode();
+  final CreateAnnouncementFirstStepVM createAnnouncementFirstStepVM = CreateAnnouncementFirstStepVM();
+  final RadioButton radioButtonBase = RadioButton();
   @override
   void initState() {
-    editMyInformations.getAllCountries();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      createAnnouncementFirstStepVM.selectedCountryName('Algeria');
+      setState(() {});
+    });
     super.initState();
   }
 
-  final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
-
-  final RadioButton radioButtonBase = RadioButton();
-  final EditMyInformations editMyInformations = EditMyInformations();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -65,21 +64,21 @@ class _CountriesSheetState extends State<CountriesSheet> {
                 padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                 child: Observer(
                   builder: (_) => InputTextField(
-                    controller: searchCountryTextEditingController,
+                    controller: searchRegionTextEditingController,
                     keyboardType: TextInputType.name,
                     label: S.current.searchForSomething,
-                    focusNode: searchCountry,
+                    focusNode: searchRegionFocusNode,
                     isRequired: false,
                     onChanged: (String text) {
-                      editMyInformations.searchWord = text;
-                      editMyInformations.searchForCountry();
+                      // editMyInformations.searchWord = text;
+                      // editMyInformations.searchForCountry();
                     },
                   ),
                 ),
               ),
             ),
             Observer(
-              builder: (_) => editMyInformations.countries.isNotEmpty
+              builder: (_) => (createAnnouncementFirstStepVM.countryRegion?.regions.isNotEmpty ?? false)
                   ? Expanded(
                       child: RawScrollbar(
                         crossAxisMargin: 12,
@@ -87,35 +86,33 @@ class _CountriesSheetState extends State<CountriesSheet> {
                         scrollbarOrientation: ScrollbarOrientation.left,
                         radius: AppConstants.normalRadius,
                         child: ListView.builder(
-                          key: Key(editMyInformations.countries.length.toString()),
+                          key: Key(createAnnouncementFirstStepVM.countryRegion!.regions.length.toString()),
                           physics: const BouncingScrollPhysics(),
-                          itemCount: editMyInformations.countries.length,
+                          itemCount: createAnnouncementFirstStepVM.countryRegion!.regions.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemBuilder: ((BuildContext context, index) {
-                            final Country currentCountry = editMyInformations.countries[index];
+                            final Region currentRegion = createAnnouncementFirstStepVM.countryRegion!.regions[index];
                             return Card(
                               elevation: 0.0,
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 8.w),
                                 child: Observer(
                                   builder: (_) => GestureDetector(
-                                    onTap: () => radioButtonBase.changeCurrentSelectedItem(name: currentCountry.name),
+                                    onTap: () => radioButtonBase.changeCurrentSelectedItem(name: currentRegion.name),
                                     child: ListTile(
-                                      leading: CircledFlag(
-                                          flag: getCountryFlag(countryCode: currentCountry.code), radius: 15),
                                       title: Text(
-                                        currentCountry.name,
+                                        currentRegion.name,
                                         style: Theme.of(context).textTheme.headline1,
                                       ),
                                       trailing: Container(
                                         width: 32.0,
                                         height: 32.0,
                                         padding: EdgeInsets.all(
-                                            radioButtonBase.selectedItemName == currentCountry.name ? 8.5 : 4.5),
+                                            radioButtonBase.selectedItemName == currentRegion.name ? 8.5 : 4.5),
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: radioButtonBase.selectedItemName == currentCountry.name
+                                          color: radioButtonBase.selectedItemName == currentRegion.name
                                               ? AppColors.darkCyanColor
                                               : AppColors.inactiveGreyColorLight,
                                         ),
@@ -144,7 +141,8 @@ class _CountriesSheetState extends State<CountriesSheet> {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 70.0),
                               child: Text(
-                                'No result found correspending for ${editMyInformations.searchWord ?? ''}',
+                                '',
+                                // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
                                 style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
                                 textAlign: TextAlign.center,
                               ),

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/domain/entities/announcement.dart';
 import 'package:wassiet/app/domain/entities/category.dart';
+import 'package:wassiet/app/models/create_announcement_first_step_vm.dart';
 import 'package:wassiet/app/models/home_page.dart';
+import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_first_step.dart';
 import 'package:wassiet/app/presentation/home/build_announcement_card.dart';
 import 'package:wassiet/app/presentation/home/build_announcements_shimmer.dart';
 import 'package:wassiet/config/config.dart';
@@ -25,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   final FocusNode searchFocusNode = FocusNode();
 
   final HomePageVM _homePage = HomePageVM();
+  final CreateAnnouncementFirstStepVM createAnnouncementFirstStepVM = CreateAnnouncementFirstStepVM();
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {

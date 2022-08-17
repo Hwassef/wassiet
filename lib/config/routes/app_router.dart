@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:wassiet/app/presentation/custom_loader/custom_loader.dart';
 import 'package:wassiet/app/presentation/pages.dart';
+import 'package:wassiet/widgets/custom_stepper.dart';
 
 @AdaptiveAutoRouter(
   routes: <AutoRoute>[
@@ -9,6 +10,7 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: HomePage,
       transitionsBuilder: TransitionsBuilders.slideLeft,
       durationInMilliseconds: 400,
+      initial: true,
     ),
     CustomRoute(
       path: '/settingsPage',
@@ -51,7 +53,6 @@ import 'package:wassiet/app/presentation/pages.dart';
       page: LoginPage,
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
-      initial: true,
     ),
     CustomRoute(
       path: '/verificationCidePage',
@@ -71,12 +72,12 @@ import 'package:wassiet/app/presentation/pages.dart';
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
-    // CustomRoute(
-    //   path: '/createAnnouncement',
-    //   page: CreateAnnouncementPage,
-    //   transitionsBuilder: TransitionsBuilders.slideTop,
-    //   durationInMilliseconds: 400,
-    // ),
+    CustomRoute(
+      path: '/stepper',
+      page: CustomStepper,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
     CustomRoute(
       path: '/createAnnouncementFirstStep',
       page: CreateAnnouncementFirstStep,

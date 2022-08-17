@@ -2,41 +2,37 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/models/edit_my_informations.dart';
+import 'package:wassiet/app/domain/entities/currency.dart';
+import 'package:wassiet/app/models/create_announcement_second_step_vm.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/app/domain/entities/country.dart';
-import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_first_step.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/utils/principal_functions.dart';
-import 'package:wassiet/widgets/circled_flag.dart';
-import 'package:wassiet/widgets/gradient_elevated_button.dart';
-import 'package:wassiet/widgets/input_text_field.dart';
+import 'package:wassiet/utils/utils.dart';
+import 'package:wassiet/widgets/widgets.dart';
 
-class CountriesSheet extends StatefulWidget {
-  const CountriesSheet({
+class CurrenciesModalBottomSheet extends StatefulWidget {
+  const CurrenciesModalBottomSheet({
     Key? key,
     required this.callBack,
   }) : super(key: key);
   final Function callBack;
+
   @override
-  State<CountriesSheet> createState() => _CountriesSheetState();
+  State<CurrenciesModalBottomSheet> createState() => _CurrenciesModalBottomSheetState();
 }
 
-class _CountriesSheetState extends State<CountriesSheet> {
-  final TextEditingController searchCountryTextEditingController = TextEditingController();
-  final FocusNode searchCountry = FocusNode();
-
+class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet> {
+  final TextEditingController searchCurrencyTextEditingController = TextEditingController();
+  final FocusNode searchCurrencyFocusNode = FocusNode();
+  final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
+  final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
+  final RadioButton radioButtonBase = RadioButton();
   @override
   void initState() {
-    editMyInformations.getAllCountries();
+    createAnnouncementSecondStepVM.getAllCurrencies();
     super.initState();
   }
 
-  final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
-
-  final RadioButton radioButtonBase = RadioButton();
-  final EditMyInformations editMyInformations = EditMyInformations();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -65,21 +61,21 @@ class _CountriesSheetState extends State<CountriesSheet> {
                 padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                 child: Observer(
                   builder: (_) => InputTextField(
-                    controller: searchCountryTextEditingController,
+                    controller: searchCurrencyTextEditingController,
                     keyboardType: TextInputType.name,
                     label: S.current.searchForSomething,
-                    focusNode: searchCountry,
+                    focusNode: searchCurrencyFocusNode,
                     isRequired: false,
                     onChanged: (String text) {
-                      editMyInformations.searchWord = text;
-                      editMyInformations.searchForCountry();
+                      // editMyInformations.searchWord = text;
+                      // editMyInformations.searchForCountry();
                     },
                   ),
                 ),
               ),
             ),
             Observer(
-              builder: (_) => editMyInformations.countries.isNotEmpty
+              builder: (_) => createAnnouncementSecondStepVM.currencies.isNotEmpty
                   ? Expanded(
                       child: RawScrollbar(
                         crossAxisMargin: 12,
@@ -87,13 +83,13 @@ class _CountriesSheetState extends State<CountriesSheet> {
                         scrollbarOrientation: ScrollbarOrientation.left,
                         radius: AppConstants.normalRadius,
                         child: ListView.builder(
-                          key: Key(editMyInformations.countries.length.toString()),
+                          key: Key(createAnnouncementSecondStepVM.currencies.length.toString()),
                           physics: const BouncingScrollPhysics(),
-                          itemCount: editMyInformations.countries.length,
+                          itemCount: createAnnouncementSecondStepVM.currencies.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemBuilder: ((BuildContext context, index) {
-                            final Country currentCountry = editMyInformations.countries[index];
+                            final Currency currentCountry = createAnnouncementSecondStepVM.currencies[index];
                             return Card(
                               elevation: 0.0,
                               child: Padding(
@@ -103,7 +99,11 @@ class _CountriesSheetState extends State<CountriesSheet> {
                                     onTap: () => radioButtonBase.changeCurrentSelectedItem(name: currentCountry.name),
                                     child: ListTile(
                                       leading: CircledFlag(
-                                          flag: getCountryFlag(countryCode: currentCountry.code), radius: 15),
+                                        flag: getCountryFlag(
+                                          countryCode: currentCountry.code[0] + currentCountry.code[1],
+                                        ),
+                                        radius: 15,
+                                      ),
                                       title: Text(
                                         currentCountry.name,
                                         style: Theme.of(context).textTheme.headline1,
@@ -144,7 +144,9 @@ class _CountriesSheetState extends State<CountriesSheet> {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 70.0),
                               child: Text(
-                                'No result found correspending for ${editMyInformations.searchWord ?? ''}',
+                                '',
+                                // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
+
                                 style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
                                 textAlign: TextAlign.center,
                               ),

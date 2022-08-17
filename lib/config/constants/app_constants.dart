@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   AppConstants._();
+
+  /// Google Map API Key
+  static const String GOOGLE_MAP_API_KEY = 'AIzaSyDz0VK3CkqzmnNps8EsmZCh-LVZt4xRViQ';
   /* Default Border radius */
   static const double smallRadiusValue = 4.0;
   static const double regularRadiusValue = 6.0;

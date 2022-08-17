@@ -81,6 +81,7 @@ class CreateAnnouncementFourthStep extends StatelessWidget {
 
           /// Available DropDown
           CustomDropDownButton(
+            content: S.current.region,
             label: S.current.available,
           ),
         ],

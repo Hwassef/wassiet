@@ -33,6 +33,22 @@ mixin _$Login on LoginBase, Store {
     });
   }
 
+  late final _$verificationIddAtom =
+      Atom(name: 'LoginBase.verificationIdd', context: context);
+
+  @override
+  String? get verificationIdd {
+    _$verificationIddAtom.reportRead();
+    return super.verificationIdd;
+  }
+
+  @override
+  set verificationIdd(String? value) {
+    _$verificationIddAtom.reportWrite(value, super.verificationIdd, () {
+      super.verificationIdd = value;
+    });
+  }
+
   late final _$LoginBaseActionController =
       ActionController(name: 'LoginBase', context: context);
 
@@ -51,6 +67,7 @@ mixin _$Login on LoginBase, Store {
   String toString() {
     return '''
 phoneNumber: ${phoneNumber},
+verificationIdd: ${verificationIdd},
 isPhoneNumberValid: ${isPhoneNumberValid}
     ''';
   }

@@ -7,11 +7,11 @@ import 'package:wassiet/config/config.dart';
 class CustomDropDownButton extends StatelessWidget {
   final void Function()? onTap;
   final String label;
-  String? selectedCountryName;
+  final String content;
   CustomDropDownButton({
     this.onTap,
     Key? key,
-    this.selectedCountryName,
+    required this.content,
     required this.label,
   }) : super(key: key);
   final RadioButton radioButton = RadioButton();
@@ -57,7 +57,7 @@ class CustomDropDownButton extends StatelessWidget {
                     items: const [],
                     onChanged: (newValue) {},
                     hint: Text(
-                      label,
+                      content,
                       style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14,

@@ -125,11 +125,17 @@ mixin _$VerificationCode on VerificationCodeBase, Store {
       ActionController(name: 'VerificationCodeBase', context: context);
 
   @override
-  void handleVerificationCodeButtonOnclick({required BuildContext context}) {
+  void handleVerificationCodeButtonOnclick(
+      {required BuildContext context,
+      required String phoneNumber,
+      required String verificationCode}) {
     final _$actionInfo = _$VerificationCodeBaseActionController.startAction(
         name: 'VerificationCodeBase.handleVerificationCodeButtonOnclick');
     try {
-      return super.handleVerificationCodeButtonOnclick(context: context);
+      return super.handleVerificationCodeButtonOnclick(
+          context: context,
+          phoneNumber: phoneNumber,
+          verificationCode: verificationCode);
     } finally {
       _$VerificationCodeBaseActionController.endAction(_$actionInfo);
     }

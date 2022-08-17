@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:wassiet/config/routes/app_router.gr.dart';
+import 'package:wassiet/widgets/custom_stepper.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -24,27 +27,30 @@ class CustomBottomNavigationBar extends StatelessWidget {
         label: 'null',
       ),
       BottomNavigationBarItem(
-        icon: Container(
-          width: 63,
-          height: 63,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.cyanColor,
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.cyanColor.withOpacity(0.1),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 0), // changes position of shadow
+        icon: GestureDetector(
+          onTap: () => context.pushRoute(CustomStepperRoute()),
+          child: Container(
+            width: 63,
+            height: 63,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.cyanColor,
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.cyanColor.withOpacity(0.1),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: const Offset(0, 0), // changes position of shadow
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(22),
+              child: Image.asset(
+                AppImages.plusIcon,
+                width: 18,
+                height: 18,
               ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(22),
-            child: Image.asset(
-              AppImages.plusIcon,
-              width: 18,
-              height: 18,
             ),
           ),
         ),

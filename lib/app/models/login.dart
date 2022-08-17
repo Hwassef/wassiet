@@ -21,6 +21,8 @@ abstract class LoginBase with Store {
     }
   }
 
+  @observable
+  String? verificationIdd;
   FirebaseAuth auth = FirebaseAuth.instance;
   void verifyPhone() async {
     await auth.verifyPhoneNumber(
@@ -30,7 +32,9 @@ abstract class LoginBase with Store {
         await auth.signInWithCredential(credential).then((value) {});
       },
       verificationFailed: (FirebaseAuthException e) {},
-      codeSent: (String verificationId, int? resendToken) {},
+      codeSent: (String verificationId, int? resendToken) {
+        verificationIdd = verificationId;
+      },
       codeAutoRetrievalTimeout: (String verificationId) {},
     );
   }

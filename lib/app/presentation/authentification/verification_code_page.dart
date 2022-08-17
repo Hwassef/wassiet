@@ -89,11 +89,11 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                                 focusNode: verificationCodeFocusNode,
                                 child: Observer(
                                   builder: (_) => Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 62.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
                                     child: PinCodeTextField(
                                       textStyle: Theme.of(context).textTheme.subtitle2,
                                       appContext: context,
-                                      length: 4,
+                                      length: 6,
                                       keyboardType: TextInputType.phone,
                                       onChanged: (String code) => _verificationCodeBase.verifictionCode = code,
                                     ),
@@ -144,7 +144,11 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                     padding: const EdgeInsets.only(bottom: 16.0),
                     child: GradientElevatedButton(
                       isButtonEnabled: _verificationCodeBase.isButtonEnabled,
-                      onPressed: () => _verificationCodeBase.handleVerificationCodeButtonOnclick(context: context),
+                      onPressed: () => _verificationCodeBase.verifyPhoneNumber(
+                        // context: context,
+                        phoneNumber: '+216${widget.phoneNumber}',
+                        verificationCode: _verificationCodeBase.verifictionCode ?? '',
+                      ),
                       child: Text(S.current.continueText),
                     ),
                   ),

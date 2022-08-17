@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Sell"
+    },
+
+    {
+        "name": "Rent"
+    },
+
+    {
+        "name": "Bid"
+    },
+    {
+        "name": "Exchange"
+    }
+]

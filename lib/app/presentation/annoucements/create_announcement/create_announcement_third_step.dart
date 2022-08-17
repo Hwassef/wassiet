@@ -148,6 +148,7 @@ class CreateAnnouncementThirdStep extends StatelessWidget {
 
           /// Postor Personnality
           CustomDropDownButton(
+            content: S.current.region,
             label: 'Owner',
           ),
         ],

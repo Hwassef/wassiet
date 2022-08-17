@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:auto_route/auto_route.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 // import 'package:wassiet/config/routes/app_router.gr.dart';
@@ -25,14 +25,15 @@ abstract class VerificationCodeBase with Store {
   @computed
   Timer? get countDownTimer => _countDownTimer;
   @computed
-  bool get isButtonEnabled => verifictionCode != null && verifictionCode?.length == 4;
+  bool get isButtonEnabled => verifictionCode != null && verifictionCode?.length == 6;
   @computed
   bool get isResendVerificationCodeClicked => _isResendVerificationCodeClicked;
   @action
-  void handleVerificationCodeButtonOnclick({required BuildContext context}) {
+  void handleVerificationCodeButtonOnclick(
+      {required BuildContext context, required String phoneNumber, required String verificationCode}) {
     if (isButtonEnabled) {
       FocusScope.of(context).unfocus();
-      // context.pushRoute(EditInformationsPageRoute());
+      verifyPhoneNumber(verificationCode: verificationCode, phoneNumber: phoneNumber);
     }
   }
 
@@ -65,5 +66,21 @@ abstract class VerificationCodeBase with Store {
     _isResendVerificationCodeClicked = true;
     resetTimer();
     startTimer();
+  }
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  void verifyPhoneNumber({required String phoneNumber, required String verificationCode}) {
+    auth.verifyPhoneNumber(
+        codeAutoRetrievalTimeout: (String verificationId) {},
+        verificationFailed: (FirebaseAuthException e) {
+          print(e.message);
+        },
+        verificationCompleted: (PhoneAuthCredential phoneAuthCredential) {},
+        phoneNumber: phoneNumber,
+        codeSent: (String verificationId, int? resendToken) async {
+          ConfirmationResult confirmationResult = await auth.signInWithPhoneNumber(phoneNumber);
+          UserCredential userCredential = await confirmationResult.confirm(verificationCode);
+        });
   }
 }

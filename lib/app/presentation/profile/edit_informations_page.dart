@@ -135,6 +135,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                 12.h.verticalSpace,
                                 Observer(
                                   builder: (_) => CustomDropDownButton(
+                                    content: S.current.region,
                                     label: S.current.country,
                                     onTap: () {
                                       showModalBottomSheet(
@@ -148,7 +149,9 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                         ),
                                         isDismissible: true,
                                         context: context,
-                                        builder: (_) => const CountriesSheet(),
+                                        builder: (_) => CountriesSheet(
+                                          callBack: () {},
+                                        ),
                                       );
                                     },
                                   ),
@@ -156,6 +159,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                                 12.h.verticalSpace,
                                 CustomDropDownButton(
                                   label: S.current.region,
+                                  content: S.current.region,
                                 ),
                               ],
                             ),

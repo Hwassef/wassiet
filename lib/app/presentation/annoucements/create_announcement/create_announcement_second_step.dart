@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wassiet/app/models/create_announcement_second_step_vm.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
+import 'package:wassiet/widgets/add_announcement_picture.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
 class CreateAnnouncementSecondStep extends StatelessWidget {
@@ -39,6 +42,7 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
   final FocusNode elevatorsNumberFocusNode = FocusNode();
   final TextEditingController ageOfAppartmentTextEditingController = TextEditingController();
   final FocusNode ageOfAppartmentFocusNode = FocusNode();
+  final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -47,20 +51,49 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           /// This one is used to show the purpose of annoucenemt
-          CustomDropDownButton(
-            label: S.current.purposeOfAnouncement,
+          Observer(
+            builder: (_) => CustomDropDownButton(
+              content: createAnnouncementSecondStepVM.purposeOfAnnouncementName ?? S.current.purposeOfAnouncement,
+              label: S.current.purposeOfAnouncement,
+              onTap: () => showModalBottomSheet(
+                enableDrag: true,
+                isScrollControlled: true,
+                backgroundColor: AppColors.whiteColor,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: AppConstants.extraLargeRadius,
+                  ),
+                ),
+                isDismissible: true,
+                context: context,
+                builder: (_) => PurposeOfAnnouncementModalBottomSheet(
+                  callBack: createAnnouncementSecondStepVM.selectedPurposeOfAnnouncementName,
+                ),
+              ),
+            ),
           ),
-          const RequriedField(),
 
-          /// This one is used to show the type of announcement
-          CustomDropDownButton(
-            label: S.current.propertyType,
-          ),
-          const RequriedField(),
-
-          /// This one is used to show the unity of measuring
-          CustomDropDownButton(
-            label: S.current.measruingUnit,
+          12.h.verticalSpace,
+          Observer(
+            builder: (_) => CustomDropDownButton(
+              content: createAnnouncementSecondStepVM.propertyTypeName ?? S.current.propertyType,
+              label: S.current.propertyType,
+              onTap: () => showModalBottomSheet(
+                enableDrag: true,
+                isScrollControlled: true,
+                backgroundColor: AppColors.whiteColor,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: AppConstants.extraLargeRadius,
+                  ),
+                ),
+                isDismissible: true,
+                context: context,
+                builder: (_) => PropertyTypesModalBottomSheet(
+                  callBack: createAnnouncementSecondStepVM.selectedPropertyTypeName,
+                ),
+              ),
+            ),
           ),
           const RequriedField(),
 
@@ -93,8 +126,26 @@ class CreateAnnouncementSecondStep extends StatelessWidget {
               ),
               8.w.horizontalSpace,
               Expanded(
-                child: CustomDropDownButton(
-                  label: S.current.price,
+                child: Observer(
+                  builder: (_) => CustomDropDownButton(
+                    content: createAnnouncementSecondStepVM.currencyName ?? S.current.price,
+                    label: S.current.price,
+                    onTap: () => showModalBottomSheet(
+                      enableDrag: true,
+                      isScrollControlled: true,
+                      backgroundColor: AppColors.whiteColor,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: AppConstants.extraLargeRadius,
+                        ),
+                      ),
+                      isDismissible: true,
+                      context: context,
+                      builder: (_) => CurrenciesModalBottomSheet(
+                        callBack: createAnnouncementSecondStepVM.selectedCurrencyName,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
