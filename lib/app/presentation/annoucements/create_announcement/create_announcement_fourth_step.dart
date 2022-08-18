@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
@@ -81,8 +83,23 @@ class CreateAnnouncementFourthStep extends StatelessWidget {
 
           /// Available DropDown
           CustomDropDownButton(
-            content: S.current.region,
+            content: S.current.available,
             label: S.current.available,
+            onTap: () => showModalBottomSheet(
+              enableDrag: true,
+              isScrollControlled: true,
+              backgroundColor: AppColors.whiteColor,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  top: AppConstants.extraLargeRadius,
+                ),
+              ),
+              isDismissible: true,
+              context: context,
+              builder: (_) => AvailableModalBottomSheet(
+                callBack: () {},
+              ),
+            ),
           ),
         ],
       ),

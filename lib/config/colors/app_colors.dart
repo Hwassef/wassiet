@@ -25,6 +25,7 @@ class AppColors {
   static const Color greyColor = Color(0xFFEEEFF2);
   static const Color inputHintTextColor = Color(0xFF707070);
   static const Color shapeGreyColor = Color(0xFFF3F4F7);
+  static const Color purpleBackgroundColor = Color(0xFFAD46CB);
   static const LinearGradient blueMaroonGradient = LinearGradient(colors: [
     Color(0xFF00B4EF),
     Color(0xFFCEB8A0),
