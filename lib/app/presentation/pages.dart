@@ -16,3 +16,4 @@ export 'annoucements/create_announcement/create_announcement_third_step.dart';
 export 'annoucements/create_announcement/create_announcement_second_step.dart';
 export 'home/filter_page.dart';
 export 'chat/all_chats.dart';
+export 'notifications/notifications_page.dart';

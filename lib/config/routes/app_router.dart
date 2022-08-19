@@ -120,6 +120,12 @@ import 'package:wassiet/widgets/custom_stepper.dart';
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: 400,
     ),
+    CustomRoute(
+      path: '/notifications',
+      page: NotificationsPage,
+      transitionsBuilder: TransitionsBuilders.slideTop,
+      durationInMilliseconds: 400,
+    ),
   ],
 )
 class $AppRouter {}

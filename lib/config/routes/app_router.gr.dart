@@ -206,6 +206,24 @@ class AppRouter extends _i4.RootStackRouter {
           durationInMilliseconds: 400,
           opaque: true,
           barrierDismissible: false);
+    },
+    AllChatsRoute.name: (routeData) {
+      return _i4.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i1.AllChats(),
+          transitionsBuilder: _i4.TransitionsBuilders.slideTop,
+          durationInMilliseconds: 400,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    NotificationsPageRoute.name: (routeData) {
+      return _i4.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i1.NotificationsPage(),
+          transitionsBuilder: _i4.TransitionsBuilders.slideTop,
+          durationInMilliseconds: 400,
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 
@@ -238,7 +256,9 @@ class AppRouter extends _i4.RootStackRouter {
             path: '/createAnnouncementFourthStep'),
         _i4.RouteConfig(CreateAnnouncementFithStepRoute.name,
             path: '/createAnnouncementFithStep'),
-        _i4.RouteConfig(FilterPageRoute.name, path: '/filterPage')
+        _i4.RouteConfig(FilterPageRoute.name, path: '/filterPage'),
+        _i4.RouteConfig(AllChatsRoute.name, path: '/allChats'),
+        _i4.RouteConfig(NotificationsPageRoute.name, path: '/notifications')
       ];
 }
 
@@ -545,4 +565,21 @@ class FilterPageRouteArgs {
   String toString() {
     return 'FilterPageRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [_i1.AllChats]
+class AllChatsRoute extends _i4.PageRouteInfo<void> {
+  const AllChatsRoute() : super(AllChatsRoute.name, path: '/allChats');
+
+  static const String name = 'AllChatsRoute';
+}
+
+/// generated route for
+/// [_i1.NotificationsPage]
+class NotificationsPageRoute extends _i4.PageRouteInfo<void> {
+  const NotificationsPageRoute()
+      : super(NotificationsPageRoute.name, path: '/notifications');
+
+  static const String name = 'NotificationsPageRoute';
 }

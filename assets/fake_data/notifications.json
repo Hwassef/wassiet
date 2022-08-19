@@ -1,53 +1,53 @@
 [
     {
-        "notification_title": "This is the first notification title",
-        "notification_description": "This is the first notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the first notification title",
+        "description": "This is the first notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the second notification title",
-        "notification_description": "This is the second notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the second notification title",
+        "description": "This is the second notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the third notification title",
-        "notification_description": "This is the third notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the third notification title",
+        "description": "This is the third notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the fourth notification title",
-        "notification_description": "This is the fourth notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the fourth notification title",
+        "description": "This is the fourth notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the fith notification title",
-        "notification_description": "This is the fith notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the fith notification title",
+        "description": "This is the fith notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the sixth notification title",
-        "notification_description": "This is the sixth notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the sixth notification title",
+        "description": "This is the sixth notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the seventh notification title",
-        "notification_description": "This is the seventh notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the seventh notification title",
+        "description": "This is the seventh notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the eighth notification title",
-        "notification_description": "This is the eighth notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the eighth notification title",
+        "description": "This is the eighth notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the ninth notification title",
-        "notification_description": "This is the ninth notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the ninth notification title",
+        "description": "This is the ninth notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     },
     {
-        "notification_title": "This is the tenth notification title",
-        "notification_description": "This is the tenth notification title, bla bla bla bla bla bla bla bla bla bla",
-        "notification_recieve_date": "Jeudi 21 Janvier . 08:20"
+        "title": "This is the tenth notification title",
+        "description": "This is the tenth notification title, bla bla bla bla bla bla bla bla bla bla",
+        "recieve_date": "Jeudi 21 Janvier . 08:20"
     }
 
 ]
