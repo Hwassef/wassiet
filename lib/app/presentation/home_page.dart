@@ -1,15 +1,11 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/domain/entities/announcement.dart';
 import 'package:wassiet/app/domain/entities/category.dart';
 import 'package:wassiet/app/models/create_announcement_first_step_vm.dart';
 import 'package:wassiet/app/models/home_page.dart';
-import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_first_step.dart';
 import 'package:wassiet/app/presentation/home/build_announcement_card.dart';
-import 'package:wassiet/app/presentation/home/build_announcements_shimmer.dart';
 import 'package:wassiet/config/config.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/filter_modal_sheet.dart';
 import 'package:wassiet/widgets/widgets.dart';
@@ -102,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 55,
                   child: ListView.builder(
                       physics: const BouncingScrollPhysics(),
@@ -133,12 +129,8 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemCount: _homePage.announcements.length,
                 itemBuilder: (context, index) {
-                  if (_homePage.isLoading) {
-                    return const BuildAnnouncementsShimmer();
-                  } else {
-                    final Announcement currentAnnouncement = _homePage.announcements[index];
-                    return BuildAnnouncementCard(currentAnnouncement: currentAnnouncement);
-                  }
+                  final Announcement currentAnnouncement = _homePage.announcements[index];
+                  return BuildAnnouncementCard(currentAnnouncement: currentAnnouncement);
                 },
               ),
             ),

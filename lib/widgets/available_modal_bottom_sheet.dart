@@ -5,11 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/domain/entities/available.dart';
 import 'package:wassiet/app/models/create_announcement_fourth_step_vm.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/app/presentation/pages.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/widgets/add_announcement_picture.dart';
-import 'package:wassiet/widgets/custom_checkbox.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
 class AvailableModalBottomSheet extends StatefulWidget {

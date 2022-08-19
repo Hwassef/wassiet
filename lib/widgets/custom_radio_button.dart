@@ -24,7 +24,7 @@ enum CheckStatus {
 
 class _CustomRadioBtnState extends State<CustomRadioBtn> {
   late bool _checked;
-  late CheckStatus _status;
+  late CheckStatus status;
 
   final RadioButton radioButtonBase = RadioButton();
   @override
@@ -36,9 +36,9 @@ class _CustomRadioBtnState extends State<CustomRadioBtn> {
   void _init() {
     _checked = widget.value;
     if (_checked) {
-      _status = CheckStatus.checked;
+      status = CheckStatus.checked;
     } else {
-      _status = CheckStatus.unchecked;
+      status = CheckStatus.unchecked;
     }
   }
 

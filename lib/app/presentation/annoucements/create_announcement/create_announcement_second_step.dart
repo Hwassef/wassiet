@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/models/create_announcement_second_step_vm.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/widgets/add_announcement_picture.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
 class CreateAnnouncementSecondStep extends StatelessWidget {

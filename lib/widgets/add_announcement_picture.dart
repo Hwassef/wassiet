@@ -60,7 +60,6 @@ class _AddAnnouncementPicture extends State<AddAnnouncementPicture> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(createAnnouncementFirstStepVM.images.length);
         changePictyreModalBottomSheet(context: context);
       },
       child: Stack(

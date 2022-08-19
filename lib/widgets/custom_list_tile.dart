@@ -31,12 +31,11 @@ class CustomListTile extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
-            trailing: Padding(
-              padding: const EdgeInsets.only(right: AppSizes.size24),
-              child: Image.asset(
-                AppImages.arrowIcon,
-                width: AppSizes.size12,
-                height: AppSizes.size18,
+            trailing: const Padding(
+              padding: EdgeInsets.only(right: AppSizes.size24),
+              child: Icon(
+                Icons.arrow_right_rounded,
+                size: AppSizes.size32,
               ),
             ),
           ),

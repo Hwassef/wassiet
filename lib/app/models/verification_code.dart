@@ -73,9 +73,7 @@ abstract class VerificationCodeBase with Store {
   void verifyPhoneNumber({required String phoneNumber, required String verificationCode}) {
     auth.verifyPhoneNumber(
         codeAutoRetrievalTimeout: (String verificationId) {},
-        verificationFailed: (FirebaseAuthException e) {
-          print(e.message);
-        },
+        verificationFailed: (FirebaseAuthException e) {},
         verificationCompleted: (PhoneAuthCredential phoneAuthCredential) {},
         phoneNumber: phoneNumber,
         codeSent: (String verificationId, int? resendToken) async {

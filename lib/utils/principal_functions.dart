@@ -70,7 +70,7 @@ enum CurrentStep { first, second, third, fourth, fith }
 Widget currentFormForCurrentIndex({required int currentStep}) {
   switch (currentStep) {
     case 0:
-      return CreateAnnouncementFirstStep();
+      return const CreateAnnouncementFirstStep();
     case 1:
       return CreateAnnouncementSecondStep();
     case 2:

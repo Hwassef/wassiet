@@ -14,7 +14,7 @@ class _AllChatsState extends State<AllChats> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
-          children: [],
+          children: const [],
         ),
       ),
     );

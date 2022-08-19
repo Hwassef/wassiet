@@ -13,9 +13,9 @@ class _GoogleAutoCompleteFieldState extends State<GoogleAutoCompleteField> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const [
         PlacesAutocompleteField(
-          apiKey: AppConstants.GOOGLE_MAP_API_KEY,
+          apiKey: AppConstants.googleMapApiKey,
         ),
       ],
     );

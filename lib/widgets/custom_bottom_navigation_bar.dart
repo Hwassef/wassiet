@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:wassiet/config/routes/app_router.gr.dart';
-import 'package:wassiet/widgets/custom_stepper.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);

@@ -82,7 +82,7 @@ abstract class EditMyInformationsBase with Store {
   @computed
   bool get isFormValid => isFullNameValid && isPhoneNumberValid && isEmailValid;
   @action
-  void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(HomePageRoute());
+  void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
   @action
   Future<void> getAllCountries() async {
     final response = await rootBundle.loadString('assets/fake_data/countries.json');

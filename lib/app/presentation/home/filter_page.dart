@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/generated/l10n.dart';
-import 'package:wassiet/widgets/drop_down_button.dart';
 import 'package:wassiet/widgets/input_text_field.dart';
 
 class FilterPage extends StatefulWidget {
-  FilterPage({Key? key}) : super(key: key);
+  const FilterPage({Key? key}) : super(key: key);
 
   @override
   State<FilterPage> createState() => _FilterPageState();

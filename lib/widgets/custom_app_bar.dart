@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
         Padding(
           padding: AppPaddings.rightLargePadding,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () => context.pushRoute(const SettingsPageRoute()),
             child: Image.asset(
               AppImages.settingsIcon,
               width: AppSizes.size30,

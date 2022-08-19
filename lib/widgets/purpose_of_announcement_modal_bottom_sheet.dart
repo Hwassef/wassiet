@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wassiet/app/domain/entities/purpose_of_announcement.dart';
 import 'package:wassiet/app/models/create_announcement_second_step_vm.dart';
 import 'package:wassiet/app/models/radio_button.dart';
-import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_second_step.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
