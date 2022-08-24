@@ -142,11 +142,9 @@ class AppRouter extends _i4.RootStackRouter {
           barrierDismissible: false);
     },
     CreateAnnouncementFirstStepRoute.name: (routeData) {
-      final args = routeData.argsAs<CreateAnnouncementFirstStepRouteArgs>(
-          orElse: () => const CreateAnnouncementFirstStepRouteArgs());
       return _i4.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i1.CreateAnnouncementFirstStep(key: args.key),
+          child: const _i1.CreateAnnouncementFirstStep(),
           transitionsBuilder: _i4.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -197,11 +195,9 @@ class AppRouter extends _i4.RootStackRouter {
           barrierDismissible: false);
     },
     FilterPageRoute.name: (routeData) {
-      final args = routeData.argsAs<FilterPageRouteArgs>(
-          orElse: () => const FilterPageRouteArgs());
       return _i4.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i1.FilterPage(key: args.key),
+          child: const _i1.FilterPage(),
           transitionsBuilder: _i4.TransitionsBuilders.slideTop,
           durationInMilliseconds: 400,
           opaque: true,
@@ -433,25 +429,12 @@ class CustomStepperRouteArgs {
 
 /// generated route for
 /// [_i1.CreateAnnouncementFirstStep]
-class CreateAnnouncementFirstStepRoute
-    extends _i4.PageRouteInfo<CreateAnnouncementFirstStepRouteArgs> {
-  CreateAnnouncementFirstStepRoute({_i5.Key? key})
+class CreateAnnouncementFirstStepRoute extends _i4.PageRouteInfo<void> {
+  const CreateAnnouncementFirstStepRoute()
       : super(CreateAnnouncementFirstStepRoute.name,
-            path: '/createAnnouncementFirstStep',
-            args: CreateAnnouncementFirstStepRouteArgs(key: key));
+            path: '/createAnnouncementFirstStep');
 
   static const String name = 'CreateAnnouncementFirstStepRoute';
-}
-
-class CreateAnnouncementFirstStepRouteArgs {
-  const CreateAnnouncementFirstStepRouteArgs({this.key});
-
-  final _i5.Key? key;
-
-  @override
-  String toString() {
-    return 'CreateAnnouncementFirstStepRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for
@@ -548,23 +531,10 @@ class CreateAnnouncementFithStepRouteArgs {
 
 /// generated route for
 /// [_i1.FilterPage]
-class FilterPageRoute extends _i4.PageRouteInfo<FilterPageRouteArgs> {
-  FilterPageRoute({_i5.Key? key})
-      : super(FilterPageRoute.name,
-            path: '/filterPage', args: FilterPageRouteArgs(key: key));
+class FilterPageRoute extends _i4.PageRouteInfo<void> {
+  const FilterPageRoute() : super(FilterPageRoute.name, path: '/filterPage');
 
   static const String name = 'FilterPageRoute';
-}
-
-class FilterPageRouteArgs {
-  const FilterPageRouteArgs({this.key});
-
-  final _i5.Key? key;
-
-  @override
-  String toString() {
-    return 'FilterPageRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

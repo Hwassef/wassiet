@@ -1,4 +1,4 @@
-import 'package:wassiet/app/domain/entities/region.dart';
+import 'package:wassiet/app/features/get_all_regions/domain/entities/region.dart';
 
 class CountriesRegion {
   final String countryName;
