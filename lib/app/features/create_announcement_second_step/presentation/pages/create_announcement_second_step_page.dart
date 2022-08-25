@@ -44,7 +44,7 @@ class CreateAnnouncementSecondStepPage extends StatelessWidget {
   final FocusNode elevatorsNumberFocusNode = FocusNode();
   final TextEditingController ageOfAppartmentTextEditingController = TextEditingController();
   final FocusNode ageOfAppartmentFocusNode = FocusNode();
-  final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
+  // final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -52,31 +52,33 @@ class CreateAnnouncementSecondStepPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Observer(
-            builder: (_) => CustomDropDownButton(
-              content: createAnnouncementSecondStepVM.purposeOfAnnouncementName ?? S.current.purposeOfAnouncement,
-              label: S.current.purposeOfAnouncement,
-              onTap: () => customModalBottomSheet(
-                context: context,
-                modalBottomSheet: PurposeOfAnnouncementModalBottomSheet(
-                  callBack: createAnnouncementSecondStepVM.selectedPurposeOfAnnouncementName,
-                ),
-              ),
-            ),
-          ),
+          // Observer(
+          //   builder: (_) => CustomDropDownButton(
+          //     content: createAnnouncementSecondStepVM.purposeOfAnnouncementName ?? S.current.purposeOfAnouncement,
+          //     label: S.current.purposeOfAnouncement,
+          //     onTap: () => customModalBottomSheet(
+          //       context: context,
+          //       modalBottomSheet: PurposeOfAnnouncementModalBottomSheet(
+          //         callBack: createAnnouncementSecondStepVM.selectedPurposeOfAnnouncementName,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+
           12.h.verticalSpace,
-          Observer(
-            builder: (_) => CustomDropDownButton(
-              content: createAnnouncementSecondStepVM.propertyTypeName ?? S.current.propertyType,
-              label: S.current.propertyType,
-              onTap: () => customModalBottomSheet(
-                context: context,
-                modalBottomSheet: PropertyTypesModalBottomSheet(
-                  callBack: createAnnouncementSecondStepVM.selectedPropertyTypeName,
-                ),
-              ),
-            ),
-          ),
+          // Observer(
+          //   builder: (_) => CustomDropDownButton(
+          //     content: createAnnouncementSecondStepVM.propertyTypeName ?? S.current.propertyType,
+          //     label: S.current.propertyType,
+          //     onTap: () => customModalBottomSheet(
+          //       context: context,
+          //       modalBottomSheet: PropertyTypesModalBottomSheet(
+          //         callBack: createAnnouncementSecondStepVM.selectedPropertyTypeName,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+
           const RequriedField(),
           InputTextField(
             controller: spaceInSquareMeter,
@@ -104,20 +106,20 @@ class CreateAnnouncementSecondStepPage extends StatelessWidget {
                 ),
               ),
               8.w.horizontalSpace,
-              Expanded(
-                child: Observer(
-                  builder: (_) => CustomDropDownButton(
-                    content: createAnnouncementSecondStepVM.currencyName ?? S.current.price,
-                    label: S.current.price,
-                    onTap: () => customModalBottomSheet(
-                      context: context,
-                      modalBottomSheet: CurrenciesModalBottomSheet(
-                        callBack: createAnnouncementSecondStepVM.selectedCurrencyName,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Expanded(
+              //   child: Observer(
+              //     builder: (_) => CustomDropDownButton(
+              //       content: createAnnouncementSecondStepVM.currencyName ?? S.current.price,
+              //       label: S.current.price,
+              //       onTap: () => customModalBottomSheet(
+              //         context: context,
+              //         modalBottomSheet: CurrenciesModalBottomSheet(
+              //           callBack: createAnnouncementSecondStepVM.selectedCurrencyName,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           const RequriedField(),

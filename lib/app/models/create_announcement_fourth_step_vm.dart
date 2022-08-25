@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
-import 'package:wassiet/app/domain/entities/available.dart';
+import 'package:wassiet/app/features/create_announcement_fourth_step/domain/entities/available_item.dart';
 import 'package:wassiet/utils/extensions.dart';
 part 'create_announcement_fourth_step_vm.g.dart';
 
@@ -10,14 +10,14 @@ class CreateAnnouncementFourthStepVM = CreateAnnouncementFourthStep with _$Creat
 
 abstract class CreateAnnouncementFourthStep with Store {
   @observable
-  List<Available> availableList = <Available>[];
+  List<AvailableItem> availableList = <AvailableItem>[];
   @observable
-  List<Available> selectedAvailible = <Available>[];
+  List<AvailableItem> selectedAvailible = <AvailableItem>[];
   @action
   Future<void> getAllAvailables() async {
     final response = await rootBundle.loadString('assets/fake_data/available.json');
     final json = jsonDecode(response) as List;
-    availableList = json.map((object) => Available.fromJson(object)).toList();
+    // availableList = json.map((object) => AvailableItemModel.fromJson(object)).toList();
   }
 
   @action

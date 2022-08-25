@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/features/get_all_categories/domain/entities/category.dart';
+import 'package:wassiet/app/features/home_page/domain/entities/category.dart';
 import 'package:wassiet/app/models/create_announcement_first_step_vm.dart';
 import 'package:wassiet/app/models/home_page.dart';
 import 'package:wassiet/app/presentation/home/build_announcement_card.dart';

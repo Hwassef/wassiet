@@ -1,8 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:wassiet/app/presentation/app_settings/change_app_language_page.dart';
-import 'package:wassiet/config/config.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
 
@@ -33,30 +29,30 @@ class SettingsPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSizes.size24),
-              child: Wrap(
-                runSpacing: 4,
-                children: [
-                  CustomListTile(
-                    onTap: () => context.pushRoute(const ChangeAppLanguagePageRoute()),
-                    content: S.of(context).changeLanguage,
-                  ),
-                  CustomListTile(
-                    onTap: () => context.pushRoute(ContactUsPageRoute()),
-                    content: S.of(context).contactUs,
-                  ),
-                  CustomListTile(
-                    onTap: () => context.pushRoute(const UsingTermsPageRoute()),
-                    content: S.of(context).termsOfService,
-                  ),
-                  CustomListTile(
-                    onTap: () => context.pushRoute(const AboutAppPageRoute()),
-                    content: S.of(context).aboutApp,
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: AppSizes.size24),
+            //   child: Wrap(
+            //     runSpacing: 4,
+            //     children: [
+            //       CustomListTile(
+            //         onTap: () => context.pushRoute(const ChangeAppLanguagePageRoute()),
+            //         content: S.of(context).changeLanguage,
+            //       ),
+            //       CustomListTile(
+            //         onTap: () => context.pushRoute(ContactUsPageRoute()),
+            //         content: S.of(context).contactUs,
+            //       ),
+            //       CustomListTile(
+            //         onTap: () => context.pushRoute(const UsingTermsPageRoute()),
+            //         content: S.of(context).termsOfService,
+            //       ),
+            //       CustomListTile(
+            //         onTap: () => context.pushRoute(const AboutAppPageRoute()),
+            //         content: S.of(context).aboutApp,
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

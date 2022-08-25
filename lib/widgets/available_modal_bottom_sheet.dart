@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/domain/entities/available.dart';
+import 'package:wassiet/app/features/create_announcement_fourth_step/domain/entities/available_item.dart';
 import 'package:wassiet/app/models/create_announcement_fourth_step_vm.dart';
 import 'package:wassiet/app/models/radio_button.dart';
 import 'package:wassiet/config/config.dart';
@@ -77,7 +77,7 @@ class _AvailableModalBottomSheetState extends State<AvailableModalBottomSheet> {
                 shrinkWrap: true,
                 itemCount: createAnnouncementFourthStepVM.selectedAvailible.length,
                 itemBuilder: (BuildContext context, index) {
-                  final Available currentSelectedItem = createAnnouncementFourthStepVM.selectedAvailible[index];
+                  final AvailableItem currentSelectedItem = createAnnouncementFourthStepVM.selectedAvailible[index];
                   return SelectedAvailableChip(
                     label: currentSelectedItem.name,
                     onDeleted: () {
@@ -101,7 +101,7 @@ class _AvailableModalBottomSheetState extends State<AvailableModalBottomSheet> {
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemBuilder: ((BuildContext context, index) {
-                            final Available currentCountry = createAnnouncementFourthStepVM.availableList[index];
+                            final AvailableItem currentCountry = createAnnouncementFourthStepVM.availableList[index];
                             return Card(
                               elevation: 0.0,
                               child: Padding(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
       ),
       BottomNavigationBarItem(
         icon: GestureDetector(
-          onTap: () => context.pushRoute(CustomStepperRoute()),
+          // onTap: () => context.pushRoute(CustomStepperRoute()),
           child: Container(
             width: 63,
             height: 63,

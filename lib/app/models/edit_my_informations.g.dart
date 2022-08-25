@@ -16,13 +16,6 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
       (_$isFormValidComputed ??= Computed<bool>(() => super.isFormValid,
               name: 'EditMyInformationsBase.isFormValid'))
           .value;
-  Computed<bool>? _$isCountryListEmptyComputed;
-
-  @override
-  bool get isCountryListEmpty => (_$isCountryListEmptyComputed ??=
-          Computed<bool>(() => super.isCountryListEmpty,
-              name: 'EditMyInformationsBase.isCountryListEmpty'))
-      .value;
   Computed<bool>? _$isSearchWordNullOrEmptyComputed;
 
   @override
@@ -143,22 +136,6 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
     });
   }
 
-  late final _$countriesAtom =
-      Atom(name: 'EditMyInformationsBase.countries', context: context);
-
-  @override
-  List<Country> get countries {
-    _$countriesAtom.reportRead();
-    return super.countries;
-  }
-
-  @override
-  set countries(List<Country> value) {
-    _$countriesAtom.reportWrite(value, super.countries, () {
-      super.countries = value;
-    });
-  }
-
   late final _$searchWordAtom =
       Atom(name: 'EditMyInformationsBase.searchWord', context: context);
 
@@ -239,17 +216,6 @@ mixin _$EditMyInformations on EditMyInformationsBase, Store {
   }
 
   @override
-  void handleEditPersonnalInformationOnClick(BuildContext context) {
-    final _$actionInfo = _$EditMyInformationsBaseActionController.startAction(
-        name: 'EditMyInformationsBase.handleEditPersonnalInformationOnClick');
-    try {
-      return super.handleEditPersonnalInformationOnClick(context);
-    } finally {
-      _$EditMyInformationsBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   String toString() {
     return '''
 imageFile: ${imageFile},
@@ -259,10 +225,8 @@ phoneNumber: ${phoneNumber},
 isFullNameValid: ${isFullNameValid},
 isEmailValid: ${isEmailValid},
 isPhoneNumberValid: ${isPhoneNumberValid},
-countries: ${countries},
 searchWord: ${searchWord},
 isFormValid: ${isFormValid},
-isCountryListEmpty: ${isCountryListEmpty},
 isSearchWordNullOrEmpty: ${isSearchWordNullOrEmpty}
     ''';
   }

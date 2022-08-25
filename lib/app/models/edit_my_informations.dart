@@ -5,8 +5,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
-import 'package:wassiet/app/domain/entities/country.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 part 'edit_my_informations.g.dart';
 
 class EditMyInformations = EditMyInformationsBase with _$EditMyInformations;
@@ -34,7 +32,7 @@ abstract class EditMyInformationsBase with Store {
   @observable
   bool isPhoneNumberValid = false;
   @observable
-  List<Country> countries = <Country>[];
+  // List<Country> countries = <Country>[];
   @observable
   String? searchWord;
   @action
@@ -81,29 +79,29 @@ abstract class EditMyInformationsBase with Store {
 
   @computed
   bool get isFormValid => isFullNameValid && isPhoneNumberValid && isEmailValid;
-  @action
-  void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
+  // @action
+  // void handleEditPersonnalInformationOnClick(BuildContext context) => context.navigateTo(const HomePageRoute());
   @action
   Future<void> getAllCountries() async {
     final response = await rootBundle.loadString('assets/fake_data/countries.json');
     final json = jsonDecode(response) as List;
-    countries = json.map((object) => Country.fromJson(object)).toList();
+    // countries = json.map((object) => Country.fromJson(object)).toList();
   }
 
-  @computed
-  bool get isCountryListEmpty => countries.isEmpty;
+  // @computed
+  // bool get isCountryListEmpty => countries.isEmpty;
   @computed
   bool get isSearchWordNullOrEmpty => (searchWord != null || (searchWord?.isNotEmpty ?? false));
 
   @action
   Future<void> searchForCountry() async {
-    List<Country> searchResult = <Country>[];
-    if (searchWord != null && (searchWord?.isNotEmpty ?? false)) {
-      await getAllCountries();
-      searchResult = countries.where((country) => country.name.toLowerCase().contains(searchWord!)).toList();
-      countries = searchResult;
-    } else {
-      getAllCountries();
-    }
+    // List<Country> searchResult = <Country>[];
+    // if (searchWord != null && (searchWord?.isNotEmpty ?? false)) {
+    //   await getAllCountries();
+    //   searchResult = countries.where((country) => country.name.toLowerCase().contains(searchWord!)).toList();
+    //   countries = searchResult;
+    // } else {
+    //   getAllCountries();
+    // }
   }
 }

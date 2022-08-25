@@ -1,4 +1,4 @@
-import 'package:wassiet/app/features/get_all_categories/domain/entities/category.dart';
+import 'package:wassiet/app/features/home_page/domain/entities/category.dart';
 
 class CategoryModel extends Category {
   const CategoryModel({required super.categoryName});

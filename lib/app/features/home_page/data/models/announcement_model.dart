@@ -1,4 +1,4 @@
-import 'package:wassiet/app/features/get_all_announcements/domain/entities/announcement.dart';
+import 'package:wassiet/app/features/home_page/domain/entities/announcement.dart';
 
 class AnnouncementModel extends Announcement {
   const AnnouncementModel({

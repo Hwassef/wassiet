@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/domain/entities/announcement.dart';
+import 'package:wassiet/app/features/home_page/domain/entities/announcement.dart';
 import 'package:wassiet/config/config.dart';
 
 class BuildAnnouncementCard extends StatelessWidget {

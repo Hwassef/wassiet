@@ -2,8 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/domain/entities/currency.dart';
-import 'package:wassiet/app/features/create_announcement_second_step/presentation/mobx/create_announcement_second_step_store.dart';
 import 'package:wassiet/app/models/radio_button.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
@@ -25,11 +23,11 @@ class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet>
   final TextEditingController searchCurrencyTextEditingController = TextEditingController();
   final FocusNode searchCurrencyFocusNode = FocusNode();
   final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
-  final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
+  // final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
   final RadioButton radioButtonBase = RadioButton();
   @override
   void initState() {
-    createAnnouncementSecondStepVM.getAllCurrencies();
+    // createAnnouncementSecondStepVM.getAllCurrencies();
     super.initState();
   }
 
@@ -74,88 +72,89 @@ class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet>
                 ),
               ),
             ),
-            Observer(
-              builder: (_) => createAnnouncementSecondStepVM.currencies.isNotEmpty
-                  ? Expanded(
-                      child: RawScrollbar(
-                        crossAxisMargin: 12,
-                        thumbColor: AppColors.inactiveGreyColorLight,
-                        scrollbarOrientation: ScrollbarOrientation.left,
-                        radius: AppConstants.normalRadius,
-                        child: ListView.builder(
-                          key: Key(createAnnouncementSecondStepVM.currencies.length.toString()),
-                          physics: const BouncingScrollPhysics(),
-                          itemCount: createAnnouncementSecondStepVM.currencies.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          itemBuilder: ((BuildContext context, index) {
-                            final Currency currentCountry = createAnnouncementSecondStepVM.currencies[index];
-                            return Card(
-                              elevation: 0.0,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                                child: Observer(
-                                  builder: (_) => GestureDetector(
-                                    onTap: () => radioButtonBase.changeCurrentSelectedItem(name: currentCountry.name),
-                                    child: ListTile(
-                                      leading: CircledFlag(
-                                        flag: getCountryFlag(
-                                          countryCode: currentCountry.code[0] + currentCountry.code[1],
-                                        ),
-                                        radius: 15,
-                                      ),
-                                      title: Text(
-                                        currentCountry.name,
-                                        style: Theme.of(context).textTheme.headline1,
-                                      ),
-                                      trailing: Container(
-                                        width: 32.0,
-                                        height: 32.0,
-                                        padding: EdgeInsets.all(
-                                            radioButtonBase.selectedItemName == currentCountry.name ? 8.5 : 4.5),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: radioButtonBase.selectedItemName == currentCountry.name
-                                              ? AppColors.darkCyanColor
-                                              : AppColors.inactiveGreyColorLight,
-                                        ),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10.0),
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),
-                      ),
-                    )
-                  : Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 70.0),
-                              child: Text(
-                                '',
-                                // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
+            // Observer(
+            //   builder: (_) => createAnnouncementSecondStepVM.currencies.isNotEmpty
+            //       ? Expanded(
+            //           child: RawScrollbar(
+            //             crossAxisMargin: 12,
+            //             thumbColor: AppColors.inactiveGreyColorLight,
+            //             scrollbarOrientation: ScrollbarOrientation.left,
+            //             radius: AppConstants.normalRadius,
+            //             child: ListView.builder(
+            //               key: Key(createAnnouncementSecondStepVM.currencies.length.toString()),
+            //               physics: const BouncingScrollPhysics(),
+            //               itemCount: createAnnouncementSecondStepVM.currencies.length,
+            //               shrinkWrap: true,
+            //               scrollDirection: Axis.vertical,
+            //               itemBuilder: ((BuildContext context, index) {
+            //                 final Currency currentCountry = createAnnouncementSecondStepVM.currencies[index];
+            //                 return Card(
+            //                   elevation: 0.0,
+            //                   child: Padding(
+            //                     padding: EdgeInsets.symmetric(horizontal: 8.w),
+            //                     child: Observer(
+            //                       builder: (_) => GestureDetector(
+            //                         onTap: () => radioButtonBase.changeCurrentSelectedItem(name: currentCountry.name),
+            //                         child: ListTile(
+            //                           leading: CircledFlag(
+            //                             flag: getCountryFlag(
+            //                               countryCode: currentCountry.code[0] + currentCountry.code[1],
+            //                             ),
+            //                             radius: 15,
+            //                           ),
+            //                           title: Text(
+            //                             currentCountry.name,
+            //                             style: Theme.of(context).textTheme.headline1,
+            //                           ),
+            //                           trailing: Container(
+            //                             width: 32.0,
+            //                             height: 32.0,
+            //                             padding: EdgeInsets.all(
+            //                                 radioButtonBase.selectedItemName == currentCountry.name ? 8.5 : 4.5),
+            //                             decoration: BoxDecoration(
+            //                               shape: BoxShape.circle,
+            //                               color: radioButtonBase.selectedItemName == currentCountry.name
+            //                                   ? AppColors.darkCyanColor
+            //                                   : AppColors.inactiveGreyColorLight,
+            //                             ),
+            //                             child: Container(
+            //                               decoration: BoxDecoration(
+            //                                 borderRadius: BorderRadius.circular(10.0),
+            //                                 color: Colors.white,
+            //                               ),
+            //                             ),
+            //                           ),
+            //                         ),
+            //                       ),
+            //                     ),
+            //                   ),
+            //                 );
+            //               }),
+            //             ),
+            //           ),
+            //         )
+            //       : Expanded(
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             crossAxisAlignment: CrossAxisAlignment.center,
+            //             children: [
+            //               Expanded(
+            //                 child: Padding(
+            //                   padding: const EdgeInsets.symmetric(horizontal: 70.0),
+            //                   child: Text(
+            //                     '',
+            //                     // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
 
-                                style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-            ),
+            //                     style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
+            //                     textAlign: TextAlign.center,
+            //                   ),
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            // ),
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 24.0),
               child: Container(

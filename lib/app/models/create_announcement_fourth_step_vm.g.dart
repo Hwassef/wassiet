@@ -13,13 +13,13 @@ mixin _$CreateAnnouncementFourthStepVM on CreateAnnouncementFourthStep, Store {
       name: 'CreateAnnouncementFourthStep.availableList', context: context);
 
   @override
-  List<Available> get availableList {
+  List<AvailableItem> get availableList {
     _$availableListAtom.reportRead();
     return super.availableList;
   }
 
   @override
-  set availableList(List<Available> value) {
+  set availableList(List<AvailableItem> value) {
     _$availableListAtom.reportWrite(value, super.availableList, () {
       super.availableList = value;
     });
@@ -29,13 +29,13 @@ mixin _$CreateAnnouncementFourthStepVM on CreateAnnouncementFourthStep, Store {
       name: 'CreateAnnouncementFourthStep.selectedAvailible', context: context);
 
   @override
-  List<Available> get selectedAvailible {
+  List<AvailableItem> get selectedAvailible {
     _$selectedAvailibleAtom.reportRead();
     return super.selectedAvailible;
   }
 
   @override
-  set selectedAvailible(List<Available> value) {
+  set selectedAvailible(List<AvailableItem> value) {
     _$selectedAvailibleAtom.reportWrite(value, super.selectedAvailible, () {
       super.selectedAvailible = value;
     });

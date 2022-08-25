@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 part 'login.g.dart';
 
 class Login = LoginBase with _$Login;
@@ -17,7 +15,7 @@ abstract class LoginBase with Store {
     if (isPhoneNumberValid) {
       verifyPhone();
       FocusScope.of(context).unfocus();
-      context.pushRoute(VerificationCodePageRoute(phoneNumber: phoneNumber ?? '_'));
+      // context.pushRoute(VerificationCodePageRoute(phoneNumber: phoneNumber ?? '_'));
     }
   }
 

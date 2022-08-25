@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wassiet/config/config.dart';
-import 'package:wassiet/config/routes/app_router.gr.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
         Padding(
           padding: AppPaddings.rightLargePadding,
           child: GestureDetector(
-            onTap: () => context.pushRoute(const SettingsPageRoute()),
+            // onTap: () => context.pushRoute(const SettingsPageRoute()),
             child: Image.asset(
               AppImages.settingsIcon,
               width: AppSizes.size30,
@@ -37,7 +36,7 @@ class CustomAppBar extends StatelessWidget {
             right: 32.0,
           ),
           child: GestureDetector(
-            onTap: () => context.pushRoute(const NotificationsPageRoute()),
+            // onTap: () => context.pushRoute(const NotificationsPageRoute()),
             child: Image.asset(
               AppImages.notificationsIcon,
               width: AppSizes.size24,

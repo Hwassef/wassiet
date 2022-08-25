@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_fith_step.dart';
 import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_fourth_step.dart';
-import 'package:wassiet/app/presentation/annoucements/create_announcement/create_announcement_second_step.dart';
+import 'package:wassiet/app/features/create_announcement_second_step/presentation/pages/create_announcement_second_step_page.dart';
 import 'package:wassiet/config/colors/app_colors.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/utils/enums.dart';
@@ -71,8 +71,8 @@ Widget currentFormForCurrentIndex({required int currentStep}) {
   switch (currentStep) {
     case 0:
       return const CreateAnnouncementFirstStep();
-    case 1:
-      return CreateAnnouncementSecondStep();
+    // case 1:
+    //   return CreateAnnouncementSecondStep();
     case 2:
       return CreateAnnouncementThirdStep();
     case 3:

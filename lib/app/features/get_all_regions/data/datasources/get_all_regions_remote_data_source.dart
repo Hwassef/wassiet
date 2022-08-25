@@ -12,7 +12,8 @@ class GetAllRegionsRemoteDataSourceImpl implements GetAllRegionsRemoteDataSource
   Future<List<Region>> getAllRegions() async {
     final response = await rootBundle.loadString('assets/fake_data/regions.json');
     final json = jsonDecode(response) as List;
-    List<CountriesRegion> regions = json.map((object) => CountriesRegion.fromJson(object)).toList();
-    return regions.where((CountriesRegion element) => element.countryName == countryName).first;
+    // List<CountriesRegion> regions = json.map((object) => CountriesRegion.fromJson(object)).toList();
+    // return regions.where((CountriesRegion element) => element.countryName == countryName).first;
+    return <Region>[];
   }
 }

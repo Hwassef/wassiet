@@ -1,4 +1,4 @@
-import 'package:wassiet/app/features/get_all_available_items/domain/entities/available_item.dart';
+import 'package:wassiet/app/features/create_announcement_fourth_step/domain/entities/available_item.dart';
 
 class AvaialableItemModel extends AvailableItem {
   AvaialableItemModel({required super.name, required super.isSelected});
