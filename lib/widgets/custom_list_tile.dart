@@ -12,6 +12,7 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
