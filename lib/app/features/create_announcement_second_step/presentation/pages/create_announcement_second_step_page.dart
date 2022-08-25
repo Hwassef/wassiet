@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/features/create_announcement_second_step/presentation/widgets/currencies_modal_bottom_sheet.dart';
-import 'package:wassiet/app/features/create_announcement_second_step/presentation/widgets/property_types_modal_bottom_sheet.dart';
-import 'package:wassiet/app/features/create_announcement_second_step/presentation/widgets/purpose_of_announcement_modal_bottom_sheet.dart';
-import 'package:wassiet/app/features/create_announcement_second_step/presentation/mobx/create_announcement_second_step_store.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/widgets.dart';
@@ -47,6 +42,7 @@ class CreateAnnouncementSecondStepPage extends StatelessWidget {
   // final CreateAnnouncementSecondStepVM createAnnouncementSecondStepVM = CreateAnnouncementSecondStepVM();
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Form(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,9 +124,9 @@ class CreateAnnouncementSecondStepPage extends StatelessWidget {
               Expanded(
                 child: Text(
                   S.current.priceWillBeCaluclatedAutomaticaly,
-                  style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: AppColors.cyanColor,
-                      ),
+                  style: theme.subtitle1?.copyWith(
+                    color: AppColors.cyanColor,
+                  ),
                 ),
               ),
             ],

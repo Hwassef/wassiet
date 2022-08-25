@@ -27,6 +27,7 @@ class _ChangeAppLanguagePageState extends State<ChangeAppLanguagePage> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -39,7 +40,7 @@ class _ChangeAppLanguagePageState extends State<ChangeAppLanguagePage> {
                   const CustomBackButton(),
                   Text(
                     S.of(context).changeLanguage,
-                    style: Theme.of(context).textTheme.headline1,
+                    style: theme.headline1,
                   ),
                 ],
               ),
@@ -78,7 +79,7 @@ class _ChangeAppLanguagePageState extends State<ChangeAppLanguagePage> {
                           CircledFlag(flag: getCountryFlag(countryCode: currentLanguage.languageCode), radius: 15.0),
                           Text(
                             currentLanguage.name,
-                            style: Theme.of(context).textTheme.bodyText1?.copyWith(letterSpacing: 0.4),
+                            style: theme.bodyText1?.copyWith(letterSpacing: 0.4),
                           )
                         ],
                       );

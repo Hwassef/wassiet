@@ -41,6 +41,7 @@ class CreateAnnouncementThirdStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Form(
       child: Column(
         children: <Widget>[
@@ -123,7 +124,7 @@ class CreateAnnouncementThirdStep extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     S.current.locateNow,
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 13),
+                    style: theme.subtitle2?.copyWith(fontSize: 13),
                   ),
                 ),
               ),

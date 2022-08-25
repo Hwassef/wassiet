@@ -8,6 +8,7 @@ class UsingTermsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -22,7 +23,7 @@ class UsingTermsPage extends StatelessWidget {
                     const CustomBackButton(),
                     Text(
                       S.current.termsOfService,
-                      style: Theme.of(context).textTheme.headline1,
+                      style: theme.headline1,
                     ),
                   ],
                 ),

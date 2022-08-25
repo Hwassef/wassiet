@@ -97,7 +97,7 @@ class _PurposeOfAnnouncementModalBottomSheetState extends State<PurposeOfAnnounc
             //                         child: ListTile(
             //                           title: Text(
             //                             currentCountry.name,
-            //                             style: Theme.of(context).textTheme.headline1,
+            //                             style: theme.headline1,
             //                           ),
             //                           trailing: Container(
             //                             width: 32.0,
@@ -138,7 +138,7 @@ class _PurposeOfAnnouncementModalBottomSheetState extends State<PurposeOfAnnounc
             //                     '',
             //                     // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
 
-            //                     style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
+            //                     style: theme.headline1?.copyWith(height: 1.4),
             //                     textAlign: TextAlign.center,
             //                   ),
             //                 ),

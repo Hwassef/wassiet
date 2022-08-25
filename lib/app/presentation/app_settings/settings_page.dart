@@ -7,6 +7,7 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -21,7 +22,7 @@ class SettingsPage extends StatelessWidget {
                       const CustomBackButton(),
                       Text(
                         S.of(context).settings,
-                        style: Theme.of(context).textTheme.headline1,
+                        style: theme.headline1,
                       ),
                     ],
                   ),

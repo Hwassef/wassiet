@@ -4,9 +4,9 @@ import 'package:wassiet/app/features/announcement_details/domain/entity/announce
 import 'package:wassiet/app/features/announcement_details/domain/repository/announcement_details_repository.dart';
 import 'package:wassiet/app/usecase.dart';
 
-class AnnouncementDetailsUseCase extends UseCase<AnnouncementDetails, NoParams> {
+class GetAnnouncementDetailsUseCase extends UseCase<AnnouncementDetails, NoParams> {
   final AnnouncementDetailsRepository repository;
-  AnnouncementDetailsUseCase({required this.repository});
+  GetAnnouncementDetailsUseCase({required this.repository});
 
   @override
   Future<Either<Failure, AnnouncementDetails>> call(NoParams params) async {

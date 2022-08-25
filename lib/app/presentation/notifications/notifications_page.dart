@@ -25,6 +25,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return KeyboardDismissOnTap(
       child: SafeArea(
         child: Scaffold(
@@ -41,7 +42,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     const CustomBackButton(),
                     Text(
                       S.current.notifications,
-                      style: Theme.of(context).textTheme.headline1,
+                      style: theme.headline1,
                     ),
                   ],
                 ),

@@ -11,6 +11,7 @@ class BuildAnnouncementCard extends StatelessWidget {
   final Announcement currentAnnouncement;
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24.0),
       child: Card(
@@ -64,7 +65,7 @@ class BuildAnnouncementCard extends StatelessWidget {
                             padding: EdgeInsets.zero,
                             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             label: Text(currentAnnouncement.announcementType),
-                            labelStyle: Theme.of(context).textTheme.button?.copyWith(fontSize: 12.sp),
+                            labelStyle: theme.button?.copyWith(fontSize: 12.sp),
                             labelPadding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 2.0),
                             backgroundColor: AppColors.cyanColor,
                           ),
@@ -83,14 +84,14 @@ class BuildAnnouncementCard extends StatelessWidget {
                           children: [
                             Text(
                               '(${currentAnnouncement.announcementNumberOfRates}) ',
-                              style: Theme.of(context).textTheme.headline2?.copyWith(fontFamily: 'Roboto'),
+                              style: theme.headline2?.copyWith(fontFamily: 'Roboto'),
                             ),
                             Text(
                               currentAnnouncement.announcementRate.toString(),
-                              style: Theme.of(context).textTheme.headline2?.copyWith(
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                              style: theme.headline2?.copyWith(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                             Image.asset(
                               AppImages.filledStarIcon,
@@ -107,7 +108,7 @@ class BuildAnnouncementCard extends StatelessWidget {
                     children: [
                       Text(
                         currentAnnouncement.announcementName,
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: theme.subtitle1,
                       ),
                     ],
                   ),
@@ -122,7 +123,7 @@ class BuildAnnouncementCard extends StatelessWidget {
                     children: [
                       Text(
                         currentAnnouncement.announcementDescription,
-                        style: Theme.of(context).textTheme.headline2,
+                        style: theme.headline2,
                       ),
                     ],
                   ),
@@ -131,9 +132,9 @@ class BuildAnnouncementCard extends StatelessWidget {
                     children: [
                       Text(
                         '${currentAnnouncement.announcementPrice} ${currentAnnouncement.announcementPriceUnit}',
-                        style: Theme.of(context).textTheme.headline1?.copyWith(
-                              fontSize: 16.sp,
-                            ),
+                        style: theme.headline1?.copyWith(
+                          fontSize: 16.sp,
+                        ),
                       ),
                     ],
                   ),

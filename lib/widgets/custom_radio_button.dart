@@ -44,6 +44,7 @@ class _CustomRadioBtnState extends State<CustomRadioBtn> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return GestureDetector(
       onTap: () => widget.onChanged(!_checked),
       child: Row(
@@ -66,7 +67,7 @@ class _CustomRadioBtnState extends State<CustomRadioBtn> {
           8.w.horizontalSpace,
           Text(
             widget.label,
-            style: Theme.of(context).textTheme.headline2,
+            style: theme.headline2,
           )
         ],
       ),

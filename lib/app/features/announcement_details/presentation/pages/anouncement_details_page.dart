@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wassiet/app/features/announcement_details/domain/repository/announcement_details_repository.dart';
+import 'package:wassiet/app/features/announcement_details/presentation/mobx/announcement_details_store.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/custom_back_button.dart';
@@ -14,6 +16,9 @@ class AnnouncementDetailsPage extends StatefulWidget {
 class _AnnouncementDetailsPageState extends State<AnnouncementDetailsPage> with SingleTickerProviderStateMixin {
   TabController? _controller;
   int selectedIndex = 0;
+  AnnouncementDetailsRepository? announcementDetailsRepository;
+  AnnouncementDetailsStore? announcementDetailsStore;
+
   @override
   void initState() {
     _controller = TabController(length: 2, vsync: this);

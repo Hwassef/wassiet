@@ -17,6 +17,7 @@ class CustomDropDownButton extends StatelessWidget {
   final RadioButton radioButton = RadioButton();
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Observer(
       builder: (_) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +26,7 @@ class CustomDropDownButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               label,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: theme.subtitle1,
             ),
           ),
           SizedBox(

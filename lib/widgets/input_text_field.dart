@@ -40,6 +40,7 @@ class InputTextField extends StatelessWidget {
   bool isRequired;
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -48,7 +49,7 @@ class InputTextField extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   isRequired ? '*${label!}' : label!,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: theme.subtitle1,
                 ),
               )
             : const SizedBox.shrink(),

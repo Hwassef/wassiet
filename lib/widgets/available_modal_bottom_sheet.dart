@@ -34,6 +34,7 @@ class _AvailableModalBottomSheetState extends State<AvailableModalBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Padding(
       padding: MediaQuery.of(context).viewInsets,
       child: SizedBox(
@@ -118,7 +119,7 @@ class _AvailableModalBottomSheetState extends State<AvailableModalBottomSheet> {
                                     child: ListTile(
                                       title: Text(
                                         currentCountry.name,
-                                        style: Theme.of(context).textTheme.headline1,
+                                        style: theme.headline1,
                                       ),
                                       trailing: Container(
                                         padding: EdgeInsets.symmetric(
@@ -168,7 +169,7 @@ class _AvailableModalBottomSheetState extends State<AvailableModalBottomSheet> {
                               child: Text(
                                 '',
                                 // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
-                                style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
+                                style: theme.headline1?.copyWith(height: 1.4),
                                 textAlign: TextAlign.center,
                               ),
                             ),

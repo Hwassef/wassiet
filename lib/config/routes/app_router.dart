@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:wassiet/app/presentation/custom_loader/custom_loader.dart';
-import 'package:wassiet/app/presentation/home/anouncement_details_page.dart';
+import 'package:wassiet/app/features/announcement_details/presentation/pages/anouncement_details_page.dart';
 import 'package:wassiet/app/presentation/pages.dart';
 import 'package:wassiet/widgets/custom_stepper.dart';
 

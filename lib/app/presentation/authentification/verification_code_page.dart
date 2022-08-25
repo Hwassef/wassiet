@@ -26,6 +26,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return KeyboardDismissOnTap(
       child: Scaffold(
         body: SafeArea(
@@ -46,7 +47,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         children: [
                           Text(
                             S.current.yourPhoneNumber,
-                            style: Theme.of(context).textTheme.headline1,
+                            style: theme.headline1,
                           ),
                           IconButton(
                             onPressed: () => context.popRoute(),
@@ -60,12 +61,12 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                       52.h.verticalSpace,
                       Text(
                         S.current.confirmationCodeHasBeenSentToYourPhoneNumber,
-                        style: Theme.of(context).textTheme.headline2,
+                        style: theme.headline2,
                       ),
                       20.h.verticalSpace,
                       Text(
                         widget.phoneNumber,
-                        style: Theme.of(context).textTheme.bodyText1?.copyWith(letterSpacing: 1),
+                        style: theme.bodyText1?.copyWith(letterSpacing: 1),
                       ),
                       20.h.verticalSpace,
                       Column(
@@ -73,9 +74,9 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         children: [
                           Text(
                             S.current.verificationCode,
-                            style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                  fontSize: 13,
-                                ),
+                            style: theme.subtitle2?.copyWith(
+                              fontSize: 13,
+                            ),
                           ),
                           Center(
                             child: Container(
@@ -91,7 +92,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                                   builder: (_) => Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                                     child: PinCodeTextField(
-                                      textStyle: Theme.of(context).textTheme.subtitle2,
+                                      textStyle: theme.subtitle2,
                                       appContext: context,
                                       length: 6,
                                       keyboardType: TextInputType.phone,
@@ -109,28 +110,28 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         builder: (_) => _verificationCodeBase.isResendVerificationCodeClicked
                             ? Text(
                                 '${S.current.sendVerificationCodeIn} ${_verificationCodeBase.countDownDuration.inSeconds}',
-                                style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                      color: AppColors.blackColor,
-                                      fontSize: 12,
-                                    ),
+                                style: theme.subtitle2?.copyWith(
+                                  color: AppColors.blackColor,
+                                  fontSize: 12,
+                                ),
                               )
                             : Row(
                                 children: [
                                   Text(
                                     S.current.youHaventRecieveVerificationCode,
-                                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                          color: AppColors.blackColor,
-                                          fontSize: 12,
-                                        ),
+                                    style: theme.subtitle2?.copyWith(
+                                      color: AppColors.blackColor,
+                                      fontSize: 12,
+                                    ),
                                   ),
                                   6.w.horizontalSpace,
                                   GestureDetector(
                                     onTap: () => _verificationCodeBase.handleSendAgainOnTap(),
                                     child: Text(
                                       S.current.sendAgain,
-                                      style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                            fontSize: 12,
-                                          ),
+                                      style: theme.subtitle2?.copyWith(
+                                        fontSize: 12,
+                                      ),
                                     ),
                                   )
                                 ],

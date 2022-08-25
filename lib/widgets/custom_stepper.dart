@@ -53,6 +53,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -65,7 +66,7 @@ class _CustomStepperState extends State<CustomStepper> {
                 children: [
                   Text(
                     S.current.addNewAnouncement,
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 18),
+                    style: theme.subtitle2?.copyWith(fontSize: 18),
                   ),
                   const Icon(
                     Icons.close,

@@ -35,6 +35,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return KeyboardDismissOnTap(
       child: SafeArea(
         child: Scaffold(
@@ -56,7 +57,7 @@ class _EditInformationsPageState extends State<EditInformationsPage> {
                             const CustomBackButton(),
                             Text(
                               S.current.editMyPersonnalInformations,
-                              style: Theme.of(context).textTheme.headline1,
+                              style: theme.headline1,
                             ),
                           ],
                         ),

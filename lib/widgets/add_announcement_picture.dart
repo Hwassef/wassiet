@@ -58,6 +58,7 @@ class _AddAnnouncementPicture extends State<AddAnnouncementPicture> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return GestureDetector(
       onTap: () {
         changePictyreModalBottomSheet(context: context);
@@ -112,6 +113,7 @@ class _AddAnnouncementPicture extends State<AddAnnouncementPicture> {
             ),
           ),
       builder: (BuildContext context) {
+        final TextTheme theme = Theme.of(context).textTheme;
         return FittedBox(
           fit: BoxFit.fill,
           child: Container(
@@ -152,7 +154,7 @@ class _AddAnnouncementPicture extends State<AddAnnouncementPicture> {
                       11.w.horizontalSpace,
                       Text(
                         S.current.phoneCamera,
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: theme.subtitle2,
                       )
                     ],
                   ),
@@ -174,7 +176,7 @@ class _AddAnnouncementPicture extends State<AddAnnouncementPicture> {
                       11.w.horizontalSpace,
                       Text(
                         S.current.gallery,
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: theme.subtitle2,
                       )
                     ],
                   ),

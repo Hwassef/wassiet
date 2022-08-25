@@ -28,6 +28,7 @@ class _FilterModalBottomSheetState extends State<FilterModalBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return FittedBox(
       fit: BoxFit.fill,
       child: Container(
@@ -50,9 +51,9 @@ class _FilterModalBottomSheetState extends State<FilterModalBottomSheet> {
               ),
               Text(
                 S.current.filterBy,
-                style: Theme.of(context).textTheme.headline1?.copyWith(
-                      fontSize: 16.sp,
-                    ),
+                style: theme.headline1?.copyWith(
+                  fontSize: 16.sp,
+                ),
               ),
               8.h.verticalSpace,
               ListView.builder(
@@ -76,7 +77,7 @@ class _FilterModalBottomSheetState extends State<FilterModalBottomSheet> {
                           8.w.horizontalSpace,
                           Text(
                             currentFilterItem.filterByName,
-                            style: Theme.of(context).textTheme.headline2,
+                            style: theme.headline2,
                           ),
                         ],
                       ),
@@ -86,9 +87,9 @@ class _FilterModalBottomSheetState extends State<FilterModalBottomSheet> {
                 padding: const EdgeInsets.only(top: 16, bottom: 26),
                 child: Text(
                   'Order By',
-                  style: Theme.of(context).textTheme.headline1?.copyWith(
-                        fontSize: 16.sp,
-                      ),
+                  style: theme.headline1?.copyWith(
+                    fontSize: 16.sp,
+                  ),
                 ),
               ),
               ListView.builder(
@@ -113,7 +114,7 @@ class _FilterModalBottomSheetState extends State<FilterModalBottomSheet> {
                           8.w.horizontalSpace,
                           Text(
                             currentOrderByItem.name,
-                            style: Theme.of(context).textTheme.headline2,
+                            style: theme.headline2,
                           ),
                         ],
                       ),

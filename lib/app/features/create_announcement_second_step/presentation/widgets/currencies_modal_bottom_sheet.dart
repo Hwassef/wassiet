@@ -33,6 +33,7 @@ class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet>
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Padding(
       padding: MediaQuery.of(context).viewInsets,
       child: SizedBox(
@@ -104,7 +105,7 @@ class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet>
             //                           ),
             //                           title: Text(
             //                             currentCountry.name,
-            //                             style: Theme.of(context).textTheme.headline1,
+            //                             style: theme.headline1,
             //                           ),
             //                           trailing: Container(
             //                             width: 32.0,
@@ -145,7 +146,7 @@ class _CurrenciesModalBottomSheetState extends State<CurrenciesModalBottomSheet>
             //                     '',
             //                     // 'No result found correspending for ${editMyInformations.searchWord ?? ''}',
 
-            //                     style: Theme.of(context).textTheme.headline1?.copyWith(height: 1.4),
+            //                     style: theme.headline1?.copyWith(height: 1.4),
             //                     textAlign: TextAlign.center,
             //                   ),
             //                 ),

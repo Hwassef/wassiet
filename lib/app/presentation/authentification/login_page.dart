@@ -23,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormFieldState> _formKey = GlobalKey<FormFieldState>();
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return KeyboardDismissOnTap(
       child: Scaffold(
         body: SafeArea(
@@ -41,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           Text(
                             S.current.yourPhoneNumber,
-                            style: Theme.of(context).textTheme.headline1,
+                            style: theme.headline1,
                           ),
                           IconButton(
                             onPressed: () => context.popRoute(),
@@ -87,9 +88,9 @@ class _LoginPageState extends State<LoginPage> {
                           Expanded(
                             child: Text(
                               S.current.weUseYourPhoneNumberOnlyToLocateYourIdentityItWillNotBeShared,
-                              style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                                    height: 1.4,
-                                  ),
+                              style: theme.bodyText2?.copyWith(
+                                height: 1.4,
+                              ),
                             ),
                           ),
                         ],
@@ -106,27 +107,27 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             S.current.byClickingOnThisButtonYouAccept,
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                  color: AppColors.blackColor,
-                                  fontSize: 12,
-                                ),
+                            style: theme.subtitle2?.copyWith(
+                              color: AppColors.blackColor,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                         WidgetSpan(
                           child: Text(
                             ' ${S.current.ourOwn}',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                                  color: AppColors.blackColor,
-                                  fontSize: 12,
-                                ),
+                            style: theme.subtitle2?.copyWith(
+                              color: AppColors.blackColor,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                         WidgetSpan(
                           child: Text(
                             ' ${S.current.termsOfService}',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 12),
+                            style: theme.subtitle2?.copyWith(fontSize: 12),
                           ),
                         ),
                       ],

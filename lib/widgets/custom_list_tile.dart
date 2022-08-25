@@ -28,7 +28,7 @@ class CustomListTile extends StatelessWidget {
               padding: const EdgeInsets.only(left: AppSizes.size24),
               child: Text(
                 content,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: theme.bodyText1,
               ),
             ),
             trailing: const Padding(

@@ -19,6 +19,7 @@ class ContactUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 70.0),
@@ -30,7 +31,7 @@ class ContactUsPage extends StatelessWidget {
                 const CustomBackButton(),
                 Text(
                   S.of(context).contactUs,
-                  style: Theme.of(context).textTheme.headline1,
+                  style: theme.headline1,
                 ),
               ],
             ),
@@ -48,7 +49,7 @@ class ContactUsPage extends StatelessWidget {
                       children: [
                         Text(
                           S.current.viaSocialMedia,
-                          style: Theme.of(context).textTheme.subtitle2,
+                          style: theme.subtitle2,
                         ),
                       ],
                     ),
@@ -83,7 +84,7 @@ class ContactUsPage extends StatelessWidget {
                       children: [
                         Text(
                           S.current.viaEmail,
-                          style: Theme.of(context).textTheme.subtitle2,
+                          style: theme.subtitle2,
                         ),
                       ],
                     ),

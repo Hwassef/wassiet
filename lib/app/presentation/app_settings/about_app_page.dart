@@ -9,6 +9,7 @@ class AboutAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -22,7 +23,7 @@ class AboutAppPage extends StatelessWidget {
                   const CustomBackButton(),
                   Text(
                     S.current.aboutApp,
-                    style: Theme.of(context).textTheme.headline1,
+                    style: theme.headline1,
                   ),
                 ],
               ),
@@ -56,7 +57,7 @@ class AboutAppPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 30.0),
                 child: Text(
                   S.current.appNameInBothLanguages,
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 18),
+                  style: theme.subtitle2?.copyWith(fontSize: 18),
                 ),
               ),
             ],

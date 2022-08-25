@@ -108,6 +108,8 @@ class _AddPictureState extends State<AddPicture> {
             ),
           ),
       builder: (BuildContext context) {
+        final TextTheme theme = Theme.of(context).textTheme;
+
         return FittedBox(
           fit: BoxFit.fill,
           child: Container(
@@ -148,7 +150,7 @@ class _AddPictureState extends State<AddPicture> {
                       11.w.horizontalSpace,
                       Text(
                         S.current.phoneCamera,
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: theme.subtitle2,
                       )
                     ],
                   ),
@@ -170,7 +172,7 @@ class _AddPictureState extends State<AddPicture> {
                       11.w.horizontalSpace,
                       Text(
                         S.current.gallery,
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: theme.subtitle2,
                       )
                     ],
                   ),

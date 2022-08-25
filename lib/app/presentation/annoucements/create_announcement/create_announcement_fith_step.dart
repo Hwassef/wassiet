@@ -14,6 +14,7 @@ class CreateAnnouncementFithStep extends StatelessWidget {
   final CreateAnnouncementFithStepVM createAnnouncementFirstStepVM = CreateAnnouncementFithStepVM();
   @override
   Widget build(BuildContext context) {
+    final TextTheme theme = Theme.of(context).textTheme;
     return Wrap(
       children: [
         Row(
@@ -22,7 +23,7 @@ class CreateAnnouncementFithStep extends StatelessWidget {
             Expanded(
               child: Text(
                 S.current.addPropertyPictures,
-                style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 14),
+                style: theme.subtitle2?.copyWith(fontSize: 14),
               ),
             ),
           ],
