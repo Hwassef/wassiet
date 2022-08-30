@@ -6,7 +6,7 @@ import 'package:wassiet/app/usecase.dart';
 
 class CreateAnnouncementSecondStepUseCases extends UseCase<List<PurposeOfAnnouncement>, NoParams> {
   final CreateAnnouncementSecondStepRepository repository;
-  CreateAnnouncementSecondStepUseCases({required this.repository});
+  CreateAnnouncementSecondStepUseCases(this.repository);
   @override
   Future<Either<Failure, List<PurposeOfAnnouncement>>> call(NoParams params) async {
     return await repository.getAllPurposesOfAnnouncement();

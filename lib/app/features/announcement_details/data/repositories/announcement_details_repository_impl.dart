@@ -6,16 +6,16 @@ import 'package:wassiet/app/features/announcement_details/domain/entity/announce
 import 'package:wassiet/app/features/announcement_details/domain/repository/announcement_details_repository.dart';
 
 class AnnouncementDetailsRepositoryImpl implements AnnouncementDetailsRepository {
-  final AnnouncementDetailsRemoteDateSource remoteDateSource;
-  AnnouncementDetailsRepositoryImpl({required this.remoteDateSource});
+  final AnnouncementDetailsRemoteDataSource remoteDataSource;
+  AnnouncementDetailsRepositoryImpl(this.remoteDataSource);
 
   @override
   Future<Either<Failure, AnnouncementDetails>> getAnnouncementDetails() async {
-    return Right(await remoteDateSource.getAnnouncemnetDetails());
+    return Right(await remoteDataSource.getAnnouncemnetDetails());
   }
 
   @override
   Future<Either<Failure, AnnouncementRatingAndComments>> getAnnouncementRatingAndComments() async {
-    return Right(await remoteDateSource.getAnnouncementRatingAndComments());
+    return Right(await remoteDataSource.getAnnouncementRatingAndComments());
   }
 }

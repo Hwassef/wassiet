@@ -8,7 +8,7 @@ import 'package:wassiet/app/features/home_page/domain/repositories/home_page_rep
 
 class HomePageRepositoryImpl implements HomePageRepository {
   final HomePageRemoteDataSource remoteDataSource;
-  HomePageRepositoryImpl({required this.remoteDataSource});
+  HomePageRepositoryImpl(this.remoteDataSource);
   @override
   Future<Either<Failure, List<Announcement>>> getAllAnnouncements() async {
     return Right(await remoteDataSource.getAllAnnouncements());

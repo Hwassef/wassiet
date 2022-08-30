@@ -6,7 +6,7 @@ import 'package:wassiet/app/usecase.dart';
 
 class CreateAnnouncementFourthStepUseCases extends UseCase<List<AvailableItem>, NoParams> {
   final CreateAnnouncementFourthStepRepository repository;
-  CreateAnnouncementFourthStepUseCases({required this.repository});
+  CreateAnnouncementFourthStepUseCases(this.repository);
   @override
   Future<Either<Failure, List<AvailableItem>>> call(NoParams params) async {
     return await repository.getAllAvailableItems();

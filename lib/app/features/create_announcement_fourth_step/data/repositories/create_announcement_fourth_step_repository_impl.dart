@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 
 class CreateAnnouncementFourthStepRepositoryImpl implements CreateAnnouncementFourthStepRepository {
   final CreateAnnouncementFourthStepRemoteDataSource remoteDataSource;
-  CreateAnnouncementFourthStepRepositoryImpl({required this.remoteDataSource});
+  CreateAnnouncementFourthStepRepositoryImpl(this.remoteDataSource);
 
   @override
   Future<Either<Failure, List<AvailableItem>>> getAllAvailableItems() async {

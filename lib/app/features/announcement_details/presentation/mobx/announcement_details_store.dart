@@ -1,23 +1,21 @@
 import 'package:mobx/mobx.dart';
 import 'package:wassiet/app/features/announcement_details/domain/entity/announcement_details.dart';
 import 'package:wassiet/app/features/announcement_details/domain/repository/announcement_details_repository.dart';
+import 'package:wassiet/app/features/announcement_details/domain/usecase/get_announcement_details_usecase.dart';
+import 'package:wassiet/app/usecase.dart';
 
-part 'announcement_detials_store.g.dart';
+part 'announcement_details_store.g.dart';
 
 class AnnouncementDetailsStore extends _AnnouncementDetailsStore with _$AnnouncementDetailsStore {
-  AnnouncementDetailsStore(AnnouncementDetailsRepository announcementDetailsRepository)
-      : super(announcementDetailsRepository);
+  AnnouncementDetailsStore(GetAnnouncementDetailsUseCase getAnnouncementDetailsUseCase)
+      : super(getAnnouncementDetailsUseCase);
 }
 
 abstract class _AnnouncementDetailsStore with Store {
-  final AnnouncementDetailsRepository announcementDetailsRepository;
-  _AnnouncementDetailsStore(this.announcementDetailsRepository);
+  final GetAnnouncementDetailsUseCase getAnnouncementDetailsUseCase;
+  _AnnouncementDetailsStore(this.getAnnouncementDetailsUseCase);
   @observable
   AnnouncementDetails? announcementDetails;
   @action
-  void getAnnouncementDetails() {
-    announcementDetailsRepository.getAnnouncementDetails().then(
-          (value) => announcementDetails = value.fold((l) => null, (r) => announcementDetails = r),
-        );
-  }
+  void getAnnouncementDetails() {}
 }

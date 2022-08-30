@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wassiet/app/features/announcement_details/domain/repository/announcement_details_repository.dart';
+import 'package:get_it/get_it.dart';
 import 'package:wassiet/app/features/announcement_details/presentation/mobx/announcement_details_store.dart';
+import 'package:wassiet/app/features/announcement_details/presentation/widgets/announcement_details_tab_bar_content.dart';
+import 'package:wassiet/app/features/announcement_details/presentation/widgets/announcement_rating_and_comments_tab_bar_content.dart';
 import 'package:wassiet/config/config.dart';
 import 'package:wassiet/generated/l10n.dart';
 import 'package:wassiet/widgets/custom_back_button.dart';
@@ -16,9 +19,7 @@ class AnnouncementDetailsPage extends StatefulWidget {
 class _AnnouncementDetailsPageState extends State<AnnouncementDetailsPage> with SingleTickerProviderStateMixin {
   TabController? _controller;
   int selectedIndex = 0;
-  AnnouncementDetailsRepository? announcementDetailsRepository;
-  AnnouncementDetailsStore? announcementDetailsStore;
-
+  final AnnouncementDetailsStore announcementDetailsStore = GetIt.I<AnnouncementDetailsStore>();
   @override
   void initState() {
     _controller = TabController(length: 2, vsync: this);
@@ -64,8 +65,7 @@ class _AnnouncementDetailsPageState extends State<AnnouncementDetailsPage> with 
                 ],
               ),
             ),
-            SizedBox(
-              height: 220,
+            Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.zero,
                 physics: const PageScrollPhysics(),
@@ -105,26 +105,12 @@ class _AnnouncementDetailsPageState extends State<AnnouncementDetailsPage> with 
                 ],
               ),
             ),
-            SizedBox(
-              height: 80.0,
+            Expanded(
               child: TabBarView(
                 controller: _controller,
                 children: <Widget>[
-                  const Card(
-                    child: ListTile(
-                      leading: Icon(Icons.home),
-                      title: TextField(
-                        decoration: InputDecoration(hintText: 'Search for address...'),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: const Icon(Icons.location_on),
-                      title: Text('Latitude: 48.09342\nLongitude: 11.23403'),
-                      trailing: IconButton(icon: const Icon(Icons.my_location), onPressed: () {}),
-                    ),
-                  ),
+                  buildAnnouncementDetailsTabBarContent(context),
+                  buildAnnouncementRatingAndComments(context),
                 ],
               ),
             ),

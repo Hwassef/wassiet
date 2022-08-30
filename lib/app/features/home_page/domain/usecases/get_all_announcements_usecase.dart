@@ -7,7 +7,7 @@ import 'package:wassiet/app/usecase.dart';
 
 class GetAllAnnouncementsUseCase extends UseCase<List<Announcement>, NoParams> {
   final HomePageRepository repository;
-  GetAllAnnouncementsUseCase({required this.repository});
+  GetAllAnnouncementsUseCase(this.repository);
   @override
   Future<Either<Failure, List<Announcement>>> call(NoParams params) async {
     return await repository.getAllAnnouncements();

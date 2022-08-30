@@ -6,12 +6,12 @@ import 'package:wassiet/app/features/announcement_details/data/models/announceme
 import 'package:wassiet/app/features/announcement_details/domain/entity/announcement_details.dart';
 import 'package:wassiet/app/features/announcement_details/domain/entity/announcement_rating_and_comments.dart';
 
-abstract class AnnouncementDetailsRemoteDateSource {
+abstract class AnnouncementDetailsRemoteDataSource {
   Future<AnnouncementDetails> getAnnouncemnetDetails();
   Future<AnnouncementRatingAndComments> getAnnouncementRatingAndComments();
 }
 
-class AnnouncementDetailsRemoteDataSourceImpl implements AnnouncementDetailsRemoteDateSource {
+class AnnouncementDetailsRemoteDataSourceImpl implements AnnouncementDetailsRemoteDataSource {
   @override
   Future<AnnouncementDetails> getAnnouncemnetDetails() async {
     final response = await rootBundle.loadString('assets/fake_data/announcements_details.json');

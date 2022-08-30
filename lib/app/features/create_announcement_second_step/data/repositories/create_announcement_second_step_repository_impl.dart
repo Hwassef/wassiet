@@ -8,7 +8,7 @@ import 'package:wassiet/app/features/create_announcement_second_step/domain/repo
 
 class CreateAnnouncementSecondStepRepositoryImpl implements CreateAnnouncementSecondStepRepository {
   final CreateAnnouncementSecondStepRemoteDataSource remoteDataSource;
-  CreateAnnouncementSecondStepRepositoryImpl({required this.remoteDataSource});
+  CreateAnnouncementSecondStepRepositoryImpl(this.remoteDataSource);
   @override
   Future<Either<Failure, List<PurposeOfAnnouncement>>> getAllPurposesOfAnnouncement() async {
     return Right(await remoteDataSource.getAllPurposesOfAnnouncement());

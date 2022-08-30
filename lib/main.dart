@@ -5,9 +5,11 @@ import 'package:wassiet/config/routes/app_router.gr.dart';
 import 'package:wassiet/config/styles/themes/app_themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'generated/l10n.dart';
+import 'app/injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }

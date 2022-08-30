@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 
 class GetAllRegionsImpl implements GetAllRegionsRepository {
   final GetAllRegionsRemoteDataSource remoteDataSource;
-  GetAllRegionsImpl({required this.remoteDataSource});
+  GetAllRegionsImpl(this.remoteDataSource);
   @override
   Future<Either<Failure, List<Region>>> getAllRegions() async {
     return Right(await remoteDataSource.getAllRegions());
